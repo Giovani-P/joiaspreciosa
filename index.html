@@ -105,9 +105,9 @@
     /* ── CARD ── */
     .card{background:var(--white);border:1px solid var(--cream-dark);cursor:pointer;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
     .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.10)}
-    .card-img-wrap{position:relative;width:100%;padding-bottom:100%;overflow:hidden;background:var(--cream)}
-    .card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-    .card:hover .card-img{transform:scale(1.04)}
+    .card-img-wrap{position:relative;width:100%;padding-bottom:105%;overflow:hidden;background:var(--cream)}
+    .card-img{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);object-fit:contain;transition:transform .4s ease}
+    .card:hover .card-img{transform:scale(1.03)}
     .card-img-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#F5EDD8,#EDE0C4)}
     .card-img-placeholder svg{width:64px;height:64px;opacity:.4}
     .card-badge{position:absolute;top:12px;left:12px;background:var(--charcoal);color:var(--gold);font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 10px}
@@ -158,7 +158,7 @@
     .cart-empty svg{width:48px;height:48px;opacity:.3;margin:0 auto 16px;display:block}
     .cart-empty p{font-size:.85rem;line-height:1.6}
     .cart-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--cream-dark);align-items:flex-start}
-    .ci-img{width:62px;height:62px;object-fit:cover;background:var(--cream);flex-shrink:0}
+    .ci-img{width:62px;height:62px;object-fit:contain;background:var(--cream);flex-shrink:0;padding:4px}
     .ci-info{flex:1}
     .ci-ref{font-size:.62rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
     .ci-name{font-size:.85rem;color:var(--charcoal);margin:3px 0 5px;line-height:1.3}
@@ -176,7 +176,7 @@
     .upsell-card{flex-shrink:0;width:110px;background:var(--white);border:1px solid var(--cream-dark);cursor:pointer;transition:box-shadow .2s}
     .upsell-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.10)}
     .upsell-img-wrap{width:100%;aspect-ratio:1;overflow:hidden;background:var(--cream)}
-    .upsell-img{width:100%;height:100%;object-fit:cover}
+    .upsell-img{width:100%;height:100%;object-fit:contain;padding:6px}
     .upsell-body{padding:8px 8px 10px}
     .upsell-name{font-size:.65rem;color:var(--charcoal);line-height:1.3;margin-bottom:5px}
     .upsell-price{font-size:.7rem;font-weight:700;color:var(--charcoal)}
@@ -204,7 +204,7 @@
     .modal-overlay.open .modal{transform:translateY(0) scale(1)}
     .modal-img-side{flex:0 0 52%;background:var(--cream);position:relative;display:flex;flex-direction:column}
     .modal-gallery{flex:1;position:relative;overflow:hidden;background:var(--cream)}
-    .modal-img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .2s}
+    .modal-img{width:100%;height:100%;object-fit:contain;display:block;transition:opacity .2s;padding:12px}
     .modal-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#F5EDD8,#EDE0C4);position:absolute;inset:0}
     .modal-img-placeholder svg{width:80px;height:80px;opacity:.35}
     .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.9);border:none;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:var(--charcoal);transition:background .2s;z-index:2}

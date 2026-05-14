@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joias Preciosa — Semi Joias com Alma</title>
+  <meta name="description" content="Semi joias com acabamento premium. Brincos, colares, conjuntos, bolsas e relógios com o brilho que você merece."/>
+  <meta property="og:title" content="Joias Preciosa"/>
+  <meta property="og:description" content="Semi joias artesanais com acabamento premium."/>
+  <meta name="theme-color" content="#1A1A1A"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --gold:#C9A96E; --gold-dark:#A8883E; --gold-light:#E8D5A8;
+      --rose:#B76E79; --cream:#FAF7F2; --cream-dark:#F0EAE0;
+      --charcoal:#1A1A1A; --gray:#6B6B6B; --gray-light:#D4D0C8; --white:#FFFFFF;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden}
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .ann-bar{background:var(--charcoal);color:var(--gold-light);font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;overflow:hidden;height:34px;display:flex;align-items:center}
+    .ann-track{display:flex;white-space:nowrap;animation:ann-scroll 22s linear infinite}
+    .ann-track:hover{animation-play-state:paused}
+    @keyframes ann-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .ann-sep{margin:0 40px;color:var(--gold);opacity:.5}
+
+    /* ── HEADER ── */
+    header{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--cream-dark);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px;box-shadow:0 2px 16px rgba(0,0,0,.05)}
+    .logo{display:flex;flex-direction:column;text-decoration:none;line-height:1}
+    .logo-main{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:500;color:var(--charcoal);letter-spacing:.08em}
+    .logo-sub{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:2px}
+    nav{display:flex;gap:28px}
+    nav a{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;padding:4px 0;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
+    nav a:hover,nav a.active{color:var(--gold-dark);border-color:var(--gold-dark)}
+    .header-right{display:flex;align-items:center;gap:10px}
+    .cart-btn{position:relative;display:flex;align-items:center;gap:8px;background:var(--charcoal);color:var(--white);border:none;cursor:pointer;padding:10px 16px;font-family:'Lato',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:background .2s;white-space:nowrap}
+    .cart-btn:hover{background:var(--gold-dark)}
+    .cart-btn svg{width:18px;height:18px;flex-shrink:0}
+    .cart-count{background:var(--gold);color:var(--charcoal);font-size:.62rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center}
+    .cart-count.visible{display:flex}
+
+    /* ── FILTER BAR ── */
+    .filter-bar{position:sticky;top:72px;z-index:90;background:var(--white);border-bottom:1px solid var(--cream-dark);padding:0 40px;display:flex;align-items:center;gap:12px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+    .filter-bar::-webkit-scrollbar{display:none}
+    .filter-bar-inner{display:flex;align-items:center;gap:10px;padding:12px 0;flex-shrink:0}
+    .filter-sep{width:1px;height:20px;background:var(--cream-dark);flex-shrink:0;margin:0 4px}
+    .f-chip{border:1.5px solid var(--gray-light);background:none;color:var(--gray);font-family:'Lato',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;cursor:pointer;transition:all .2s;white-space:nowrap}
+    .f-chip:hover{border-color:var(--charcoal);color:var(--charcoal)}
+    .f-chip.active{background:var(--charcoal);border-color:var(--charcoal);color:var(--white)}
+    .f-select{border:1.5px solid var(--gray-light);background:none;color:var(--gray);font-family:'Lato',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;cursor:pointer;appearance:none;-webkit-appearance:none;outline:none;transition:all .2s}
+    .f-select:focus,.f-select:hover{border-color:var(--charcoal);color:var(--charcoal)}
+
+    /* ── FAB CART ── */
+    .fab-cart{position:fixed;bottom:32px;right:32px;z-index:150;display:flex;align-items:center;gap:10px;background:var(--charcoal);color:var(--white);border:none;cursor:pointer;padding:14px 22px;font-family:'Lato',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 8px 32px rgba(0,0,0,.25);transition:background .2s,transform .2s,box-shadow .2s,opacity .25s;opacity:0;pointer-events:none;transform:translateY(16px)}
+    .fab-cart.visible{opacity:1;pointer-events:all;transform:translateY(0)}
+    .fab-cart:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+    .fab-cart svg{width:20px;height:20px}
+    .fab-count{background:var(--gold);color:var(--charcoal);font-size:.65rem;font-weight:700;min-width:20px;height:20px;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:0 5px}
+    @keyframes fab-pulse{0%{box-shadow:0 8px 32px rgba(0,0,0,.25),0 0 0 0 rgba(201,169,110,.5)}70%{box-shadow:0 8px 32px rgba(0,0,0,.25),0 0 0 12px rgba(201,169,110,0)}100%{box-shadow:0 8px 32px rgba(0,0,0,.25),0 0 0 0 rgba(201,169,110,0)}}
+    .fab-cart.pulse{animation:fab-pulse 1.2s ease}
+
+    /* ── HERO ── */
+    .hero{background:linear-gradient(135deg,#1A1A1A 0%,#2C2419 55%,#3D3022 100%);color:var(--white);padding:90px 40px 100px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(201,169,110,.18) 0%,transparent 70%)}
+    .hero-tag{display:inline-block;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,169,110,.4);padding:6px 18px;margin-bottom:24px;position:relative}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.6rem);font-weight:400;line-height:1.2;margin-bottom:20px;position:relative}
+    .hero h1 em{font-style:italic;color:var(--gold-light)}
+    .hero p{font-size:.95rem;color:rgba(255,255,255,.65);max-width:480px;margin:0 auto 36px;line-height:1.7;letter-spacing:.02em;position:relative}
+    .hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--charcoal);font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:14px 36px;text-decoration:none;transition:background .2s,transform .2s;position:relative}
+    .hero-cta:hover{background:var(--gold-dark);transform:translateY(-1px)}
+
+    /* ── SECTIONS ── */
+    .section{padding:72px 40px}
+    .section-header{text-align:center;margin-bottom:52px}
+    .section-tag{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px}
+    .section-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;color:var(--charcoal)}
+    .section-line{width:48px;height:1.5px;background:var(--gold);margin:16px auto 0}
+    .section-alt{background:var(--white)}
+    .section[data-section]{transition:opacity .25s}
+
+    /* ── GRID ── */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px;max-width:1160px;margin:0 auto}
+
+    /* ── FILTERED RESULTS ── */
+    #filtered-section{display:none;padding:72px 40px}
+    #filtered-section .section-header{margin-bottom:40px}
+    .btn-clear-filter{display:inline-block;margin-top:18px;background:none;border:1.5px solid var(--gray-light);color:var(--gray);font-family:'Lato',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 20px;cursor:pointer;transition:all .2s}
+    .btn-clear-filter:hover{border-color:var(--charcoal);color:var(--charcoal)}
+
+    /* ── EM BREVE ── */
+    .coming-soon{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px}
+    .cs-card{background:var(--white);border:1.5px dashed var(--gold-light);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;text-align:center;min-height:280px}
+    .cs-icon{font-size:2.2rem;margin-bottom:16px;opacity:.5}
+    .cs-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--charcoal);margin-bottom:8px}
+    .cs-text{font-size:.75rem;color:var(--gray);line-height:1.6}
+
+    /* ── DESTAQUES (horizontal scroll) ── */
+    .destaques-track{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px;max-width:1160px;margin:0 auto}
+
+    /* ── CARD ── */
+    .card{background:var(--white);border:1px solid var(--cream-dark);cursor:pointer;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+    .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.10)}
+    .card-img-wrap{position:relative;width:100%;padding-bottom:100%;overflow:hidden;background:var(--cream)}
+    .card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .card:hover .card-img{transform:scale(1.04)}
+    .card-img-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#F5EDD8,#EDE0C4)}
+    .card-img-placeholder svg{width:64px;height:64px;opacity:.4}
+    .card-badge{position:absolute;top:12px;left:12px;background:var(--charcoal);color:var(--gold);font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 10px}
+    .card-gift-badge{position:absolute;top:12px;right:12px;background:var(--rose);color:var(--white);font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px}
+    .card-body{padding:18px 20px 20px}
+    .card-ref{font-size:.65rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:4px}
+    .card-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--charcoal);line-height:1.35;margin-bottom:6px}
+    .card-material{font-size:.72rem;color:var(--gray);letter-spacing:.06em;margin-bottom:14px}
+    .card-footer{display:flex;align-items:center;justify-content:space-between}
+    .card-price{font-size:1.05rem;font-weight:700;color:var(--charcoal)}
+    .card-add{background:var(--charcoal);color:var(--white);border:none;font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:9px 16px;cursor:pointer;transition:background .2s}
+    .card-add:hover{background:var(--gold-dark)}
+    .card-add.added{background:var(--gold);color:var(--charcoal)}
+
+    /* ── PRESENTES ── */
+    .presentes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px;max-width:1160px;margin:0 auto}
+
+    /* ── DEPOIMENTOS ── */
+    .depo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+    .depo-card{background:var(--white);border:1px solid var(--cream-dark);padding:28px 28px 24px}
+    .depo-stars{color:var(--gold);font-size:.9rem;letter-spacing:3px;margin-bottom:14px}
+    .depo-text{font-size:.85rem;line-height:1.7;color:var(--charcoal);margin-bottom:16px;font-style:italic}
+    .depo-text::before{content:'\201C';font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold-light);line-height:0;vertical-align:-.5rem;margin-right:4px}
+    .depo-author{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+    .depo-location{font-size:.68rem;color:var(--gray-light);margin-top:2px}
+
+    /* ── CART OVERLAY ── */
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:199;opacity:0;pointer-events:none;transition:opacity .3s}
+    .overlay.open{opacity:1;pointer-events:all}
+
+    /* ── CART DRAWER ── */
+    .cart-drawer{position:fixed;top:0;right:0;width:440px;max-width:100vw;height:100%;background:var(--white);z-index:200;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 40px rgba(0,0,0,.15)}
+    .cart-drawer.open{transform:translateX(0)}
+    .cart-header{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;border-bottom:1px solid var(--cream-dark)}
+    .cart-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:400}
+    .cart-close{background:none;border:none;cursor:pointer;color:var(--charcoal);padding:4px;transition:color .2s}
+    .cart-close:hover{color:var(--rose)}
+    .cart-close svg{width:22px;height:22px}
+    .discount-bar{padding:14px 28px;background:var(--cream);border-bottom:1px solid var(--cream-dark)}
+    .discount-bar-msg{font-size:.73rem;color:var(--charcoal);margin-bottom:8px;line-height:1.4}
+    .discount-bar-msg strong{color:var(--gold-dark)}
+    .discount-bar-msg.unlocked{color:#1a7a3f;font-weight:700}
+    .progress-track{background:var(--cream-dark);height:5px;border-radius:3px;overflow:hidden}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-dark));border-radius:3px;transition:width .4s ease}
+    .progress-fill.full{background:linear-gradient(90deg,#25a244,#1a7a3f)}
+    .cart-items{flex:1;overflow-y:auto;padding:16px 28px}
+    .cart-empty{text-align:center;padding:50px 20px;color:var(--gray)}
+    .cart-empty svg{width:48px;height:48px;opacity:.3;margin:0 auto 16px;display:block}
+    .cart-empty p{font-size:.85rem;line-height:1.6}
+    .cart-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--cream-dark);align-items:flex-start}
+    .ci-img{width:62px;height:62px;object-fit:cover;background:var(--cream);flex-shrink:0}
+    .ci-info{flex:1}
+    .ci-ref{font-size:.62rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+    .ci-name{font-size:.85rem;color:var(--charcoal);margin:3px 0 5px;line-height:1.3}
+    .ci-prices{display:flex;align-items:center;gap:8px}
+    .ci-price{font-size:.88rem;font-weight:700;color:var(--charcoal)}
+    .ci-price-orig{font-size:.78rem;color:var(--gray);text-decoration:line-through}
+    .ci-remove{background:none;border:none;cursor:pointer;color:var(--gray-light);padding:2px;transition:color .2s;flex-shrink:0}
+    .ci-remove:hover{color:var(--rose)}
+    .ci-remove svg{width:16px;height:16px}
+    .upsell-section{padding:20px 0 8px;margin-top:8px;border-top:1px solid var(--cream-dark)}
+    .upsell-title{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gray);margin-bottom:12px}
+    .upsell-grid{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px}
+    .upsell-grid::-webkit-scrollbar{height:3px}
+    .upsell-grid::-webkit-scrollbar-thumb{background:var(--cream-dark)}
+    .upsell-card{flex-shrink:0;width:110px;background:var(--white);border:1px solid var(--cream-dark);cursor:pointer;transition:box-shadow .2s}
+    .upsell-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.10)}
+    .upsell-img-wrap{width:100%;aspect-ratio:1;overflow:hidden;background:var(--cream)}
+    .upsell-img{width:100%;height:100%;object-fit:cover}
+    .upsell-body{padding:8px 8px 10px}
+    .upsell-name{font-size:.65rem;color:var(--charcoal);line-height:1.3;margin-bottom:5px}
+    .upsell-price{font-size:.7rem;font-weight:700;color:var(--charcoal)}
+    .upsell-add{width:100%;background:var(--charcoal);color:var(--white);border:none;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 4px;cursor:pointer;transition:background .2s}
+    .upsell-add:hover{background:var(--gold-dark)}
+    .cart-footer{padding:16px 28px 28px;border-top:1px solid var(--cream-dark)}
+    .cart-subtotal-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+    .cart-subtotal-label{font-size:.72rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase}
+    .cart-subtotal-val{font-size:.9rem;color:var(--gray)}
+    .cart-discount-row{display:none;justify-content:space-between;align-items:center;margin-bottom:4px}
+    .cart-discount-label{font-size:.72rem;color:#1a7a3f;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+    .cart-discount-val{font-size:.9rem;color:#1a7a3f;font-weight:700}
+    .cart-total-row{display:flex;justify-content:space-between;align-items:center;margin:10px 0 18px;padding-top:10px;border-top:1px solid var(--cream-dark)}
+    .cart-total-label{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray)}
+    .cart-total-val{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--charcoal)}
+    .btn-whatsapp{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;background:#25D366;color:var(--white);border:none;cursor:pointer;font-family:'Lato',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;transition:background .2s,transform .15s}
+    .btn-whatsapp:hover{background:#1DA855;transform:translateY(-1px)}
+    .btn-whatsapp svg{width:20px;height:20px}
+    .cart-note{font-size:.68rem;color:var(--gray);text-align:center;margin-top:10px;line-height:1.5}
+
+    /* ── PRODUCT MODAL ── */
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:250;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;padding:20px}
+    .modal-overlay.open{opacity:1;pointer-events:all}
+    .modal{background:var(--white);max-width:860px;width:100%;max-height:90vh;display:flex;overflow:hidden;transform:translateY(24px) scale(.97);transition:transform .32s cubic-bezier(.4,0,.2,1);position:relative}
+    .modal-overlay.open .modal{transform:translateY(0) scale(1)}
+    .modal-img-side{flex:0 0 52%;background:var(--cream);position:relative;display:flex;flex-direction:column}
+    .modal-gallery{flex:1;position:relative;overflow:hidden;background:var(--cream)}
+    .modal-img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .2s}
+    .modal-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#F5EDD8,#EDE0C4);position:absolute;inset:0}
+    .modal-img-placeholder svg{width:80px;height:80px;opacity:.35}
+    .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.9);border:none;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:var(--charcoal);transition:background .2s;z-index:2}
+    .gallery-arrow:hover{background:var(--white)}
+    .gallery-arrow.prev{left:10px}
+    .gallery-arrow.next{right:10px}
+    .gallery-arrow svg{width:18px;height:18px}
+    .gallery-arrow[hidden]{display:none}
+    .gallery-thumbs{display:flex;gap:6px;padding:10px 12px;background:var(--cream-dark);overflow-x:auto;scrollbar-width:none}
+    .gallery-thumbs::-webkit-scrollbar{display:none}
+    .gallery-thumb{width:52px;height:52px;object-fit:cover;cursor:pointer;opacity:.55;transition:opacity .2s;border:2px solid transparent;flex-shrink:0}
+    .gallery-thumb.active{opacity:1;border-color:var(--gold)}
+    .gallery-thumbs-wrap{flex-shrink:0}
+    .modal-info-side{flex:1;padding:44px 40px 36px;display:flex;flex-direction:column;overflow-y:auto}
+    .modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.9);border:none;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:var(--charcoal);transition:background .2s,color .2s;z-index:3}
+    .modal-close:hover{background:var(--charcoal);color:var(--white)}
+    .modal-close svg{width:18px;height:18px}
+    .modal-ref{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+    .modal-name{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:400;line-height:1.2;margin-bottom:8px}
+    .modal-material{font-size:.8rem;color:var(--gray);letter-spacing:.06em;margin-bottom:24px}
+    .modal-divider{width:40px;height:1.5px;background:var(--gold);margin-bottom:24px}
+    .modal-detail-row{display:flex;gap:8px;align-items:flex-start;margin-bottom:10px}
+    .modal-detail-icon{color:var(--gold);font-size:.75rem;margin-top:1px;flex-shrink:0}
+    .modal-detail-text{font-size:.8rem;color:var(--gray);line-height:1.5}
+    .modal-price-row{margin-top:auto;padding-top:28px}
+    .modal-price-label{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:6px}
+    .modal-price{font-family:'Playfair Display',serif;font-size:2rem;color:var(--charcoal);margin-bottom:16px}
+    .modal-actions{display:flex;gap:10px;flex-direction:column}
+    .modal-add-btn{width:100%;padding:16px;background:var(--charcoal);color:var(--white);border:none;cursor:pointer;font-family:'Lato',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;transition:background .2s,transform .15s}
+    .modal-add-btn:hover{background:var(--gold-dark);transform:translateY(-1px)}
+    .modal-add-btn.added{background:var(--gold);color:var(--charcoal)}
+    .modal-share-btn{width:100%;padding:12px;background:none;color:var(--charcoal);border:1.5px solid var(--gray-light);cursor:pointer;font-family:'Lato',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;transition:border-color .2s,color .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+    .modal-share-btn:hover{border-color:var(--charcoal)}
+    .modal-share-btn svg{width:16px;height:16px}
+
+    /* ── BRAND STRIP ── */
+    .brand-strip{background:var(--charcoal);padding:52px 40px;text-align:center}
+    .brand-strip h3{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3vw,1.8rem);font-weight:400;color:var(--white);margin-bottom:14px}
+    .brand-strip h3 em{font-style:italic;color:var(--gold-light)}
+    .brand-strip p{font-size:.85rem;color:rgba(255,255,255,.5);letter-spacing:.05em}
+
+    /* ── PILLARS ── */
+    .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;max-width:900px;margin:0 auto}
+    .pillar{padding:48px 32px;text-align:center;border-right:1px solid var(--cream-dark)}
+    .pillar:last-child{border-right:none}
+    .pillar-icon{font-size:1.8rem;margin-bottom:14px}
+    .pillar h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;margin-bottom:8px}
+    .pillar p{font-size:.78rem;color:var(--gray);line-height:1.65}
+
+    /* ── FOOTER ── */
+    footer{background:var(--charcoal);color:rgba(255,255,255,.45);padding:40px;text-align:center;font-size:.75rem;letter-spacing:.08em;line-height:2}
+    footer .footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold);margin-bottom:8px}
+
+    /* ── TOAST ── */
+    .toast{position:fixed;bottom:100px;right:28px;background:var(--charcoal);color:var(--white);padding:12px 20px;font-size:.78rem;letter-spacing:.04em;z-index:300;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;pointer-events:none;max-width:260px;line-height:1.4}
+    .toast.show{opacity:1;transform:translateY(0)}
+
+    /* ── BOTTOM NAV ── */
+    .bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:120;background:var(--white);border-top:1px solid var(--cream-dark);padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -4px 20px rgba(0,0,0,.07)}
+    .bottom-nav-inner{display:flex;height:58px}
+    .bn-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;color:var(--gray);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;border:none;background:none;cursor:pointer;transition:color .2s;-webkit-tap-highlight-color:transparent;padding:0}
+    .bn-item.active,.bn-item:active{color:var(--gold-dark)}
+    .bn-item svg{width:20px;height:20px}
+    .bn-cart-badge{position:relative}
+    .bn-badge{position:absolute;top:-4px;right:-6px;background:var(--gold);color:var(--charcoal);font-size:.55rem;font-weight:700;width:15px;height:15px;border-radius:50%;display:none;align-items:center;justify-content:center}
+    .bn-badge.visible{display:flex}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:768px){
+      body{padding-bottom:calc(58px + env(safe-area-inset-bottom))}
+      header{padding:0 16px;height:60px}
+      nav{display:none}
+      .filter-bar{top:60px;padding:0 12px}
+      .bottom-nav{display:block}
+      .cart-btn{padding:8px 12px}
+      .cart-btn span:not(.cart-count){display:none}
+      .hero{padding:52px 20px 64px}
+      .hero h1{font-size:1.9rem}
+      .section{padding:44px 16px}
+      .brand-strip{padding:36px 20px}
+      .grid,.destaques-track,.presentes-grid,.depo-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+      .card-body{padding:12px 14px 14px}
+      .card-name{font-size:.88rem}
+      .card-material{font-size:.68rem;margin-bottom:10px}
+      .card-price{font-size:.95rem}
+      .card-add{padding:8px 12px;font-size:.6rem}
+      .pillar{border-right:none;border-bottom:1px solid var(--cream-dark);padding:32px 20px}
+      .pillar:last-child{border-bottom:none}
+      footer{padding:32px 20px}
+      .cart-drawer{width:100vw}
+      .cart-header{padding:18px 20px}
+      .cart-items{padding:12px 20px}
+      .discount-bar{padding:12px 20px}
+      .cart-footer{padding:14px 20px 20px}
+      .fab-cart{bottom:calc(70px + env(safe-area-inset-bottom));right:16px;padding:11px 16px;font-size:.72rem}
+      .toast{bottom:calc(130px + env(safe-area-inset-bottom));right:16px;max-width:220px}
+      .modal-overlay{padding:0;align-items:flex-end}
+      .modal{flex-direction:column;max-height:94vh;border-radius:16px 16px 0 0}
+      .modal-img-side{flex:0 0 auto}
+      .modal-gallery{height:52vw;min-height:200px}
+      .modal-info-side{padding:22px 20px 24px}
+      .modal-name{font-size:1.3rem}
+      .modal-price{font-size:1.6rem;margin-bottom:12px}
+      .gallery-thumbs-wrap{display:none}
+      #filtered-section{padding:44px 16px}
+    }
+    @media(max-width:400px){
+      .grid,.destaques-track,.presentes-grid{grid-template-columns:1fr 1fr;gap:10px}
+      .card-add{padding:7px 8px;letter-spacing:.05em}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── ANNOUNCEMENT BAR ── -->
+<div class="ann-bar" aria-hidden="true">
+  <div class="ann-track">
+    <span>10% OFF acima de R$150</span>
+    <span class="ann-sep">✦</span>
+    <span>Banho de ouro 18k de alta durabilidade</span>
+    <span class="ann-sep">✦</span>
+    <span>Anti-alérgico — use todos os dias</span>
+    <span class="ann-sep">✦</span>
+    <span>Embalagem especial para presentes</span>
+    <span class="ann-sep">✦</span>
+    <span>Atendimento via WhatsApp com a Paloma</span>
+    <span class="ann-sep">✦</span>
+    <!-- duplicado para loop contínuo -->
+    <span>10% OFF acima de R$150</span>
+    <span class="ann-sep">✦</span>
+    <span>Banho de ouro 18k de alta durabilidade</span>
+    <span class="ann-sep">✦</span>
+    <span>Anti-alérgico — use todos os dias</span>
+    <span class="ann-sep">✦</span>
+    <span>Embalagem especial para presentes</span>
+    <span class="ann-sep">✦</span>
+    <span>Atendimento via WhatsApp com a Paloma</span>
+    <span class="ann-sep">✦</span>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <a class="logo" href="#">
+    <span class="logo-main">Joias Preciosa</span>
+    <span class="logo-sub">Semi Joias &amp; Acessórios</span>
+  </a>
+  <nav>
+    <a href="#brincos"   onclick="navTo(event,'brincos')">Brincos</a>
+    <a href="#colares"   onclick="navTo(event,'colares')">Colares</a>
+    <a href="#conjuntos" onclick="navTo(event,'conjuntos')">Conjuntos</a>
+    <a href="#bolsas"    onclick="navTo(event,'bolsas')">Bolsas</a>
+    <a href="#relogios"  onclick="navTo(event,'relogios')">Relógios</a>
+    <a href="#presentes" onclick="navTo(event,'presentes')">Presentes</a>
+  </nav>
+  <div class="header-right">
+    <button class="cart-btn" onclick="toggleCart()" aria-label="Carrinho">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span>Minha Seleção</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- ── BOTTOM NAV ── -->
+<nav class="bottom-nav" aria-label="Navegação mobile">
+  <div class="bottom-nav-inner">
+    <a class="bn-item active" href="#" id="bn-inicio" onclick="navTo(event,'destaques')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Início
+    </a>
+    <a class="bn-item" href="#brincos" id="bn-brincos" onclick="navTo(event,'brincos')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="2"/><path d="M12 7v5"/><ellipse cx="12" cy="16" rx="4" ry="3"/></svg>
+      Brincos
+    </a>
+    <a class="bn-item" href="#colares" id="bn-colares" onclick="navTo(event,'colares')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 4 6 4 10c0 5 8 12 8 12s8-7 8-12c0-4-4-8-8-8z"/></svg>
+      Colares
+    </a>
+    <a class="bn-item" href="#presentes" id="bn-presentes" onclick="navTo(event,'presentes')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+      Presentes
+    </a>
+    <button class="bn-item" onclick="toggleCart()">
+      <div class="bn-cart-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="bn-badge" id="bnBadge">0</span>
+      </div>
+      Seleção
+    </button>
+  </div>
+</nav>
+
+<!-- ── FILTER BAR ── -->
+<div class="filter-bar" role="toolbar" aria-label="Filtros">
+  <div class="filter-bar-inner">
+    <button class="f-chip active" data-filter-cat="todos" onclick="setFilter('cat','todos',this)">Todos</button>
+    <button class="f-chip" data-filter-cat="brincos" onclick="setFilter('cat','brincos',this)">Brincos</button>
+    <button class="f-chip" data-filter-cat="colares" onclick="setFilter('cat','colares',this)">Colares</button>
+    <button class="f-chip" data-filter-cat="conjuntos" onclick="setFilter('cat','conjuntos',this)">Conjuntos</button>
+    <button class="f-chip" data-filter-cat="bolsas" onclick="setFilter('cat','bolsas',this)">Bolsas</button>
+    <button class="f-chip" data-filter-cat="relogios" onclick="setFilter('cat','relogios',this)">Relógios</button>
+    <div class="filter-sep"></div>
+    <select class="f-select" onchange="setFilter('material',this.value,null)" aria-label="Material">
+      <option value="todos">Material</option>
+      <option value="dourado">Dourado</option>
+      <option value="prata">Prata</option>
+      <option value="bicolor">Bicolor</option>
+    </select>
+    <select class="f-select" onchange="setFilter('sort',this.value,null)" aria-label="Ordenar">
+      <option value="relevancia">Ordenar</option>
+      <option value="preco-asc">Menor preço</option>
+      <option value="preco-desc">Maior preço</option>
+    </select>
+  </div>
+</div>
+
+<!-- ── FAB CART ── -->
+<button class="fab-cart" id="fabCart" onclick="toggleCart()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+  <span>Ver Seleção</span>
+  <span class="fab-count" id="fabCount">0</span>
+</button>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <span class="hero-tag">Coleção Exclusiva</span>
+  <h1>Joias que contam<br><em>a sua história</em></h1>
+  <p>Semi joias artesanais com acabamento premium. Peças que expressam quem você é, com o brilho que você merece.</p>
+  <a href="#destaques" class="hero-cta">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+    Ver Coleção
+  </a>
+</section>
+
+<!-- ── FILTERED RESULTS ── -->
+<section id="filtered-section">
+  <div class="section-header">
+    <span class="section-tag" id="filter-label">Resultados</span>
+    <h2 id="filter-title">Produtos filtrados</h2>
+    <div class="section-line"></div>
+    <button class="btn-clear-filter" onclick="resetFilters()">← Ver todos os produtos</button>
+  </div>
+  <div class="grid" id="grid-filtered"></div>
+  <p id="filter-empty" style="text-align:center;color:var(--gray);font-size:.85rem;padding:40px 0;display:none">Nenhuma peça encontrada com esse filtro.</p>
+  <div id="filter-embreve" style="display:none;max-width:600px;margin:0 auto;text-align:center;padding:60px 20px">
+    <div style="font-size:2rem;margin-bottom:16px">✦</div>
+    <div style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:10px;color:var(--charcoal)">Em breve disponível</div>
+    <div style="font-size:.82rem;color:var(--gray);line-height:1.7">Estamos preparando essa coleção com muito cuidado.<br>Fique de olho nas novidades!</div>
+  </div>
+</section>
+
+<!-- ── DESTAQUES ── -->
+<section class="section" id="destaques">
+  <div class="section-header">
+    <span class="section-tag">Mais amadas</span>
+    <h2>Destaques</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="destaques-track" id="grid-destaques"></div>
+</section>
+
+<!-- ── BRINCOS ── -->
+<section class="section section-alt" id="brincos" data-section="brincos">
+  <div class="section-header">
+    <span class="section-tag">Coleção</span>
+    <h2>Brincos</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="grid" id="grid-brincos"></div>
+</section>
+
+<!-- ── BRAND STRIP ── -->
+<div class="brand-strip">
+  <h3>Feito para durar,<br><em>criado para brilhar</em></h3>
+  <p>Banho de ouro 18k · Anti-alérgico · Resistente à água</p>
+</div>
+
+<!-- ── COLARES ── -->
+<section class="section" id="colares" data-section="colares">
+  <div class="section-header">
+    <span class="section-tag">Coleção</span>
+    <h2>Colares</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="grid" id="grid-colares"></div>
+</section>
+
+<!-- ── CONJUNTOS ── -->
+<section class="section section-alt" id="conjuntos" data-section="conjuntos">
+  <div class="section-header">
+    <span class="section-tag">Coleção</span>
+    <h2>Conjuntos</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="grid" id="grid-conjuntos"></div>
+</section>
+
+<!-- ── BOLSAS ── -->
+<section class="section" id="bolsas" data-section="bolsas">
+  <div class="section-header">
+    <span class="section-tag">Em Breve</span>
+    <h2>Bolsas</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="coming-soon">
+    <div class="cs-card"><div class="cs-icon">👜</div><div class="cs-title">Novidades chegando</div><div class="cs-text">Nossa coleção de bolsas está a caminho.<br>Em breve disponível aqui.</div></div>
+    <div class="cs-card"><div class="cs-icon">✦</div><div class="cs-title">Peças selecionadas</div><div class="cs-text">Cada bolsa escolhida com o mesmo cuidado<br>das nossas joias.</div></div>
+  </div>
+</section>
+
+<!-- ── RELÓGIOS ── -->
+<section class="section section-alt" id="relogios" data-section="relogios">
+  <div class="section-header">
+    <span class="section-tag">Em Breve</span>
+    <h2>Relógios</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="coming-soon">
+    <div class="cs-card"><div class="cs-icon">⌚</div><div class="cs-title">Novidades chegando</div><div class="cs-text">Nossa coleção de relógios está a caminho.<br>Em breve disponível aqui.</div></div>
+    <div class="cs-card"><div class="cs-icon">◇</div><div class="cs-title">Estilo e precisão</div><div class="cs-text">Relógios com design minimalista e elegante<br>para todos os momentos.</div></div>
+  </div>
+</section>
+
+<!-- ── PRESENTES ── -->
+<section class="section" id="presentes" data-section="presentes">
+  <div class="section-header">
+    <span class="section-tag">Para presentear</span>
+    <h2>Presentes</h2>
+    <div class="section-line"></div>
+  </div>
+  <p style="text-align:center;font-size:.82rem;color:var(--gray);margin:-28px 0 40px;letter-spacing:.04em">Embalagem especial inclusa em todas as peças ✦ Perfeito para qualquer ocasião</p>
+  <div class="presentes-grid" id="grid-presentes"></div>
+</section>
+
+<!-- ── DEPOIMENTOS ── -->
+<section class="section section-alt">
+  <div class="section-header">
+    <span class="section-tag">Quem usa, ama</span>
+    <h2>O que dizem nossas clientes</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="depo-grid">
+    <div class="depo-card">
+      <div class="depo-stars">★★★★★</div>
+      <p class="depo-text">Comprei o Conjunto Ponto de Luz e recebo elogios toda vez que uso. A qualidade é incrível para o preço!</p>
+      <div class="depo-author">Ana Paula S.</div>
+      <div class="depo-location">São Paulo, SP</div>
+    </div>
+    <div class="depo-card">
+      <div class="depo-stars">★★★★★</div>
+      <p class="depo-text">Os colares têm uma mensagem linda e o acabamento é perfeito. Já presenteei três amigas e todas amaram!</p>
+      <div class="depo-author">Fernanda R.</div>
+      <div class="depo-location">Campinas, SP</div>
+    </div>
+    <div class="depo-card">
+      <div class="depo-stars">★★★★★</div>
+      <p class="depo-text">A Argola Coração Cravejado é delicada e elegante. Uso no dia a dia sem tirar — resistiu à academia e tudo!</p>
+      <div class="depo-author">Juliana M.</div>
+      <div class="depo-location">São Paulo, SP</div>
+    </div>
+    <div class="depo-card">
+      <div class="depo-stars">★★★★★</div>
+      <p class="depo-text">Atendimento da Paloma é incrível, chegou rapidinho e a embalagem é linda demais para presente. Super indico!</p>
+      <div class="depo-author">Carolina T.</div>
+      <div class="depo-location">Indaiatuba, SP</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PILLARS ── -->
+<section class="section" style="padding-top:0;padding-bottom:0">
+  <div class="pillars">
+    <div class="pillar"><div class="pillar-icon">✦</div><h4>Banho Premium</h4><p>Ouro 18k e prata 925<br>de altíssima durabilidade</p></div>
+    <div class="pillar"><div class="pillar-icon">◇</div><h4>Anti-alérgico</h4><p>Hipoalergênico, seguro<br>para uso diário</p></div>
+    <div class="pillar"><div class="pillar-icon">❋</div><h4>Acabamento Único</h4><p>Cada peça inspecionada<br>com cuidado artesanal</p></div>
+    <div class="pillar"><div class="pillar-icon">◎</div><h4>Embalagem Especial</h4><p>Pronta para presentear<br>com muito estilo</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Joias Preciosa</div>
+  <div>Semi Joias &amp; Acessórios · Feitos com amor</div>
+  <div>Atendimento via WhatsApp · (19) 99900-9303</div>
+</footer>
+
+<!-- ── PRODUCT MODAL ── -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal(null)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-img-side">
+      <div class="modal-gallery">
+        <img class="modal-img" id="modalImg" src="" alt=""
+          onerror="this.style.display='none';document.getElementById('modalImgPlaceholder').style.display='flex'"/>
+        <div class="modal-img-placeholder" id="modalImgPlaceholder" style="display:none">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.2"><circle cx="12" cy="8" r="5"/><path d="M3 21c0-4.418 4.03-8 9-8s9 3.582 9 8"/></svg>
+        </div>
+        <button class="gallery-arrow prev" id="galleryPrev" onclick="galleryNav(-1)" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="gallery-arrow next" id="galleryNext" onclick="galleryNav(1)" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <div class="gallery-thumbs-wrap">
+        <div class="gallery-thumbs" id="galleryThumbs"></div>
+      </div>
+    </div>
+    <div class="modal-info-side">
+      <div class="modal-ref" id="modalRef"></div>
+      <h2 class="modal-name" id="modalName"></h2>
+      <div class="modal-material" id="modalMaterial"></div>
+      <div class="modal-divider"></div>
+      <div class="modal-detail-row"><span class="modal-detail-icon">✦</span><span class="modal-detail-text">Banho de ouro 18k de alta durabilidade</span></div>
+      <div class="modal-detail-row"><span class="modal-detail-icon">◇</span><span class="modal-detail-text">Material hipoalergênico — seguro para uso diário</span></div>
+      <div class="modal-detail-row"><span class="modal-detail-icon">❋</span><span class="modal-detail-text">Acabamento artesanal inspecionado peça a peça</span></div>
+      <div class="modal-detail-row"><span class="modal-detail-icon">◎</span><span class="modal-detail-text">Embalagem especial inclusa — perfeito para presentear</span></div>
+      <div class="modal-price-row">
+        <div class="modal-price-label">Preço</div>
+        <div class="modal-price" id="modalPrice"></div>
+        <div class="modal-actions">
+          <button class="modal-add-btn" id="modalAddBtn" onclick="modalAddToCart()">Adicionar à Seleção</button>
+          <button class="modal-share-btn" onclick="shareProduct()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Compartilhar esta peça
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CART ── -->
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h2 class="cart-title">Minha Seleção</h2>
+    <button class="cart-close" onclick="toggleCart()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="discount-bar" id="discountBar" style="display:none">
+    <div class="discount-bar-msg" id="discountMsg"></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <p>Sua seleção está vazia.<br>Adicione peças que você ama!</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-subtotal-row" id="subtotalRow">
+      <span class="cart-subtotal-label">Subtotal</span>
+      <span class="cart-subtotal-val" id="cartSubtotal"></span>
+    </div>
+    <div class="cart-discount-row" id="discountRow">
+      <span class="cart-discount-label">✦ 10% OFF aplicado</span>
+      <span class="cart-discount-val" id="discountVal"></span>
+    </div>
+    <div class="cart-total-row">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-val" id="cartTotal"></span>
+    </div>
+    <button class="btn-whatsapp" onclick="sendWhatsApp()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Enviar Pedido pelo WhatsApp
+    </button>
+    <p class="cart-note">Você será direcionada para o WhatsApp da Paloma<br>com as peças selecionadas.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const WHATSAPP = '5519999009303';
+const DISCOUNT_THRESHOLD = 150;
+const DISCOUNT_RATE = 0.10;
+
+function driveImg(id){ return `https://drive.google.com/thumbnail?id=${id}&sz=w600`; }
+function fmt(v){ return 'R$ '+v.toFixed(2).replace('.',','); }
+
+const products = [
+  { id:'BR001', cat:'brincos', name:'Argola Coração Cravejado', material:'bicolor', materialLabel:'Prata e Dourado', price:39.90, imgs:['1hvst7vYtZYb5wjshHZh7Xrf-xf8DejS1'], featured:true,  gift:false },
+  { id:'BR003', cat:'brincos', name:'Brinco Botão',             material:'dourado', materialLabel:'Dourado',         price:39.90, imgs:['1BRBtLbDFzrWpB8nR6pg5jEiTexAV_ONm'], featured:false, gift:false },
+  { id:'BR027', cat:'brincos', name:'Argola Bicolor',           material:'bicolor', materialLabel:'Bicolor',         price:39.90, imgs:['1e-lY5uB6Oqqh7hbSNTlEF9tym9mznKh0'], featured:false, gift:false },
+  { id:'BR042', cat:'brincos', name:'Borboleta Cravejada',      material:'dourado', materialLabel:'Dourado',         price:34.90, imgs:['1JzrZCIDV4jupeW-O1sgsSd4UJr6kJO1K'], featured:false, gift:false },
+  { id:'BR043', cat:'brincos', name:'Borboleta Pérola',         material:'bicolor', materialLabel:'Prata e Dourado', price:39.90, imgs:['1f6F31Jh7bWx7zaLnwzzCbpCpHYhZzswQ'], featured:false, gift:true  },
+  { id:'CL007', cat:'colares', name:'Colar Confiar',            material:'dourado', materialLabel:'Dourado',         price:39.90, imgs:['17udqxH3d0DRT40A1c27tZD1SRPEg9pzv'], featured:true,  gift:true  },
+  { id:'CL012', cat:'colares', name:'Seja Forte e Corajosa',    material:'prata',   materialLabel:'Prata',           price:49.90, imgs:['1NDLA550HS2D7ihyk64yYJfHBky_D-ST_'], featured:false, gift:true  },
+  { id:'CL016', cat:'colares', name:'Seja Forte e Corajosa',    material:'dourado', materialLabel:'Dourado',         price:49.90, imgs:['1QMNBh8g78G7cu44L845a9g7E_tZrayZ0'], featured:true,  gift:true  },
+  { id:'CJ003', cat:'conjuntos',name:'Conjunto Ponto de Luz',   material:'dourado', materialLabel:'Dourado',         price:59.90, imgs:['15NbUsrDFxSgTOEwnOHMmRfy9bK7gTk9Y'], featured:false, gift:true  },
+  { id:'CJ013', cat:'conjuntos',name:'Conjunto Pizza Cravejado',material:'dourado', materialLabel:'Dourado',         price:79.90, imgs:['1pq0UWvuvweZpIesIAVGO8CRSWSLu-KKs'], featured:true,  gift:true  },
+];
+
+let cart = [];
+let activeFilters = { cat:'todos', material:'todos', sort:'relevancia' };
+
+// ── RENDER ──
+function buildCard(p){
+  return `
+    <div class="card" id="card-${p.id}" onclick="openModal('${p.id}')">
+      <div class="card-img-wrap">
+        <img class="card-img" src="${driveImg(p.imgs[0])}" alt="${p.name}"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="card-img-placeholder" style="display:none">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.2"><circle cx="12" cy="8" r="5"/><path d="M3 21c0-4.418 4.03-8 9-8s9 3.582 9 8"/></svg>
+        </div>
+        <span class="card-badge">${p.id}</span>
+        ${p.gift ? '<span class="card-gift-badge">Presente</span>' : ''}
+      </div>
+      <div class="card-body">
+        <div class="card-ref">${p.id}</div>
+        <div class="card-name">${p.name}</div>
+        <div class="card-material">${p.materialLabel}</div>
+        <div class="card-footer">
+          <span class="card-price">${fmt(p.price)}</span>
+          <button class="card-add" id="btn-${p.id}"
+            onclick="event.stopPropagation();addToCart('${p.id}')">Adicionar</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderAll(){
+  document.getElementById('grid-destaques').innerHTML =
+    products.filter(p=>p.featured).map(buildCard).join('');
+  ['brincos','colares','conjuntos'].forEach(cat=>{
+    document.getElementById('grid-'+cat).innerHTML =
+      products.filter(p=>p.cat===cat).map(buildCard).join('');
+  });
+  document.getElementById('grid-presentes').innerHTML =
+    products.filter(p=>p.gift).map(buildCard).join('');
+}
+
+// ── FILTERS ──
+function setFilter(key, val, btn){
+  activeFilters[key] = val;
+  if(key==='cat' && btn){
+    document.querySelectorAll('[data-filter-cat]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  applyFilters();
+}
+
+function resetFilters(){
+  activeFilters = {cat:'todos', material:'todos', sort:'relevancia'};
+  document.querySelectorAll('[data-filter-cat]').forEach(b=>
+    b.classList.toggle('active', b.dataset.filterCat==='todos')
+  );
+  document.querySelectorAll('.f-select').forEach(s=>s.selectedIndex=0);
+  applyFilters();
+}
+
+function navTo(e, id){
+  e.preventDefault();
+  resetFilters();
+  setTimeout(()=>{
+    const el=document.getElementById(id);
+    if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  },40);
+}
+
+function applyFilters(){
+  const {cat, material, sort} = activeFilters;
+  // Sort alone never triggers filtered mode — it only applies inside a category/material filter
+  const isFiltered = cat!=='todos' || material!=='todos';
+  const filteredSec = document.getElementById('filtered-section');
+  const normalSecs  = document.querySelectorAll('[data-section]');
+  const destaqSec   = document.getElementById('destaques');
+
+  if(!isFiltered){
+    filteredSec.style.display='none';
+    normalSecs.forEach(s=>s.style.display='');
+    destaqSec.style.display='';
+    return;
+  }
+
+  normalSecs.forEach(s=>s.style.display='none');
+  destaqSec.style.display='none';
+  filteredSec.style.display='block';
+
+  let list = [...products];
+  if(cat!=='todos') list = list.filter(p=>p.cat===cat);
+  if(material!=='todos') list = list.filter(p=>p.material===material);
+  if(sort==='preco-asc') list.sort((a,b)=>a.price-b.price);
+  if(sort==='preco-desc') list.sort((a,b)=>b.price-a.price);
+
+  const catLabels = {todos:'Todos',brincos:'Brincos',colares:'Colares',conjuntos:'Conjuntos',bolsas:'Bolsas',relogios:'Relógios'};
+  const matLabels = {todos:'',dourado:' · Dourado',prata:' · Prata',bicolor:' · Bicolor'};
+  document.getElementById('filter-label').textContent = catLabels[cat]||'Resultados';
+  document.getElementById('filter-title').textContent = (catLabels[cat]||'Produtos')+(matLabels[material]||'');
+
+  const grid = document.getElementById('grid-filtered');
+  const empty = document.getElementById('filter-empty');
+  const embreve = document.getElementById('filter-embreve');
+  const emBreveCats = ['bolsas','relogios'];
+
+  if(list.length===0){
+    grid.innerHTML='';
+    if(emBreveCats.includes(cat)){
+      empty.style.display='none'; embreve.style.display='';
+    } else {
+      empty.style.display=''; embreve.style.display='none';
+    }
+  } else {
+    empty.style.display='none'; embreve.style.display='none';
+    grid.innerHTML = list.map(buildCard).join('');
+  }
+
+  syncAllBtns();
+}
+
+// ── CART ──
+function addToCart(id){
+  const p = products.find(x=>x.id===id);
+  if(!p || cart.find(x=>x.id===id)) return;
+  cart.push({...p});
+  updateCartUI();
+  pulseFab();
+  showToast(`✦ ${p.name} adicionado`);
+  syncAllBtns();
+}
+
+function removeFromCart(id){
+  cart = cart.filter(x=>x.id!==id);
+  updateCartUI();
+  syncAllBtns();
+  if(modalProductId===id) syncModalBtn();
+}
+
+function syncAllBtns(){
+  products.forEach(p=>{
+    const inCart = !!cart.find(x=>x.id===p.id);
+    document.querySelectorAll(`#btn-${p.id}`).forEach(btn=>{
+      if(btn){ btn.textContent = inCart?'✓ Adicionado':'Adicionar'; btn.classList.toggle('added',inCart); }
+    });
+  });
+}
+
+function getSubtotal(){ return cart.reduce((s,p)=>s+p.price,0); }
+function getDiscount(sub){ return sub>=DISCOUNT_THRESHOLD ? sub*DISCOUNT_RATE : 0; }
+
+function updateCartUI(){
+  const count=cart.length, sub=getSubtotal(), disc=getDiscount(sub), total=sub-disc;
+  ['cartCount','fabCount','bnBadge'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el) return;
+    el.textContent=count;
+    const cls = id==='cartCount'?'visible':id==='fabCount'?null:'visible';
+    if(cls) el.classList.toggle(cls,count>0);
+  });
+  document.getElementById('fabCart').classList.toggle('visible',count>0);
+  document.getElementById('bnBadge').classList.toggle('visible',count>0);
+
+  const itemsEl=document.getElementById('cartItems');
+  const footerEl=document.getElementById('cartFooter');
+  const discBarEl=document.getElementById('discountBar');
+
+  if(count===0){
+    itemsEl.innerHTML=`<div class="cart-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><p>Sua seleção está vazia.<br>Adicione peças que você ama!</p></div>`;
+    footerEl.style.display='none'; discBarEl.style.display='none'; return;
+  }
+
+  discBarEl.style.display='';
+  const pct=Math.min((sub/DISCOUNT_THRESHOLD)*100,100);
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressFill').classList.toggle('full',disc>0);
+  const msg=document.getElementById('discountMsg');
+  if(disc>0){ msg.className='discount-bar-msg unlocked'; msg.innerHTML=`🎉 <strong>10% de desconto aplicado!</strong> Você economizou ${fmt(disc)}.`; }
+  else { msg.className='discount-bar-msg'; msg.innerHTML=`Faltam apenas <strong>${fmt(DISCOUNT_THRESHOLD-sub)}</strong> para ganhar <strong>10% de desconto</strong>!`; }
+
+  const cartIds=cart.map(x=>x.id);
+  const upsells=products.filter(p=>!cartIds.includes(p.id)).sort(()=>0.5-Math.random()).slice(0,4);
+
+  itemsEl.innerHTML = cart.map(p=>{
+    const dp=disc>0?p.price*(1-DISCOUNT_RATE):null;
+    return `<div class="cart-item">
+      <img class="ci-img" src="${driveImg(p.imgs[0])}" alt="${p.name}" onerror="this.style.background='#F5EDD8'"/>
+      <div class="ci-info">
+        <div class="ci-ref">${p.id}</div>
+        <div class="ci-name">${p.name} · ${p.materialLabel}</div>
+        <div class="ci-prices">
+          ${dp?`<span class="ci-price">${fmt(dp)}</span><span class="ci-price-orig">${fmt(p.price)}</span>`:`<span class="ci-price">${fmt(p.price)}</span>`}
+        </div>
+      </div>
+      <button class="ci-remove" onclick="removeFromCart('${p.id}')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>`;
+  }).join('') + (upsells.length?`
+    <div class="upsell-section">
+      <div class="upsell-title">Você também pode gostar</div>
+      <div class="upsell-grid">${upsells.map(p=>`
+        <div class="upsell-card" onclick="openModal('${p.id}')">
+          <div class="upsell-img-wrap"><img class="upsell-img" src="${driveImg(p.imgs[0])}" alt="${p.name}" onerror="this.style.background='#F5EDD8'"/></div>
+          <div class="upsell-body"><div class="upsell-name">${p.name}</div><div class="upsell-price">${fmt(p.price)}</div></div>
+          <button class="upsell-add" onclick="event.stopPropagation();addToCart('${p.id}')">+ Adicionar</button>
+        </div>`).join('')}
+      </div>
+    </div>`:'');
+
+  footerEl.style.display='';
+  document.getElementById('cartSubtotal').textContent=fmt(sub);
+  const dr=document.getElementById('discountRow');
+  const sr=document.getElementById('subtotalRow');
+  if(disc>0){ dr.style.display='flex'; sr.style.display='flex'; document.getElementById('discountVal').textContent='- '+fmt(disc); }
+  else { dr.style.display='none'; sr.style.display='none'; }
+  document.getElementById('cartTotal').textContent=fmt(total);
+}
+
+function toggleCart(){
+  const d=document.getElementById('cartDrawer'), o=document.getElementById('overlay');
+  const open=d.classList.toggle('open');
+  o.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+
+function sendWhatsApp(){
+  if(!cart.length) return;
+  const sub=getSubtotal(), disc=getDiscount(sub), total=sub-disc;
+  let msg='Olá, Paloma! ✨\n\nTenho interesse nas seguintes peças:\n\n';
+  cart.forEach(p=>{ const price=disc>0?p.price*(1-DISCOUNT_RATE):p.price; msg+=`▸ [${p.id}] ${p.name} — ${p.materialLabel} — ${fmt(price)}\n`; });
+  if(disc>0){ msg+=`\n💰 Subtotal: ${fmt(sub)}\n🎉 Desconto 10%: - ${fmt(disc)}\n✅ Total com desconto: ${fmt(total)}\n\n`; }
+  else { msg+=`\n💰 Total: ${fmt(total)}\n\n`; }
+  msg+='Poderia verificar a disponibilidade? Obrigada! 💛';
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+
+// ── MODAL ──
+let modalProductId=null, galleryIndex=0;
+
+function openModal(id){
+  const p=products.find(x=>x.id===id);
+  if(!p) return;
+  modalProductId=id; galleryIndex=0;
+  document.getElementById('modalRef').textContent=p.id;
+  document.getElementById('modalName').textContent=p.name;
+  document.getElementById('modalMaterial').textContent=p.materialLabel;
+  document.getElementById('modalPrice').textContent=fmt(p.price);
+  setGalleryImage(p,0);
+  buildThumbs(p);
+  syncModalBtn();
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function setGalleryImage(p,idx){
+  const img=document.getElementById('modalImg');
+  const ph=document.getElementById('modalImgPlaceholder');
+  img.src=driveImg(p.imgs[idx]);
+  img.style.display='block'; ph.style.display='none';
+  document.getElementById('galleryPrev').hidden = idx===0;
+  document.getElementById('galleryNext').hidden = idx===p.imgs.length-1;
+  document.querySelectorAll('.gallery-thumb').forEach((t,i)=>t.classList.toggle('active',i===idx));
+}
+
+function buildThumbs(p){
+  const wrap=document.getElementById('galleryThumbs');
+  if(p.imgs.length<=1){ wrap.innerHTML=''; wrap.parentElement.style.display='none'; return; }
+  wrap.parentElement.style.display='';
+  wrap.innerHTML=p.imgs.map((id,i)=>`<img class="gallery-thumb${i===0?' active':''}" src="${driveImg(id)}" onclick="galleryGoto(${i})" alt="Foto ${i+1}"/>`).join('');
+}
+
+function galleryNav(dir){
+  const p=products.find(x=>x.id===modalProductId);
+  if(!p) return;
+  galleryIndex=Math.max(0,Math.min(p.imgs.length-1,galleryIndex+dir));
+  setGalleryImage(p,galleryIndex);
+}
+function galleryGoto(i){
+  const p=products.find(x=>x.id===modalProductId);
+  if(!p) return;
+  galleryIndex=i; setGalleryImage(p,i);
+}
+
+function closeModal(e){
+  if(e&&e.target!==document.getElementById('modalOverlay')) return;
+  document.getElementById('modalOverlay').classList.remove('open');
+  // Keep overflow:hidden if cart is still open
+  if(!document.getElementById('cartDrawer').classList.contains('open'))
+    document.body.style.overflow='';
+  modalProductId=null;
+}
+
+function modalAddToCart(){
+  if(!modalProductId) return;
+  addToCart(modalProductId); syncModalBtn();
+}
+
+function syncModalBtn(){
+  const btn=document.getElementById('modalAddBtn');
+  const inCart=!!cart.find(x=>x.id===modalProductId);
+  btn.textContent=inCart?'✓ Adicionado à Seleção':'Adicionar à Seleção';
+  btn.classList.toggle('added',inCart);
+}
+
+function shareProduct(){
+  const p=products.find(x=>x.id===modalProductId);
+  if(!p) return;
+  const text=`✨ Olha que peça linda!\n\n${p.name} — ${p.materialLabel}\n${fmt(p.price)}\n\nJoias Preciosa · Semi Joias com Alma`;
+  if(navigator.share){
+    navigator.share({title:'Joias Preciosa',text,url:window.location.href+'#'+p.id}).catch(()=>{});
+  } else {
+    navigator.clipboard.writeText(text).then(()=>showToast('Link copiado!')).catch(()=>showToast('Compartilhe: '+p.name));
+  }
+}
+
+// Touch swipe no modal
+let touchX=null;
+document.getElementById('modal').addEventListener('touchstart',e=>{ touchX=e.touches[0].clientX; },{passive:true});
+document.getElementById('modal').addEventListener('touchend',e=>{
+  if(touchX===null) return;
+  const dx=e.changedTouches[0].clientX-touchX;
+  if(Math.abs(dx)>50) galleryNav(dx<0?1:-1);
+  touchX=null;
+},{passive:true});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') closeModal(null);
+  if(e.key==='ArrowLeft') galleryNav(-1);
+  if(e.key==='ArrowRight') galleryNav(1);
+});
+
+// ── FAB ──
+function pulseFab(){ const f=document.getElementById('fabCart'); f.classList.remove('pulse'); void f.offsetWidth; f.classList.add('pulse'); }
+
+// ── TOAST ──
+function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('show'),2400); }
+
+// ── ACTIVE NAV ──
+window.addEventListener('scroll',()=>{
+  const pos=window.scrollY+120;
+  let active='';
+  ['destaques','brincos','colares','conjuntos','bolsas','relogios','presentes'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el&&el.offsetTop<=pos) active=id;
+  });
+  document.querySelectorAll('header nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+active));
+  ['brincos','colares','conjuntos','bolsas','relogios','presentes'].forEach(id=>{
+    const bn=document.getElementById('bn-'+id);
+    if(bn) bn.classList.toggle('active',active===id);
+  });
+  document.getElementById('bn-inicio').classList.toggle('active',active===''||active==='destaques');
+});
+
+// ── PWA ──
+if('serviceWorker' in navigator){ window.addEventListener('load',()=>{}); }
+
+renderAll();
+</script>
+</body>
+</html>

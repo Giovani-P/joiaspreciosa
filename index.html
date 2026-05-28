@@ -304,7 +304,7 @@
       .modal-overlay{padding:0;align-items:flex-end}
       .modal{flex-direction:column;max-height:94vh;border-radius:16px 16px 0 0}
       .modal-img-side{flex:0 0 auto}
-      .modal-gallery{height:52vw;min-height:200px}
+      .modal-gallery{height:75vw;min-height:260px}
       .modal-info-side{padding:22px 20px 24px}
       .modal-name{font-size:1.3rem}
       .modal-price{font-size:1.6rem;margin-bottom:12px}
@@ -690,16 +690,39 @@ function driveImg(id){ return `https://drive.google.com/thumbnail?id=${id}&sz=w6
 function fmt(v){ return 'R$ '+v.toFixed(2).replace('.',','); }
 
 const products = [
-  { id:'BR001', cat:'brincos', name:'Argola Coração Cravejado', material:'bicolor', materialLabel:'Prata e Dourado', price:39.90, imgs:['1hvst7vYtZYb5wjshHZh7Xrf-xf8DejS1'], featured:true,  gift:false },
-  { id:'BR003', cat:'brincos', name:'Brinco Botão',             material:'dourado', materialLabel:'Dourado',         price:39.90, imgs:['1BRBtLbDFzrWpB8nR6pg5jEiTexAV_ONm'], featured:false, gift:false },
-  { id:'BR027', cat:'brincos', name:'Argola Bicolor',           material:'bicolor', materialLabel:'Bicolor',         price:39.90, imgs:['1e-lY5uB6Oqqh7hbSNTlEF9tym9mznKh0'], featured:false, gift:false },
-  { id:'BR042', cat:'brincos', name:'Borboleta Cravejada',      material:'dourado', materialLabel:'Dourado',         price:34.90, imgs:['1JzrZCIDV4jupeW-O1sgsSd4UJr6kJO1K'], featured:false, gift:false },
-  { id:'BR043', cat:'brincos', name:'Borboleta Pérola',         material:'bicolor', materialLabel:'Prata e Dourado', price:39.90, imgs:['1f6F31Jh7bWx7zaLnwzzCbpCpHYhZzswQ'], featured:false, gift:true  },
-  { id:'CL007', cat:'colares', name:'Colar Confiar',            material:'dourado', materialLabel:'Dourado',         price:39.90, imgs:['17udqxH3d0DRT40A1c27tZD1SRPEg9pzv'], featured:true,  gift:true  },
-  { id:'CL012', cat:'colares', name:'Seja Forte e Corajosa',    material:'prata',   materialLabel:'Prata',           price:49.90, imgs:['1NDLA550HS2D7ihyk64yYJfHBky_D-ST_'], featured:false, gift:true  },
-  { id:'CL016', cat:'colares', name:'Seja Forte e Corajosa',    material:'dourado', materialLabel:'Dourado',         price:49.90, imgs:['1QMNBh8g78G7cu44L845a9g7E_tZrayZ0'], featured:true,  gift:true  },
-  { id:'CJ003', cat:'conjuntos',name:'Conjunto Ponto de Luz',   material:'dourado', materialLabel:'Dourado',         price:59.90, imgs:['15NbUsrDFxSgTOEwnOHMmRfy9bK7gTk9Y'], featured:false, gift:true  },
-  { id:'CJ013', cat:'conjuntos',name:'Conjunto Pizza Cravejado',material:'dourado', materialLabel:'Dourado',         price:79.90, imgs:['1pq0UWvuvweZpIesIAVGO8CRSWSLu-KKs'], featured:true,  gift:true  },
+  // ── BRINCOS ──
+  { id:'BR001', cat:'brincos', name:'Argola Coração Cravejado', material:'bicolor', materialLabel:'Prata e Dourado', price:39.90, imgs:['1hvst7vYtZYb5wjshHZh7Xrf-xf8DejS1','1JzrZCIDV4jupeW-O1sgsSd4UJr6kJO1K','1e-lY5uB6Oqqh7hbSNTlEF9tym9mznKh0'], featured:true,  gift:false },
+  { id:'BR003', cat:'brincos', name:'Brinco Botão',             material:'dourado', materialLabel:'Dourado',         price:39.90, imgs:['15NbUsrDFxSgTOEwnOHMmRfy9bK7gTk9Y'], featured:false, gift:false },
+  { id:'BR018', cat:'brincos', name:'Brinco Flor',              material:'dourado', materialLabel:'Dourado',         price:44.90, imgs:['1e0LQNdKIjHhDv0VeIB-UMjGh_GVvFB0j','11ayPUVfgu8NcwTvFoww0M5YDkbpIjA5d','1IiCEdVayCLCL1jqqg6zmRjYyN0YG9s-C','1MvWZgdrKBjKf11hEcJKJkGKtSbA_nvOw','1lVBv1tk-b-SfUsPXsy3GyTpc-PsCJq-D','1prdWYUg62FgszM91MEwgu5SDM-ffwdQ1'], featured:false, gift:true  },
+  { id:'BR024', cat:'brincos', name:'Brinco Orquídea',          material:'dourado', materialLabel:'Dourado',         price:49.90, imgs:['1grIZF-4BcBGjhBkZswhfB9Qh6X6ASr55','11YL1AkI73jtUvDrAdFkX9XUN1l4xRj6N','1OjjW7o4Fi6-oOjbV7CaXHb9uE2QkVPLV','1ggJDAbW6QAgpvmKOxfUIS8pe8b0jH6zr'], featured:true,  gift:true  },
+  { id:'BR027', cat:'brincos', name:'Argola Bicolor',           material:'bicolor', materialLabel:'Bicolor',         price:39.90, imgs:['1f6F31Jh7bWx7zaLnwzzCbpCpHYhZzswQ'], featured:false, gift:false },
+  { id:'BR029', cat:'brincos', name:'Brincos Variados Cravejado',material:'bicolor',materialLabel:'Dourado e Prata', price:34.90, imgs:['1OjA8H7ysDQ0r8Pm-U4467SYLPQ77rCuL','1HkX8GzxywPURXECZIsilUGCRbpSIHEjI','1WiYcj3KnTSR02cepFefWSiPf2BbyGuch','10w1itXxJ6r7t5A-hZ1WPYcaVBklU44lx'], featured:false, gift:false },
+  { id:'BR037', cat:'brincos', name:'Borboleta Dupla',          material:'prata',   materialLabel:'Prata',           price:44.90, imgs:['1vImKpuxj7QzWXC4RjjmWoinvTn7_Y0J_','1ELeexS15xLOjYA98IerA7b5fLvAN02Sj'], featured:false, gift:true  },
+  { id:'BR038', cat:'brincos', name:'Brinco Flor Branco',       material:'dourado', materialLabel:'Dourado',         price:44.90, imgs:['1AJbaydFztM5Bon66OvrDC-QNL2h0EmwS'], featured:false, gift:true  },
+  { id:'BR042', cat:'brincos', name:'Borboleta Cravejada',      material:'dourado', materialLabel:'Dourado',         price:34.90, imgs:['1MTaHpIXv10T8JwyrMDKovwAAGf7T-1SA'], featured:false, gift:false },
+  { id:'BR043', cat:'brincos', name:'Borboleta Pérola',         material:'bicolor', materialLabel:'Prata e Dourado', price:39.90, imgs:['1pq0UWvuvweZpIesIAVGO8CRSWSLu-KKs'], featured:false, gift:true  },
+
+  // ── COLARES ──
+  { id:'CL004', cat:'colares', name:'Colar Delicado',           material:'dourado', materialLabel:'Dourado',         price:39.90, imgs:['1_lI9iR2Ye2-EV5KrKQqMjwghoKV42h1t','10vD5JS629O8F2F0RcXh30V6iJ6j42Z5l'], featured:false, gift:false },
+  { id:'CL007', cat:'colares', name:'Colar Confiar',            material:'dourado', materialLabel:'Dourado',         price:39.90, imgs:['1NDLA550HS2D7ihyk64yYJfHBky_D-ST_'], featured:true,  gift:true  },
+  { id:'CL008', cat:'colares', name:'Cordão Baiano',            material:'bicolor', materialLabel:'Prata e Dourado', price:44.90, imgs:['1qhdrOEyB5WuDN4yu9HMFTKUCCIZbUWkO','1E2jGP7VmSz5p8E32Co8ptzdu_eagesit'], featured:false, gift:false },
+  { id:'CL009', cat:'colares', name:'Choker Cravejada',         material:'dourado', materialLabel:'Dourado',         price:54.90, imgs:['1xoqDflG1rGPq6WPmgv5l-lZfLVFhcO8_','1sXQLXMWvNKr9jGcvu1gQXXOmXR6wzFmQ','1aMUC8nLMyCr_BJf7IaxwkqYJuIrxRq78'], featured:true,  gift:true  },
+  { id:'CL012', cat:'colares', name:'Seja Forte e Corajosa',    material:'prata',   materialLabel:'Prata',           price:49.90, imgs:['17udqxH3d0DRT40A1c27tZD1SRPEg9pzv'], featured:false, gift:true  },
+  { id:'CL014', cat:'colares', name:'Colar Árvore da Vida Cravejada', material:'prata', materialLabel:'Prata',       price:49.90, imgs:['1VamrMilddC5YgZQm67C52-hUH17HBSQJ','1ygQafxk8OKooCMp7JY1OfkbxZ9r_6w8V'], featured:false, gift:true  },
+  { id:'CL015', cat:'colares', name:'Colar Árvore da Vida',     material:'dourado', materialLabel:'Dourado',         price:49.90, imgs:['1zvBeMeAdG_R5802eUZqMydTebFNtv6Bc','1t41dhs_Qan3cL0XTTIccIZX1IP4nn8a0','1wmGx3kBkgPhBnucXjrWxnEoXfAStLz9b'], featured:true,  gift:true  },
+  { id:'CL016', cat:'colares', name:'Seja Forte e Corajosa',    material:'dourado', materialLabel:'Dourado',         price:49.90, imgs:['17udqxH3d0DRT40A1c27tZD1SRPEg9pzv'], featured:true,  gift:true  },
+  { id:'CL025', cat:'colares', name:'Colar Relicário',          material:'prata',   materialLabel:'Prata',           price:44.90, imgs:['1QcCGYlH0KF7q8VXni8ewi8Ca4okAtKxj','1e873uizNABf1aCXGdKtqilZLbZgNaznK'], featured:false, gift:true  },
+  { id:'CL027', cat:'colares', name:'Colar Riviera',            material:'dourado', materialLabel:'Dourado',         price:49.90, imgs:['19bvg9NhpilEc1psdGUtGajA9DPiBw1zH','1akzvGiJbho45Pv7YizUY-30jBe1dTJ4N','1vINir4QTWfFYoIIyY0x-Gc2ZMXjD74Mu','1MP1wF-THnqCSnFUoihOyCOrgNyhxoNo8'], featured:false, gift:false },
+  { id:'CL028', cat:'colares', name:'Colar Trevo',              material:'prata',   materialLabel:'Prata',           price:39.90, imgs:['1vOoOXy_g4rwq0RZy_gWCIPWc3jH0UEsF'], featured:false, gift:false },
+  { id:'CL037', cat:'colares', name:'Colar Borboleta Madrepérola', material:'dourado', materialLabel:'Dourado',      price:44.90, imgs:['1V4tkP7giEGzzebL5DWN3kg7t6DU3WzCg','1LUKxK35qJiU45fUz4iryW7FNzbtVeeqg','18n_iZGoyT6m4M-Pb7bxU8avKH5PHZwpd'], featured:true,  gift:true  },
+
+  // ── CONJUNTOS ──
+  { id:'CJ001', cat:'conjuntos', name:'Conjunto Básico',        material:'prata',   materialLabel:'Prata',           price:59.90, imgs:['1e9_iXS_hpLIRKmPXUW7B_V0pd1QiPf54','1R-lkV7iZYWzYY-5n5q1zboFXMhgYwHsP','1NfvY19bh3wuKCsC5D0VeksQFA2PPN9d4'], featured:false, gift:true  },
+  { id:'CJ003', cat:'conjuntos', name:'Conjunto Ponto de Luz',  material:'dourado', materialLabel:'Dourado',         price:59.90, imgs:['1BRBtLbDFzrWpB8nR6pg5jEiTexAV_ONm','16Yd3YzklXCdWdWKKoFp5TuVd5NHHPDk8','1U7hAwRONTU2QtCj0R5ePVZYYQps9TmV1'], featured:false, gift:true  },
+  { id:'CJ010', cat:'conjuntos', name:'Conjunto Verde Pérolas', material:'dourado', materialLabel:'Dourado',         price:79.90, imgs:['1vOtf7JJeYP703JBT8ewWQUNsrSS-9RXI','15o3cSX0Sti3CZ8ggZN5oyYtEcoFz8fcO','1qlq5WU9A8olbBsoOEZ-ETdp3DhNKfRsA'], featured:false, gift:true  },
+  { id:'CJ011', cat:'conjuntos', name:'Conjunto Pedra Fusion',  material:'prata',   materialLabel:'Prata',           price:69.90, imgs:['1bbaC6MWLaionJrVYS82UdgnnjqL36gJz'], featured:true,  gift:true  },
+  { id:'CJ013', cat:'conjuntos', name:'Conjunto Pizza Cravejado',material:'dourado',materialLabel:'Dourado',         price:79.90, imgs:['1QMNBh8g78G7cu44L845a9g7E_tZrayZ0'], featured:true,  gift:true  },
+  { id:'CJ014', cat:'conjuntos', name:'Conjunto Azul Pérolas',  material:'dourado', materialLabel:'Dourado',         price:79.90, imgs:['1DiZwqs3fC0D-klTtn6XKP6W2q8D5Ajdo','1JmJZgZASZ7ZbKc-cznarBqScNts01bdY','1xu2DRUaPI9x1IAAYkpgfxrhY3fOapg7I','1SqU9gmgpVQrI65qyYiG0_9Bq9-9d1Jue','1Z2nUmMgHn60v2EypPIQbEeTLiHfx-FqF'], featured:true,  gift:true  },
 ];
 
 let cart = [];

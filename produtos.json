@@ -427,19 +427,5 @@
     "featured": true,
     "gift": true,
     "visible": true
-  },
-  {
-    "id": "BR044",
-    "cat": "brincos",
-    "name": "__TESTE__ apagar",
-    "material": "dourado",
-    "materialLabel": "Dourado",
-    "price": 1,
-    "imgs": [
-      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR044-1781043658924-1.jpg"
-    ],
-    "featured": false,
-    "gift": false,
-    "visible": false
   }
 ]

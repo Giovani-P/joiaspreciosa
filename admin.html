@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>Painel · Joias Preciosa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#C9A96E;--gold-dark:#A8883E;--cream:#FAF7F2;--cream-dark:#F0EAE0;--charcoal:#1A1A1A;--gray:#6B6B6B;--gray-light:#D4D0C8;--white:#fff;--red:#C0573F;--green:#1a7a3f}
+body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.5;-webkit-tap-highlight-color:transparent}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px 120px}
+
+/* topo */
+.topbar{position:sticky;top:0;z-index:50;background:var(--charcoal);color:var(--white);padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
+.topbar .brand{font-family:'Playfair Display',serif;font-size:1.05rem;letter-spacing:.04em}
+.topbar .brand small{display:block;font-family:'Lato';font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:1px}
+.logout{background:none;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:7px 12px;border-radius:6px;cursor:pointer}
+
+/* login */
+.login-card{max-width:380px;margin:14vh auto 0;background:var(--white);border:1px solid var(--cream-dark);border-radius:16px;padding:36px 28px;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.login-card .logo{font-family:'Playfair Display',serif;font-size:1.5rem}
+.login-card .logo small{display:block;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:4px;font-family:'Lato'}
+.login-card p{font-size:.82rem;color:var(--gray);margin:18px 0 22px}
+
+/* form elementos */
+label{display:block;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--gray);margin:0 0 6px}
+input[type=text],input[type=number],input[type=password],select,textarea{width:100%;font-family:'Lato';font-size:1rem;padding:13px 14px;border:1.5px solid var(--gray-light);border-radius:10px;background:var(--white);color:var(--charcoal);outline:none;transition:border-color .15s}
+input:focus,select:focus,textarea:focus{border-color:var(--gold-dark)}
+.field{margin-bottom:16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.checks{display:flex;gap:18px;flex-wrap:wrap;margin:4px 0 4px}
+.chk{display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:400;color:var(--charcoal);cursor:pointer;text-transform:none;letter-spacing:0}
+.chk input{width:20px;height:20px;accent-color:var(--gold-dark)}
+
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:none;border-radius:10px;font-family:'Lato';font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px;cursor:pointer;transition:background .15s,opacity .15s}
+.btn-primary{background:var(--charcoal);color:#fff}
+.btn-primary:hover{background:var(--gold-dark)}
+.btn-gold{background:var(--gold);color:var(--charcoal)}
+.btn-ghost{background:none;border:1.5px solid var(--gray-light);color:var(--gray)}
+.btn:disabled{opacity:.5;cursor:default}
+
+/* barra de acoes */
+.actionbar{position:sticky;top:52px;z-index:40;background:var(--cream);padding:14px 0;display:flex;gap:10px;align-items:center}
+.actionbar .count{font-size:.72rem;color:var(--gray);margin-left:auto}
+
+/* card produto */
+.plist{display:flex;flex-direction:column;gap:10px}
+.pcard{display:flex;gap:12px;background:var(--white);border:1px solid var(--cream-dark);border-radius:12px;padding:10px;align-items:center}
+.pcard.hidden{opacity:.55}
+.pthumb{width:62px;height:62px;border-radius:8px;object-fit:contain;background:var(--cream);flex-shrink:0;padding:3px}
+.pinfo{flex:1;min-width:0}
+.pref{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dark);font-weight:700}
+.pname{font-family:'Playfair Display',serif;font-size:.98rem;line-height:1.2;margin:1px 0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pmeta{font-size:.72rem;color:var(--gray)}
+.pprice{font-weight:700;font-size:.86rem}
+.ptags{display:flex;gap:5px;margin-top:3px;flex-wrap:wrap}
+.tag{font-size:.55rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:2px 6px;border-radius:4px}
+.tag.f{background:#2c2419;color:var(--gold)}
+.tag.g{background:#f3e3e5;color:#9c4b57}
+.tag.h{background:#eee;color:#888}
+.pactions{display:flex;flex-direction:column;gap:6px;flex-shrink:0}
+.icobtn{width:38px;height:38px;border:1px solid var(--cream-dark);background:var(--white);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--gray);transition:all .15s}
+.icobtn:hover{border-color:var(--charcoal);color:var(--charcoal)}
+.icobtn.del:hover{border-color:var(--red);color:var(--red)}
+.icobtn svg{width:17px;height:17px}
+
+/* modal form */
+.sheet-ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;opacity:0;pointer-events:none;transition:opacity .25s}
+.sheet-ov.open{opacity:1;pointer-events:all}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:101;background:var(--cream);border-radius:18px 18px 0 0;max-height:94vh;overflow-y:auto;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.sheet.open{transform:translateY(0)}
+.sheet-inner{max-width:560px;margin:0 auto;padding:22px 18px 32px}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.sheet-title{font-family:'Playfair Display',serif;font-size:1.3rem}
+.xbtn{width:36px;height:36px;border:none;background:var(--cream-dark);border-radius:50%;cursor:pointer;font-size:1.1rem;color:var(--charcoal)}
+
+/* fotos */
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px;margin-top:8px}
+.photo{position:relative;aspect-ratio:1;border-radius:8px;overflow:hidden;background:var(--cream-dark);border:1px solid var(--cream-dark)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo .rm{position:absolute;top:3px;right:3px;width:22px;height:22px;border:none;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;font-size:.8rem;cursor:pointer;line-height:1}
+.addphoto{aspect-ratio:1;border:2px dashed var(--gold);border-radius:8px;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;color:var(--gold-dark);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.addphoto svg{width:22px;height:22px}
+
+/* fab add */
+.fab{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:45;background:var(--charcoal);color:#fff;border:none;border-radius:30px;padding:15px 28px;font-family:'Lato';font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 8px 28px rgba(0,0,0,.25);cursor:pointer;display:flex;align-items:center;gap:8px}
+.fab svg{width:18px;height:18px}
+
+/* misc */
+.empty{text-align:center;color:var(--gray);padding:60px 20px;font-size:.9rem}
+.spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite}
+.btn-gold .spin,.btn-ghost .spin{border-color:rgba(0,0,0,.25);border-top-color:#000}
+@keyframes sp{to{transform:rotate(360deg)}}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--charcoal);color:#fff;padding:12px 20px;border-radius:10px;font-size:.82rem;z-index:200;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.err{background:var(--red)}
+.hide{display:none!important}
+.hint{font-size:.72rem;color:var(--gray);margin-top:5px}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginView">
+  <div class="login-card">
+    <div class="logo">Joias Preciosa<small>Painel da Paloma</small></div>
+    <p>Entre com sua senha para gerenciar os produtos da loja.</p>
+    <div class="field"><input type="password" id="pw" placeholder="Senha" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"/></div>
+    <button class="btn btn-primary" id="loginBtn" onclick="doLogin()">Entrar</button>
+    <p class="hint" id="loginErr" style="color:var(--red);margin-top:14px"></p>
+  </div>
+</div>
+
+<!-- PAINEL -->
+<div id="panelView" class="hide">
+  <div class="topbar">
+    <div class="brand">Joias Preciosa<small>Painel</small></div>
+    <button class="logout" onclick="logout()">Sair</button>
+  </div>
+  <div class="wrap">
+    <div class="actionbar">
+      <span class="count" id="count"></span>
+    </div>
+    <div class="plist" id="plist"></div>
+    <div class="empty hide" id="empty">Nenhum produto ainda.<br>Toque em <strong>+ Nova peça</strong> para começar.</div>
+  </div>
+  <button class="fab" onclick="openForm()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    Nova peça
+  </button>
+</div>
+
+<!-- FORM SHEET -->
+<div class="sheet-ov" id="sheetOv" onclick="closeForm()"></div>
+<div class="sheet" id="sheet">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <div class="sheet-title" id="sheetTitle">Nova peça</div>
+      <button class="xbtn" onclick="closeForm()">✕</button>
+    </div>
+
+    <div class="field">
+      <label>Nome da peça</label>
+      <input type="text" id="f_name" placeholder="Ex: Brinco Flor Dourado"/>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>Categoria</label>
+        <select id="f_cat">
+          <option value="brincos">Brincos</option>
+          <option value="colares">Colares</option>
+          <option value="conjuntos">Conjuntos</option>
+          <option value="bolsas">Bolsas</option>
+          <option value="relogios">Relógios</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Preço (R$)</label>
+        <input type="number" id="f_price" inputmode="decimal" step="0.01" placeholder="39.90"/>
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>Material</label>
+        <select id="f_material" onchange="syncMatLabel()">
+          <option value="dourado">Dourado</option>
+          <option value="prata">Prata</option>
+          <option value="bicolor">Bicolor</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Texto do material</label>
+        <input type="text" id="f_matlabel" placeholder="Dourado"/>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Fotos</label>
+      <div class="photos" id="photos"></div>
+      <input type="file" id="fileInput" accept="image/*" multiple class="hide" onchange="handleFiles(event)"/>
+      <p class="hint">A primeira foto é a capa. As fotos são otimizadas automaticamente.</p>
+    </div>
+
+    <div class="checks">
+      <label class="chk"><input type="checkbox" id="f_featured"/> Destaque</label>
+      <label class="chk"><input type="checkbox" id="f_gift"/> Presente</label>
+      <label class="chk"><input type="checkbox" id="f_visible" checked/> Visível na loja</label>
+    </div>
+
+    <div style="margin-top:18px;display:flex;flex-direction:column;gap:10px">
+      <button class="btn btn-primary" id="saveBtn" onclick="save()">Salvar peça</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API='/api/admin';
+let PW='';
+let items=[];        // produtos carregados
+let editId=null;     // id sendo editado (ou null = novo)
+let keepImgs=[];     // URLs existentes mantidas (edicao)
+let newImgs=[];      // dataURLs novas a enviar
+
+function toast(msg,err){const t=document.getElementById('toast');t.textContent=msg;t.className='toast show'+(err?' err':'');clearTimeout(t._t);t._t=setTimeout(()=>t.className='toast',2600);}
+function fmt(v){return 'R$ '+Number(v).toFixed(2).replace('.',',');}
+
+async function api(payload){
+  const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:PW,...payload})});
+  let j={};try{j=await r.json();}catch(_){}
+  if(!r.ok) throw new Error(j.error||('erro '+r.status));
+  return j;
+}
+
+/* ── LOGIN ── */
+async function doLogin(){
+  const pw=document.getElementById('pw').value.trim();
+  const btn=document.getElementById('loginBtn');
+  const err=document.getElementById('loginErr');
+  err.textContent='';
+  if(!pw){err.textContent='Digite a senha.';return;}
+  btn.disabled=true;btn.innerHTML='<span class="spin"></span>';
+  PW=pw;
+  try{
+    const j=await api({action:'list'});
+    items=j.products||[];
+    sessionStorage.setItem('jp_pw',pw);
+    showPanel();
+  }catch(e){
+    PW='';err.textContent=e.message==='senha incorreta'?'Senha incorreta.':e.message;
+  }finally{btn.disabled=false;btn.textContent='Entrar';}
+}
+function logout(){PW='';sessionStorage.removeItem('jp_pw');location.reload();}
+
+function showPanel(){
+  document.getElementById('loginView').classList.add('hide');
+  document.getElementById('panelView').classList.remove('hide');
+  render();
+}
+
+/* ── LISTA ── */
+function render(){
+  const list=document.getElementById('plist');
+  const empty=document.getElementById('empty');
+  document.getElementById('count').textContent=items.length+' '+(items.length===1?'peça':'peças');
+  if(!items.length){list.innerHTML='';empty.classList.remove('hide');return;}
+  empty.classList.add('hide');
+  const order={brincos:1,colares:2,conjuntos:3,bolsas:4,relogios:5};
+  const sorted=[...items].sort((a,b)=>(order[a.cat]-order[b.cat])||a.id.localeCompare(b.id));
+  list.innerHTML=sorted.map(p=>`
+    <div class="pcard ${p.visible===false?'hidden':''}">
+      <img class="pthumb" src="${p.imgs&&p.imgs[0]||''}" alt="" onerror="this.style.visibility='hidden'"/>
+      <div class="pinfo">
+        <div class="pref">${p.id}</div>
+        <div class="pname">${esc(p.name)}</div>
+        <div class="pmeta">${esc(p.materialLabel||'')} · <span class="pprice">${fmt(p.price)}</span></div>
+        <div class="ptags">
+          ${p.featured?'<span class="tag f">Destaque</span>':''}
+          ${p.gift?'<span class="tag g">Presente</span>':''}
+          ${p.visible===false?'<span class="tag h">Oculto</span>':''}
+        </div>
+      </div>
+      <div class="pactions">
+        <button class="icobtn" title="Editar" onclick="editProduct('${p.id}')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        </button>
+        <button class="icobtn" title="${p.visible===false?'Mostrar':'Ocultar'}" onclick="toggleVis('${p.id}',${p.visible===false})">
+          ${p.visible===false
+            ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>'
+            : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.9 4.2A9.1 9.1 0 0 1 12 4c6.5 0 10 7 10 7a13 13 0 0 1-2.2 3"/><path d="M6.6 6.6A13 13 0 0 0 2 12s3.5 7 10 7a9 9 0 0 0 3.4-.7"/><line x1="2" y1="2" x2="22" y2="22"/></svg>'}
+        </button>
+        <button class="icobtn del" title="Excluir" onclick="delProduct('${p.id}','${esc(p.name)}')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </button>
+      </div>
+    </div>`).join('');
+}
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+/* ── FORM ── */
+function syncMatLabel(){
+  const sel=document.getElementById('f_material').value;
+  const inp=document.getElementById('f_matlabel');
+  const map={dourado:'Dourado',prata:'Prata',bicolor:'Bicolor'};
+  if(!inp.value || ['Dourado','Prata','Bicolor'].includes(inp.value)) inp.value=map[sel];
+}
+function openForm(){
+  editId=null;keepImgs=[];newImgs=[];
+  document.getElementById('sheetTitle').textContent='Nova peça';
+  document.getElementById('f_name').value='';
+  document.getElementById('f_cat').value='brincos';
+  document.getElementById('f_price').value='';
+  document.getElementById('f_material').value='dourado';
+  document.getElementById('f_matlabel').value='Dourado';
+  document.getElementById('f_featured').checked=false;
+  document.getElementById('f_gift').checked=false;
+  document.getElementById('f_visible').checked=true;
+  renderPhotos();
+  openSheet();
+}
+function editProduct(id){
+  const p=items.find(x=>x.id===id);if(!p)return;
+  editId=id;keepImgs=[...(p.imgs||[])];newImgs=[];
+  document.getElementById('sheetTitle').textContent='Editar '+id;
+  document.getElementById('f_name').value=p.name||'';
+  document.getElementById('f_cat').value=p.cat||'brincos';
+  document.getElementById('f_price').value=p.price||'';
+  document.getElementById('f_material').value=p.material||'dourado';
+  document.getElementById('f_matlabel').value=p.materialLabel||'';
+  document.getElementById('f_featured').checked=!!p.featured;
+  document.getElementById('f_gift').checked=!!p.gift;
+  document.getElementById('f_visible').checked=p.visible!==false;
+  renderPhotos();
+  openSheet();
+}
+function openSheet(){document.getElementById('sheetOv').classList.add('open');document.getElementById('sheet').classList.add('open');document.body.style.overflow='hidden';}
+function closeForm(){document.getElementById('sheetOv').classList.remove('open');document.getElementById('sheet').classList.remove('open');document.body.style.overflow='';}
+
+function renderPhotos(){
+  const box=document.getElementById('photos');
+  const existing=keepImgs.map((u,i)=>`<div class="photo"><img src="${u}" alt=""/><button class="rm" onclick="rmKeep(${i})">✕</button></div>`).join('');
+  const fresh=newImgs.map((u,i)=>`<div class="photo"><img src="${u}" alt=""/><button class="rm" onclick="rmNew(${i})">✕</button></div>`).join('');
+  const add=`<div class="addphoto" onclick="document.getElementById('fileInput').click()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3"/></svg>
+    Foto</div>`;
+  box.innerHTML=existing+fresh+add;
+}
+function rmKeep(i){keepImgs.splice(i,1);renderPhotos();}
+function rmNew(i){newImgs.splice(i,1);renderPhotos();}
+
+async function handleFiles(ev){
+  const files=[...ev.target.files];
+  ev.target.value='';
+  for(const f of files){
+    try{newImgs.push(await compress(f));}catch(_){toast('Não consegui ler uma das fotos',true);}
+  }
+  renderPhotos();
+}
+function compress(file,max=1200,q=0.82){
+  return new Promise((res,rej)=>{
+    const img=new Image();const url=URL.createObjectURL(file);
+    img.onload=()=>{
+      let w=img.width,h=img.height;
+      if(w>h&&w>max){h=Math.round(h*max/w);w=max;}
+      else if(h>=w&&h>max){w=Math.round(w*max/h);h=max;}
+      const c=document.createElement('canvas');c.width=w;c.height=h;
+      c.getContext('2d').drawImage(img,0,0,w,h);
+      URL.revokeObjectURL(url);
+      res(c.toDataURL('image/jpeg',q));
+    };
+    img.onerror=()=>{URL.revokeObjectURL(url);rej(new Error('img'));};
+    img.src=url;
+  });
+}
+
+async function save(){
+  const name=document.getElementById('f_name').value.trim();
+  const price=parseFloat(document.getElementById('f_price').value);
+  if(!name){toast('Informe o nome da peça',true);return;}
+  if(!price||price<=0){toast('Informe um preço válido',true);return;}
+  if(keepImgs.length+newImgs.length===0){toast('Adicione pelo menos uma foto',true);return;}
+  const btn=document.getElementById('saveBtn');btn.disabled=true;btn.innerHTML='<span class="spin"></span> Salvando…';
+  try{
+    const product={
+      id:editId||undefined,
+      cat:document.getElementById('f_cat').value,
+      name,
+      material:document.getElementById('f_material').value,
+      materialLabel:document.getElementById('f_matlabel').value.trim(),
+      price,
+      imgs:keepImgs,
+      featured:document.getElementById('f_featured').checked,
+      gift:document.getElementById('f_gift').checked,
+      visible:document.getElementById('f_visible').checked,
+    };
+    const j=await api({action:'save',product,newImages:newImgs});
+    // atualiza lista local
+    const idx=items.findIndex(x=>x.id===j.product.id);
+    if(idx>=0) items[idx]=j.product; else items.push(j.product);
+    closeForm();render();
+    toast(editId?'Peça atualizada ✓':'Peça adicionada ✓');
+  }catch(e){toast(e.message||'Erro ao salvar',true);}
+  finally{btn.disabled=false;btn.textContent='Salvar peça';}
+}
+
+async function toggleVis(id,makeVisible){
+  try{await api({action:'toggle',id,visible:makeVisible});
+    const it=items.find(x=>x.id===id);if(it)it.visible=makeVisible;render();
+    toast(makeVisible?'Peça visível na loja':'Peça ocultada');
+  }catch(e){toast(e.message,true);}
+}
+async function delProduct(id,name){
+  if(!confirm('Excluir "'+name+'" ('+id+')?\nIsso remove a peça da loja.'))return;
+  try{await api({action:'delete',id});
+    items=items.filter(x=>x.id!==id);render();
+    toast('Peça excluída');
+  }catch(e){toast(e.message,true);}
+}
+
+/* sessao salva */
+(function(){
+  const saved=sessionStorage.getItem('jp_pw');
+  if(saved){document.getElementById('pw').value=saved;doLogin();}
+})();
+</script>
+</body>
+</html>

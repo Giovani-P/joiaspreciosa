@@ -1,0 +1,431 @@
+[
+  {
+    "id": "BR001",
+    "cat": "brincos",
+    "name": "Argola Coração Cravejado",
+    "material": "bicolor",
+    "materialLabel": "Prata e Dourado",
+    "price": 39.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1hvst7vYtZYb5wjshHZh7Xrf-xf8DejS1&sz=w600",
+      "https://drive.google.com/thumbnail?id=1JzrZCIDV4jupeW-O1sgsSd4UJr6kJO1K&sz=w600",
+      "https://drive.google.com/thumbnail?id=1e-lY5uB6Oqqh7hbSNTlEF9tym9mznKh0&sz=w600"
+    ],
+    "featured": true,
+    "gift": false,
+    "visible": true
+  },
+  {
+    "id": "BR003",
+    "cat": "brincos",
+    "name": "Brinco Botão",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 39.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=15NbUsrDFxSgTOEwnOHMmRfy9bK7gTk9Y&sz=w600"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
+  },
+  {
+    "id": "BR018",
+    "cat": "brincos",
+    "name": "Brinco Flor",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 44.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1e0LQNdKIjHhDv0VeIB-UMjGh_GVvFB0j&sz=w600",
+      "https://drive.google.com/thumbnail?id=11ayPUVfgu8NcwTvFoww0M5YDkbpIjA5d&sz=w600",
+      "https://drive.google.com/thumbnail?id=1IiCEdVayCLCL1jqqg6zmRjYyN0YG9s-C&sz=w600",
+      "https://drive.google.com/thumbnail?id=1MvWZgdrKBjKf11hEcJKJkGKtSbA_nvOw&sz=w600",
+      "https://drive.google.com/thumbnail?id=1lVBv1tk-b-SfUsPXsy3GyTpc-PsCJq-D&sz=w600",
+      "https://drive.google.com/thumbnail?id=1prdWYUg62FgszM91MEwgu5SDM-ffwdQ1&sz=w600"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "BR024",
+    "cat": "brincos",
+    "name": "Brinco Orquídea",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 49.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1grIZF-4BcBGjhBkZswhfB9Qh6X6ASr55&sz=w600",
+      "https://drive.google.com/thumbnail?id=11YL1AkI73jtUvDrAdFkX9XUN1l4xRj6N&sz=w600",
+      "https://drive.google.com/thumbnail?id=1OjjW7o4Fi6-oOjbV7CaXHb9uE2QkVPLV&sz=w600",
+      "https://drive.google.com/thumbnail?id=1ggJDAbW6QAgpvmKOxfUIS8pe8b0jH6zr&sz=w600"
+    ],
+    "featured": true,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "BR027",
+    "cat": "brincos",
+    "name": "Argola Bicolor",
+    "material": "bicolor",
+    "materialLabel": "Bicolor",
+    "price": 39.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1f6F31Jh7bWx7zaLnwzzCbpCpHYhZzswQ&sz=w600"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
+  },
+  {
+    "id": "BR029",
+    "cat": "brincos",
+    "name": "Brincos Variados Cravejado",
+    "material": "bicolor",
+    "materialLabel": "Dourado e Prata",
+    "price": 34.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1OjA8H7ysDQ0r8Pm-U4467SYLPQ77rCuL&sz=w600",
+      "https://drive.google.com/thumbnail?id=1HkX8GzxywPURXECZIsilUGCRbpSIHEjI&sz=w600",
+      "https://drive.google.com/thumbnail?id=1WiYcj3KnTSR02cepFefWSiPf2BbyGuch&sz=w600",
+      "https://drive.google.com/thumbnail?id=10w1itXxJ6r7t5A-hZ1WPYcaVBklU44lx&sz=w600"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
+  },
+  {
+    "id": "BR037",
+    "cat": "brincos",
+    "name": "Borboleta Dupla",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 44.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1vImKpuxj7QzWXC4RjjmWoinvTn7_Y0J_&sz=w600",
+      "https://drive.google.com/thumbnail?id=1ELeexS15xLOjYA98IerA7b5fLvAN02Sj&sz=w600"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "BR038",
+    "cat": "brincos",
+    "name": "Brinco Flor Branco",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 44.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1AJbaydFztM5Bon66OvrDC-QNL2h0EmwS&sz=w600"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "BR042",
+    "cat": "brincos",
+    "name": "Borboleta Cravejada",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 34.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1MTaHpIXv10T8JwyrMDKovwAAGf7T-1SA&sz=w600"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
+  },
+  {
+    "id": "BR043",
+    "cat": "brincos",
+    "name": "Borboleta Pérola",
+    "material": "bicolor",
+    "materialLabel": "Prata e Dourado",
+    "price": 39.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1pq0UWvuvweZpIesIAVGO8CRSWSLu-KKs&sz=w600"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CL004",
+    "cat": "colares",
+    "name": "Colar Delicado",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 39.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1_lI9iR2Ye2-EV5KrKQqMjwghoKV42h1t&sz=w600",
+      "https://drive.google.com/thumbnail?id=10vD5JS629O8F2F0RcXh30V6iJ6j42Z5l&sz=w600"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
+  },
+  {
+    "id": "CL007",
+    "cat": "colares",
+    "name": "Colar Confiar",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 39.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1NDLA550HS2D7ihyk64yYJfHBky_D-ST_&sz=w600"
+    ],
+    "featured": true,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CL008",
+    "cat": "colares",
+    "name": "Cordão Baiano",
+    "material": "bicolor",
+    "materialLabel": "Prata e Dourado",
+    "price": 44.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1qhdrOEyB5WuDN4yu9HMFTKUCCIZbUWkO&sz=w600",
+      "https://drive.google.com/thumbnail?id=1E2jGP7VmSz5p8E32Co8ptzdu_eagesit&sz=w600"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
+  },
+  {
+    "id": "CL009",
+    "cat": "colares",
+    "name": "Choker Cravejada",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 54.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1xoqDflG1rGPq6WPmgv5l-lZfLVFhcO8_&sz=w600",
+      "https://drive.google.com/thumbnail?id=1sXQLXMWvNKr9jGcvu1gQXXOmXR6wzFmQ&sz=w600",
+      "https://drive.google.com/thumbnail?id=1aMUC8nLMyCr_BJf7IaxwkqYJuIrxRq78&sz=w600"
+    ],
+    "featured": true,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CL012",
+    "cat": "colares",
+    "name": "Seja Forte e Corajosa",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 49.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=17udqxH3d0DRT40A1c27tZD1SRPEg9pzv&sz=w600"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CL014",
+    "cat": "colares",
+    "name": "Colar Árvore da Vida Cravejada",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 49.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1VamrMilddC5YgZQm67C52-hUH17HBSQJ&sz=w600",
+      "https://drive.google.com/thumbnail?id=1ygQafxk8OKooCMp7JY1OfkbxZ9r_6w8V&sz=w600"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CL015",
+    "cat": "colares",
+    "name": "Colar Árvore da Vida",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 49.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1zvBeMeAdG_R5802eUZqMydTebFNtv6Bc&sz=w600",
+      "https://drive.google.com/thumbnail?id=1t41dhs_Qan3cL0XTTIccIZX1IP4nn8a0&sz=w600",
+      "https://drive.google.com/thumbnail?id=1wmGx3kBkgPhBnucXjrWxnEoXfAStLz9b&sz=w600"
+    ],
+    "featured": true,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CL016",
+    "cat": "colares",
+    "name": "Seja Forte e Corajosa",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 49.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=17udqxH3d0DRT40A1c27tZD1SRPEg9pzv&sz=w600"
+    ],
+    "featured": true,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CL025",
+    "cat": "colares",
+    "name": "Colar Relicário",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 44.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1QcCGYlH0KF7q8VXni8ewi8Ca4okAtKxj&sz=w600",
+      "https://drive.google.com/thumbnail?id=1e873uizNABf1aCXGdKtqilZLbZgNaznK&sz=w600"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CL027",
+    "cat": "colares",
+    "name": "Colar Riviera",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 49.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=19bvg9NhpilEc1psdGUtGajA9DPiBw1zH&sz=w600",
+      "https://drive.google.com/thumbnail?id=1akzvGiJbho45Pv7YizUY-30jBe1dTJ4N&sz=w600",
+      "https://drive.google.com/thumbnail?id=1vINir4QTWfFYoIIyY0x-Gc2ZMXjD74Mu&sz=w600",
+      "https://drive.google.com/thumbnail?id=1MP1wF-THnqCSnFUoihOyCOrgNyhxoNo8&sz=w600"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
+  },
+  {
+    "id": "CL028",
+    "cat": "colares",
+    "name": "Colar Trevo",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 39.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1vOoOXy_g4rwq0RZy_gWCIPWc3jH0UEsF&sz=w600"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
+  },
+  {
+    "id": "CL037",
+    "cat": "colares",
+    "name": "Colar Borboleta Madrepérola",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 44.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1V4tkP7giEGzzebL5DWN3kg7t6DU3WzCg&sz=w600",
+      "https://drive.google.com/thumbnail?id=1LUKxK35qJiU45fUz4iryW7FNzbtVeeqg&sz=w600",
+      "https://drive.google.com/thumbnail?id=18n_iZGoyT6m4M-Pb7bxU8avKH5PHZwpd&sz=w600"
+    ],
+    "featured": true,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CJ001",
+    "cat": "conjuntos",
+    "name": "Conjunto Básico",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 59.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1e9_iXS_hpLIRKmPXUW7B_V0pd1QiPf54&sz=w600",
+      "https://drive.google.com/thumbnail?id=1R-lkV7iZYWzYY-5n5q1zboFXMhgYwHsP&sz=w600",
+      "https://drive.google.com/thumbnail?id=1NfvY19bh3wuKCsC5D0VeksQFA2PPN9d4&sz=w600"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CJ003",
+    "cat": "conjuntos",
+    "name": "Conjunto Ponto de Luz",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 59.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1BRBtLbDFzrWpB8nR6pg5jEiTexAV_ONm&sz=w600",
+      "https://drive.google.com/thumbnail?id=16Yd3YzklXCdWdWKKoFp5TuVd5NHHPDk8&sz=w600",
+      "https://drive.google.com/thumbnail?id=1U7hAwRONTU2QtCj0R5ePVZYYQps9TmV1&sz=w600"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CJ010",
+    "cat": "conjuntos",
+    "name": "Conjunto Verde Pérolas",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 79.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1vOtf7JJeYP703JBT8ewWQUNsrSS-9RXI&sz=w600",
+      "https://drive.google.com/thumbnail?id=15o3cSX0Sti3CZ8ggZN5oyYtEcoFz8fcO&sz=w600",
+      "https://drive.google.com/thumbnail?id=1qlq5WU9A8olbBsoOEZ-ETdp3DhNKfRsA&sz=w600"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CJ011",
+    "cat": "conjuntos",
+    "name": "Conjunto Pedra Fusion",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 69.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1bbaC6MWLaionJrVYS82UdgnnjqL36gJz&sz=w600"
+    ],
+    "featured": true,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CJ013",
+    "cat": "conjuntos",
+    "name": "Conjunto Pizza Cravejado",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 79.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1QMNBh8g78G7cu44L845a9g7E_tZrayZ0&sz=w600"
+    ],
+    "featured": true,
+    "gift": true,
+    "visible": true
+  },
+  {
+    "id": "CJ014",
+    "cat": "conjuntos",
+    "name": "Conjunto Azul Pérolas",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 79.9,
+    "imgs": [
+      "https://drive.google.com/thumbnail?id=1DiZwqs3fC0D-klTtn6XKP6W2q8D5Ajdo&sz=w600",
+      "https://drive.google.com/thumbnail?id=1JmJZgZASZ7ZbKc-cznarBqScNts01bdY&sz=w600",
+      "https://drive.google.com/thumbnail?id=1xu2DRUaPI9x1IAAYkpgfxrhY3fOapg7I&sz=w600",
+      "https://drive.google.com/thumbnail?id=1SqU9gmgpVQrI65qyYiG0_9Bq9-9d1Jue&sz=w600",
+      "https://drive.google.com/thumbnail?id=1Z2nUmMgHn60v2EypPIQbEeTLiHfx-FqF&sz=w600"
+    ],
+    "featured": true,
+    "gift": true,
+    "visible": true
+  }
+]

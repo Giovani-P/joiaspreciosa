@@ -442,6 +442,6 @@
     ],
     "featured": false,
     "gift": true,
-    "visible": false
+    "visible": true
   }
 ]

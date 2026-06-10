@@ -460,5 +460,21 @@
     "featured": false,
     "gift": true,
     "visible": true
+  },
+  {
+    "id": "RE003",
+    "code": "RE003",
+    "cat": "relogios",
+    "name": "Kit relógio Bracelete bicolor",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 79.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE003-1781123415512-1.jpg"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
   }
 ]

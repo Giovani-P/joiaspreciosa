@@ -1046,12 +1046,12 @@ window.addEventListener('scroll',()=>{
 if('serviceWorker' in navigator){ window.addEventListener('load',()=>{}); }
 
 // ── CARGA DINAMICA DOS PRODUTOS ──
-const REPO=Giovani-P/joiaspreciosa;
-const DATA_URL=https://cdn.jsdelivr.net/gh/+REPO+@main/produtos.json;
+const REPO='Giovani-P/joiaspreciosa';
+const DATA_URL='https://cdn.jsdelivr.net/gh/'+REPO+'@main/produtos.json';
 async function loadProducts(){
   let data=[];
-  try{ const r=await fetch(DATA_URL,{cache:no-store}); if(!r.ok) throw 0; data=await r.json(); }
-  catch(e){ try{ data=await (await fetch(produtos.json,{cache:no-store})).json(); }catch(_){ data=[]; } }
+  try{ const r=await fetch(DATA_URL+'?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw 0; data=await r.json(); }
+  catch(e){ try{ data=await (await fetch('produtos.json',{cache:'no-store'})).json(); }catch(_){ data=[]; } }
   products = Array.isArray(data) ? data.filter(p=>p.visible!==false) : [];
   renderAll();
 }

@@ -476,5 +476,24 @@
     "featured": false,
     "gift": true,
     "visible": true
+  },
+  {
+    "id": "RE004",
+    "code": "RE004",
+    "cat": "relogios",
+    "name": "Kit relógio",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 109.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE004-1781129268053-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE004-1781129268958-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE004-1781129269895-3.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE004-1781129270753-4.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

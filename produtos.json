@@ -394,7 +394,7 @@
     ],
     "featured": true,
     "gift": true,
-    "visible": true
+    "visible": false
   },
   {
     "id": "CJ013",

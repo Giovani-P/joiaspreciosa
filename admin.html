@@ -151,10 +151,11 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold-dark)}
     <div class="row2">
       <div class="field">
         <label>Categoria</label>
-        <select id="f_cat">
+        <select id="f_cat" onchange="onCatChange()">
           <option value="brincos">Brincos</option>
           <option value="colares">Colares</option>
           <option value="conjuntos">Conjuntos</option>
+          <option value="aneis">Anéis</option>
           <option value="bolsas">Bolsas</option>
           <option value="relogios">Relógios</option>
         </select>
@@ -178,6 +179,18 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold-dark)}
         <label>Texto do material</label>
         <input type="text" id="f_matlabel" placeholder="Dourado"/>
       </div>
+    </div>
+
+    <div class="field">
+      <label>Código da peça</label>
+      <input type="text" id="f_code" placeholder="Gerado automaticamente"/>
+      <p class="hint">Vem preenchido automático (ex: BR001). Você pode trocar por um código seu se quiser.</p>
+    </div>
+
+    <div class="field">
+      <label>Especificações / descrição</label>
+      <textarea id="f_specs" rows="3" placeholder="Ex: Comprimento 45cm, fecho lagosta, banho ouro 18k, pedra zircônia..."></textarea>
+      <p class="hint">Aparece na peça quando a cliente abre o story.</p>
     </div>
 
     <div class="field">
@@ -258,7 +271,7 @@ function render(){
     <div class="pcard ${p.visible===false?'hidden':''}">
       <img class="pthumb" src="${p.imgs&&p.imgs[0]||''}" alt="" onerror="this.style.visibility='hidden'"/>
       <div class="pinfo">
-        <div class="pref">${p.id}</div>
+        <div class="pref">${esc(p.code||p.id)}</div>
         <div class="pname">${esc(p.name)}</div>
         <div class="pmeta">${esc(p.materialLabel||'')} · <span class="pprice">${fmt(p.price)}</span></div>
         <div class="ptags">
@@ -291,11 +304,25 @@ function syncMatLabel(){
   const map={dourado:'Dourado',prata:'Prata',bicolor:'Bicolor'};
   if(!inp.value || ['Dourado','Prata','Bicolor'].includes(inp.value)) inp.value=map[sel];
 }
+const PREFIX={brincos:'BR',colares:'CL',conjuntos:'CJ',aneis:'AN',bolsas:'BO',relogios:'RE'};
+function nextRef(cat){
+  const pre=PREFIX[cat]||'XX';let max=0;
+  items.forEach(p=>{const m=String(p.id||'').match(new RegExp('^'+pre+'(\\d+)$'));if(m)max=Math.max(max,parseInt(m[1],10));});
+  return pre+String(max+1).padStart(3,'0');
+}
+// ao trocar categoria numa peça NOVA, atualiza o código auto (se ainda não for personalizado)
+function onCatChange(){
+  if(editId!==null) return;
+  const c=document.getElementById('f_code');
+  if(!c.value || /^[A-Z]{2}\d{3}$/.test(c.value)) c.value=nextRef(document.getElementById('f_cat').value);
+}
 function openForm(){
   editId=null;keepImgs=[];newImgs=[];
   document.getElementById('sheetTitle').textContent='Nova peça';
   document.getElementById('f_name').value='';
   document.getElementById('f_cat').value='brincos';
+  document.getElementById('f_code').value=nextRef('brincos');
+  document.getElementById('f_specs').value='';
   document.getElementById('f_price').value='';
   document.getElementById('f_material').value='dourado';
   document.getElementById('f_matlabel').value='Dourado';
@@ -308,9 +335,11 @@ function openForm(){
 function editProduct(id){
   const p=items.find(x=>x.id===id);if(!p)return;
   editId=id;keepImgs=[...(p.imgs||[])];newImgs=[];
-  document.getElementById('sheetTitle').textContent='Editar '+id;
+  document.getElementById('sheetTitle').textContent='Editar '+(p.code||id);
   document.getElementById('f_name').value=p.name||'';
   document.getElementById('f_cat').value=p.cat||'brincos';
+  document.getElementById('f_code').value=p.code||p.id||'';
+  document.getElementById('f_specs').value=p.specs||'';
   document.getElementById('f_price').value=p.price||'';
   document.getElementById('f_material').value=p.material||'dourado';
   document.getElementById('f_matlabel').value=p.materialLabel||'';
@@ -370,10 +399,12 @@ async function save(){
   try{
     const product={
       id:editId||undefined,
+      code:document.getElementById('f_code').value.trim(),
       cat:document.getElementById('f_cat').value,
       name,
       material:document.getElementById('f_material').value,
       materialLabel:document.getElementById('f_matlabel').value.trim(),
+      specs:document.getElementById('f_specs').value.trim(),
       price,
       imgs:keepImgs,
       featured:document.getElementById('f_featured').checked,

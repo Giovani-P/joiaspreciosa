@@ -7,7 +7,7 @@ const BRANCH = process.env.GITHUB_BRANCH || 'main';
 const API = `https://api.github.com/repos/${REPO}/contents`;
 const DATA_FILE = 'produtos.json';
 
-const PREFIX = { brincos:'BR', colares:'CL', conjuntos:'CJ', bolsas:'BO', relogios:'RE' };
+const PREFIX = { brincos:'BR', colares:'CL', conjuntos:'CJ', aneis:'AN', bolsas:'BO', relogios:'RE' };
 
 function gh(path, opts = {}) {
   return fetch(`${API}/${path}`, {
@@ -107,11 +107,13 @@ module.exports = async (req, res) => {
 
       const prod = {
         id: ref,
+        code: String(p.code || '').trim() || ref,
         cat: p.cat,
         name: String(p.name || '').trim(),
         material: p.material || 'dourado',
         materialLabel: String(p.materialLabel || '').trim() || 'Dourado',
         price: Number(p.price) || 0,
+        specs: String(p.specs || '').trim(),
         imgs,
         featured: !!p.featured,
         gift: !!p.gift,

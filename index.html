@@ -315,6 +315,40 @@
       .grid,.destaques-track,.presentes-grid{grid-template-columns:1fr 1fr;gap:10px}
       .card-add{padding:7px 8px;letter-spacing:.05em}
     }
+
+    /* ── STORY VIEWER ── */
+    .story-ov{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:250;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+    .story-ov.open{opacity:1;pointer-events:all}
+    .story{position:relative;width:100%;height:100%;max-width:460px;max-height:100vh;background:#0e0e0e;display:flex;flex-direction:column;overflow:hidden}
+    @media(min-width:520px){.story{max-height:92vh;border-radius:18px}}
+    .story-bars{position:absolute;top:0;left:0;right:0;z-index:6;display:flex;gap:4px;padding:10px 12px}
+    .story-bar{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.3);overflow:hidden}
+    .story-bar i{display:block;height:100%;width:0;background:#fff;border-radius:3px}
+    .story-bar.done i{width:100%}
+    .story-bar.active i{width:100%;transition:width linear}
+    .story-top{position:absolute;top:18px;left:0;right:0;z-index:6;display:flex;align-items:center;justify-content:space-between;padding:6px 14px;pointer-events:none}
+    .story-brand{font-family:'Playfair Display',serif;color:#fff;font-size:.95rem;letter-spacing:.04em;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+    .story-close{pointer-events:all;background:rgba(0,0,0,.35);border:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer}
+    .story-close svg{width:18px;height:18px}
+    .story-stage{position:relative;flex:1;display:flex;align-items:center;justify-content:center;background:#0e0e0e;min-height:0}
+    .story-img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;display:block}
+    .story-tap{position:absolute;top:0;bottom:0;width:38%;z-index:4;cursor:pointer}
+    .story-tap.prev{left:0}
+    .story-tap.next{right:0;width:62%}
+    .story-info{position:relative;z-index:5;padding:22px 20px 24px;background:linear-gradient(to top,rgba(0,0,0,.92) 30%,rgba(0,0,0,.55) 75%,transparent);color:#fff;margin-top:-90px;pointer-events:none}
+    .story-info>*{pointer-events:auto}
+    .story-ref{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:5px}
+    .story-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;line-height:1.15;margin-bottom:5px}
+    .story-material{font-size:.78rem;color:rgba(255,255,255,.7);letter-spacing:.04em;margin-bottom:8px}
+    .story-specs{font-size:.82rem;color:rgba(255,255,255,.82);line-height:1.5;margin-bottom:12px;max-height:22vh;overflow-y:auto;white-space:pre-line}
+    .story-specs:empty{display:none}
+    .story-price{font-family:'Playfair Display',serif;font-size:1.7rem;margin-bottom:14px}
+    .story-actions{display:flex;gap:10px;align-items:stretch}
+    .story-add{flex:1;background:var(--gold);color:var(--charcoal);border:none;border-radius:10px;font-family:'Lato',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px;cursor:pointer;transition:background .2s}
+    .story-add:hover{background:var(--gold-dark)}
+    .story-add.added{background:#fff}
+    .story-share{flex-shrink:0;width:52px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:10px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .story-share svg{width:18px;height:18px}
   </style>
 </head>
 <body>
@@ -356,6 +390,7 @@
     <a href="#brincos"   onclick="navTo(event,'brincos')">Brincos</a>
     <a href="#colares"   onclick="navTo(event,'colares')">Colares</a>
     <a href="#conjuntos" onclick="navTo(event,'conjuntos')">Conjuntos</a>
+    <a href="#aneis"     onclick="navTo(event,'aneis')">Anéis</a>
     <a href="#bolsas"    onclick="navTo(event,'bolsas')">Bolsas</a>
     <a href="#relogios"  onclick="navTo(event,'relogios')">Relógios</a>
     <a href="#presentes" onclick="navTo(event,'presentes')">Presentes</a>
@@ -405,6 +440,7 @@
     <button class="f-chip" data-filter-cat="brincos" onclick="setFilter('cat','brincos',this)">Brincos</button>
     <button class="f-chip" data-filter-cat="colares" onclick="setFilter('cat','colares',this)">Colares</button>
     <button class="f-chip" data-filter-cat="conjuntos" onclick="setFilter('cat','conjuntos',this)">Conjuntos</button>
+    <button class="f-chip" data-filter-cat="aneis" onclick="setFilter('cat','aneis',this)">Anéis</button>
     <button class="f-chip" data-filter-cat="bolsas" onclick="setFilter('cat','bolsas',this)">Bolsas</button>
     <button class="f-chip" data-filter-cat="relogios" onclick="setFilter('cat','relogios',this)">Relógios</button>
     <div class="filter-sep"></div>
@@ -503,30 +539,34 @@
   <div class="grid" id="grid-conjuntos"></div>
 </section>
 
-<!-- ── BOLSAS ── -->
-<section class="section" id="bolsas" data-section="bolsas">
+<!-- ── ANÉIS ── -->
+<section class="section" id="aneis" data-section="aneis">
   <div class="section-header">
-    <span class="section-tag">Em Breve</span>
+    <span class="section-tag">Coleção</span>
+    <h2>Anéis</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="grid" id="grid-aneis"></div>
+</section>
+
+<!-- ── BOLSAS ── -->
+<section class="section section-alt" id="bolsas" data-section="bolsas">
+  <div class="section-header">
+    <span class="section-tag">Coleção</span>
     <h2>Bolsas</h2>
     <div class="section-line"></div>
   </div>
-  <div class="coming-soon">
-    <div class="cs-card"><div class="cs-icon">👜</div><div class="cs-title">Novidades chegando</div><div class="cs-text">Nossa coleção de bolsas está a caminho.<br>Em breve disponível aqui.</div></div>
-    <div class="cs-card"><div class="cs-icon">✦</div><div class="cs-title">Peças selecionadas</div><div class="cs-text">Cada bolsa escolhida com o mesmo cuidado<br>das nossas joias.</div></div>
-  </div>
+  <div class="grid" id="grid-bolsas"></div>
 </section>
 
 <!-- ── RELÓGIOS ── -->
-<section class="section section-alt" id="relogios" data-section="relogios">
+<section class="section" id="relogios" data-section="relogios">
   <div class="section-header">
-    <span class="section-tag">Em Breve</span>
+    <span class="section-tag">Coleção</span>
     <h2>Relógios</h2>
     <div class="section-line"></div>
   </div>
-  <div class="coming-soon">
-    <div class="cs-card"><div class="cs-icon">⌚</div><div class="cs-title">Novidades chegando</div><div class="cs-text">Nossa coleção de relógios está a caminho.<br>Em breve disponível aqui.</div></div>
-    <div class="cs-card"><div class="cs-icon">◇</div><div class="cs-title">Estilo e precisão</div><div class="cs-text">Relógios com design minimalista e elegante<br>para todos os momentos.</div></div>
-  </div>
+  <div class="grid" id="grid-relogios"></div>
 </section>
 
 <!-- ── PRESENTES ── -->
@@ -591,49 +631,32 @@
   <div>Atendimento via WhatsApp · (19) 99900-9303</div>
 </footer>
 
-<!-- ── PRODUCT MODAL ── -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-  <div class="modal" id="modal">
-    <button class="modal-close" onclick="closeModal(null)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <div class="modal-img-side">
-      <div class="modal-gallery">
-        <img class="modal-img" id="modalImg" src="" alt=""
-          onerror="this.style.display='none';document.getElementById('modalImgPlaceholder').style.display='flex'"/>
-        <div class="modal-img-placeholder" id="modalImgPlaceholder" style="display:none">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.2"><circle cx="12" cy="8" r="5"/><path d="M3 21c0-4.418 4.03-8 9-8s9 3.582 9 8"/></svg>
-        </div>
-        <button class="gallery-arrow prev" id="galleryPrev" onclick="galleryNav(-1)" hidden>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button class="gallery-arrow next" id="galleryNext" onclick="galleryNav(1)" hidden>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-      </div>
-      <div class="gallery-thumbs-wrap">
-        <div class="gallery-thumbs" id="galleryThumbs"></div>
-      </div>
+<!-- ── PRODUCT STORY VIEWER ── -->
+<div class="story-ov" id="storyOv">
+  <div class="story" id="story">
+    <div class="story-bars" id="storyBars"></div>
+    <div class="story-top">
+      <div class="story-brand">Joias Preciosa</div>
+      <button class="story-close" onclick="closeStory()" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
-    <div class="modal-info-side">
-      <div class="modal-ref" id="modalRef"></div>
-      <h2 class="modal-name" id="modalName"></h2>
-      <div class="modal-material" id="modalMaterial"></div>
-      <div class="modal-divider"></div>
-      <div class="modal-detail-row"><span class="modal-detail-icon">✦</span><span class="modal-detail-text">Banho de ouro 18k de alta durabilidade</span></div>
-      <div class="modal-detail-row"><span class="modal-detail-icon">◇</span><span class="modal-detail-text">Material hipoalergênico — seguro para uso diário</span></div>
-      <div class="modal-detail-row"><span class="modal-detail-icon">❋</span><span class="modal-detail-text">Acabamento artesanal inspecionado peça a peça</span></div>
-      <div class="modal-detail-row"><span class="modal-detail-icon">◎</span><span class="modal-detail-text">Embalagem especial inclusa — perfeito para presentear</span></div>
-      <div class="modal-price-row">
-        <div class="modal-price-label">Preço</div>
-        <div class="modal-price" id="modalPrice"></div>
-        <div class="modal-actions">
-          <button class="modal-add-btn" id="modalAddBtn" onclick="modalAddToCart()">Adicionar à Seleção</button>
-          <button class="modal-share-btn" onclick="shareProduct()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-            Compartilhar esta peça
-          </button>
-        </div>
+    <div class="story-stage" id="storyStage">
+      <img class="story-img" id="storyImg" src="" alt="" onerror="this.style.visibility='hidden'"/>
+      <div class="story-tap prev" onclick="storyNav(-1)"></div>
+      <div class="story-tap next" onclick="storyNav(1)"></div>
+    </div>
+    <div class="story-info">
+      <div class="story-ref" id="storyRef"></div>
+      <h2 class="story-name" id="storyName"></h2>
+      <div class="story-material" id="storyMaterial"></div>
+      <div class="story-specs" id="storySpecs"></div>
+      <div class="story-price" id="storyPrice"></div>
+      <div class="story-actions">
+        <button class="story-add" id="storyAddBtn" onclick="storyAdd()">Adicionar à Seleção</button>
+        <button class="story-share" onclick="shareProduct()" aria-label="Compartilhar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -697,18 +720,18 @@ let activeFilters = { cat:'todos', material:'todos', sort:'relevancia' };
 // ── RENDER ──
 function buildCard(p){
   return `
-    <div class="card" id="card-${p.id}" onclick="openModal('${p.id}')">
+    <div class="card" id="card-${p.id}" onclick="openStory('${p.id}')">
       <div class="card-img-wrap">
         <img class="card-img" src="${imgUrl(p.imgs[0])}" alt="${p.name}"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="card-img-placeholder" style="display:none">
           <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.2"><circle cx="12" cy="8" r="5"/><path d="M3 21c0-4.418 4.03-8 9-8s9 3.582 9 8"/></svg>
         </div>
-        <span class="card-badge">${p.id}</span>
+        <span class="card-badge">${p.code||p.id}</span>
         ${p.gift ? '<span class="card-gift-badge">Presente</span>' : ''}
       </div>
       <div class="card-body">
-        <div class="card-ref">${p.id}</div>
+        <div class="card-ref">${p.code||p.id}</div>
         <div class="card-name">${p.name}</div>
         <div class="card-material">${p.materialLabel}</div>
         <div class="card-footer">
@@ -720,12 +743,26 @@ function buildCard(p){
     </div>`;
 }
 
+const CATS = ['brincos','colares','conjuntos','aneis','bolsas','relogios'];
+const CAT_SOON = {
+  brincos:'Nossa coleção de brincos está a caminho.',
+  colares:'Nossa coleção de colares está a caminho.',
+  conjuntos:'Nossos conjuntos estão a caminho.',
+  aneis:'Nossa coleção de anéis está a caminho.',
+  bolsas:'Nossa coleção de bolsas está a caminho.',
+  relogios:'Nossa coleção de relógios está a caminho.',
+};
+function comingSoon(cat){
+  return `<div class="coming-soon"><div class="cs-card"><div class="cs-icon">✦</div><div class="cs-title">Em breve disponível</div><div class="cs-text">${CAT_SOON[cat]||'Novidades chegando.'}<br>Fique de olho!</div></div></div>`;
+}
 function renderAll(){
   document.getElementById('grid-destaques').innerHTML =
     products.filter(p=>p.featured).map(buildCard).join('');
-  ['brincos','colares','conjuntos'].forEach(cat=>{
-    document.getElementById('grid-'+cat).innerHTML =
-      products.filter(p=>p.cat===cat).map(buildCard).join('');
+  CATS.forEach(cat=>{
+    const el=document.getElementById('grid-'+cat);
+    if(!el) return;
+    const list=products.filter(p=>p.cat===cat);
+    el.innerHTML = list.length ? list.map(buildCard).join('') : comingSoon(cat);
   });
   document.getElementById('grid-presentes').innerHTML =
     products.filter(p=>p.gift).map(buildCard).join('');
@@ -784,7 +821,7 @@ function applyFilters(){
   if(sort==='preco-asc') list.sort((a,b)=>a.price-b.price);
   if(sort==='preco-desc') list.sort((a,b)=>b.price-a.price);
 
-  const catLabels = {todos:'Todos',brincos:'Brincos',colares:'Colares',conjuntos:'Conjuntos',bolsas:'Bolsas',relogios:'Relógios'};
+  const catLabels = {todos:'Todos',brincos:'Brincos',colares:'Colares',conjuntos:'Conjuntos',aneis:'Anéis',bolsas:'Bolsas',relogios:'Relógios'};
   const matLabels = {todos:'',dourado:' · Dourado',prata:' · Prata',bicolor:' · Bicolor'};
   document.getElementById('filter-label').textContent = catLabels[cat]||'Resultados';
   document.getElementById('filter-title').textContent = (catLabels[cat]||'Produtos')+(matLabels[material]||'');
@@ -792,7 +829,7 @@ function applyFilters(){
   const grid = document.getElementById('grid-filtered');
   const empty = document.getElementById('filter-empty');
   const embreve = document.getElementById('filter-embreve');
-  const emBreveCats = ['bolsas','relogios'];
+  const emBreveCats = ['aneis','bolsas','relogios'];
 
   if(list.length===0){
     grid.innerHTML='';
@@ -824,7 +861,7 @@ function removeFromCart(id){
   cart = cart.filter(x=>x.id!==id);
   updateCartUI();
   syncAllBtns();
-  if(modalProductId===id) syncModalBtn();
+  if(storyPid===id) syncStoryBtn();
 }
 
 function syncAllBtns(){
@@ -890,7 +927,7 @@ function updateCartUI(){
     <div class="upsell-section">
       <div class="upsell-title">Você também pode gostar</div>
       <div class="upsell-grid">${upsells.map(p=>`
-        <div class="upsell-card" onclick="openModal('${p.id}')">
+        <div class="upsell-card" onclick="openStory('${p.id}')">
           <div class="upsell-img-wrap"><img class="upsell-img" src="${imgUrl(p.imgs[0])}" alt="${p.name}" onerror="this.style.background='#F5EDD8'"/></div>
           <div class="upsell-body"><div class="upsell-name">${p.name}</div><div class="upsell-price">${fmt(p.price)}</div></div>
           <button class="upsell-add" onclick="event.stopPropagation();addToCart('${p.id}')">+ Adicionar</button>
@@ -925,76 +962,92 @@ function sendWhatsApp(){
   window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
-// ── MODAL ──
-let modalProductId=null, galleryIndex=0;
+// ── STORY VIEWER (estilo Instagram Stories) ──
+let storyPid=null, storyIdx=0, storyTimer=null;
+const STORY_MS=3800;
 
-function openModal(id){
+function openStory(id){
   const p=products.find(x=>x.id===id);
   if(!p) return;
-  modalProductId=id; galleryIndex=0;
-  document.getElementById('modalRef').textContent=p.id;
-  document.getElementById('modalName').textContent=p.name;
-  document.getElementById('modalMaterial').textContent=p.materialLabel;
-  document.getElementById('modalPrice').textContent=fmt(p.price);
-  setGalleryImage(p,0);
-  buildThumbs(p);
-  syncModalBtn();
-  document.getElementById('modalOverlay').classList.add('open');
+  storyPid=id; storyIdx=0;
+  document.getElementById('storyRef').textContent=p.code||p.id;
+  document.getElementById('storyName').textContent=p.name;
+  document.getElementById('storyMaterial').textContent=p.materialLabel||'';
+  document.getElementById('storySpecs').textContent=p.specs||'';
+  document.getElementById('storyPrice').textContent=fmt(p.price);
+  document.getElementById('storyBars').innerHTML=
+    (p.imgs||[]).map(()=>'<div class="story-bar"><i></i></div>').join('');
+  syncStoryBtn();
+  document.getElementById('storyOv').classList.add('open');
   document.body.style.overflow='hidden';
+  storyShow(0);
 }
 
-function setGalleryImage(p,idx){
-  const img=document.getElementById('modalImg');
-  const ph=document.getElementById('modalImgPlaceholder');
-  img.src=imgUrl(p.imgs[idx]);
-  img.style.display='block'; ph.style.display='none';
-  document.getElementById('galleryPrev').hidden = idx===0;
-  document.getElementById('galleryNext').hidden = idx===p.imgs.length-1;
-  document.querySelectorAll('.gallery-thumb').forEach((t,i)=>t.classList.toggle('active',i===idx));
-}
-
-function buildThumbs(p){
-  const wrap=document.getElementById('galleryThumbs');
-  if(p.imgs.length<=1){ wrap.innerHTML=''; wrap.parentElement.style.display='none'; return; }
-  wrap.parentElement.style.display='';
-  wrap.innerHTML=p.imgs.map((id,i)=>`<img class="gallery-thumb${i===0?' active':''}" src="${imgUrl(id)}" onclick="galleryGoto(${i})" alt="Foto ${i+1}"/>`).join('');
-}
-
-function galleryNav(dir){
-  const p=products.find(x=>x.id===modalProductId);
+function storyShow(i){
+  const p=products.find(x=>x.id===storyPid);
   if(!p) return;
-  galleryIndex=Math.max(0,Math.min(p.imgs.length-1,galleryIndex+dir));
-  setGalleryImage(p,galleryIndex);
-}
-function galleryGoto(i){
-  const p=products.find(x=>x.id===modalProductId);
-  if(!p) return;
-  galleryIndex=i; setGalleryImage(p,i);
+  storyIdx=i;
+  const img=document.getElementById('storyImg');
+  img.style.visibility='visible';
+  img.src=imgUrl(p.imgs[i]);
+  const bars=[...document.querySelectorAll('#storyBars .story-bar')];
+  bars.forEach((b,bi)=>{
+    b.classList.remove('active','done');
+    const fill=b.querySelector('i');
+    fill.style.transition='none';
+    fill.style.width = bi<i ? '100%' : '0';
+    if(bi<i) b.classList.add('done');
+  });
+  clearTimeout(storyTimer);
+  const cur=bars[i];
+  if(cur){
+    const fill=cur.querySelector('i');
+    cur.classList.add('active');
+    void fill.offsetWidth;
+    fill.style.transition='width '+STORY_MS+'ms linear';
+    fill.style.width='100%';
+  }
+  storyTimer=setTimeout(()=>storyNav(1), STORY_MS);
 }
 
-function closeModal(e){
-  if(e&&e.target!==document.getElementById('modalOverlay')) return;
-  document.getElementById('modalOverlay').classList.remove('open');
-  // Keep overflow:hidden if cart is still open
+function storyNav(dir){
+  const p=products.find(x=>x.id===storyPid);
+  if(!p) return;
+  const next=storyIdx+dir;
+  if(next<0){ storyShow(0); return; }
+  if(next>=p.imgs.length){
+    clearTimeout(storyTimer);
+    document.querySelectorAll('#storyBars .story-bar').forEach(b=>{
+      b.classList.remove('active'); b.classList.add('done'); b.querySelector('i').style.width='100%';
+    });
+    return;
+  }
+  storyShow(next);
+}
+
+function closeStory(){
+  clearTimeout(storyTimer);
+  document.getElementById('storyOv').classList.remove('open');
   if(!document.getElementById('cartDrawer').classList.contains('open'))
     document.body.style.overflow='';
-  modalProductId=null;
+  storyPid=null;
 }
 
-function modalAddToCart(){
-  if(!modalProductId) return;
-  addToCart(modalProductId); syncModalBtn();
+function storyAdd(){
+  if(!storyPid) return;
+  addToCart(storyPid); syncStoryBtn();
 }
 
-function syncModalBtn(){
-  const btn=document.getElementById('modalAddBtn');
-  const inCart=!!cart.find(x=>x.id===modalProductId);
-  btn.textContent=inCart?'✓ Adicionado à Seleção':'Adicionar à Seleção';
+function syncStoryBtn(){
+  const btn=document.getElementById('storyAddBtn');
+  if(!btn) return;
+  const inCart=!!cart.find(x=>x.id===storyPid);
+  btn.textContent=inCart?'✓ Adicionado':'Adicionar à Seleção';
   btn.classList.toggle('added',inCart);
 }
 
 function shareProduct(){
-  const p=products.find(x=>x.id===modalProductId);
+  const p=products.find(x=>x.id===storyPid);
   if(!p) return;
   const text=`✨ Olha que peça linda!\n\n${p.name} — ${p.materialLabel}\n${fmt(p.price)}\n\nJoias Preciosa · Semi Joias com Alma`;
   if(navigator.share){
@@ -1004,20 +1057,27 @@ function shareProduct(){
   }
 }
 
-// Touch swipe no modal
-let touchX=null;
-document.getElementById('modal').addEventListener('touchstart',e=>{ touchX=e.touches[0].clientX; },{passive:true});
-document.getElementById('modal').addEventListener('touchend',e=>{
+// swipe no story: lados = navegar, arrastar pra baixo = fechar
+let touchX=null, touchY=null;
+const _stage=document.getElementById('storyStage');
+_stage.addEventListener('touchstart',e=>{ touchX=e.touches[0].clientX; touchY=e.touches[0].clientY; },{passive:true});
+_stage.addEventListener('touchend',e=>{
   if(touchX===null) return;
-  const dx=e.changedTouches[0].clientX-touchX;
-  if(Math.abs(dx)>50) galleryNav(dx<0?1:-1);
-  touchX=null;
+  const dx=e.changedTouches[0].clientX-touchX, dy=e.changedTouches[0].clientY-touchY;
+  if(dy>80 && Math.abs(dy)>Math.abs(dx)) closeStory();
+  else if(Math.abs(dx)>50) storyNav(dx<0?1:-1);
+  touchX=null; touchY=null;
 },{passive:true});
 
+document.getElementById('storyOv').addEventListener('click',e=>{
+  if(e.target===document.getElementById('storyOv')) closeStory();
+});
+
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape') closeModal(null);
-  if(e.key==='ArrowLeft') galleryNav(-1);
-  if(e.key==='ArrowRight') galleryNav(1);
+  if(!document.getElementById('storyOv').classList.contains('open')) return;
+  if(e.key==='Escape') closeStory();
+  if(e.key==='ArrowLeft') storyNav(-1);
+  if(e.key==='ArrowRight') storyNav(1);
 });
 
 // ── FAB ──
@@ -1030,12 +1090,12 @@ function showToast(msg){ const t=document.getElementById('toast'); t.textContent
 window.addEventListener('scroll',()=>{
   const pos=window.scrollY+120;
   let active='';
-  ['destaques','brincos','colares','conjuntos','bolsas','relogios','presentes'].forEach(id=>{
+  ['destaques','brincos','colares','conjuntos','aneis','bolsas','relogios','presentes'].forEach(id=>{
     const el=document.getElementById(id);
     if(el&&el.offsetTop<=pos) active=id;
   });
   document.querySelectorAll('header nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+active));
-  ['brincos','colares','conjuntos','bolsas','relogios','presentes'].forEach(id=>{
+  ['brincos','colares','conjuntos','aneis','bolsas','relogios','presentes'].forEach(id=>{
     const bn=document.getElementById('bn-'+id);
     if(bn) bn.classList.toggle('active',active===id);
   });

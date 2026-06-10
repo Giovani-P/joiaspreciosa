@@ -427,5 +427,19 @@
     "featured": true,
     "gift": true,
     "visible": true
+  },
+  {
+    "id": "RE001",
+    "cat": "relogios",
+    "name": "Kit relogio",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 79.9,
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE001-1781049788679-1.jpg"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
   }
 ]

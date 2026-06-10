@@ -443,5 +443,22 @@
     "featured": false,
     "gift": true,
     "visible": true
+  },
+  {
+    "id": "RE002",
+    "code": "RE002",
+    "cat": "relogios",
+    "name": "Kit relógio dourado gota cravejado",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 79.9,
+    "specs": "Relógio em aço inoxidável banho a ouro 18 hipoalergênico",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE002-1781123321516-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE002-1781123322551-2.jpg"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
   }
 ]

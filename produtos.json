@@ -443,21 +443,5 @@
     "featured": false,
     "gift": true,
     "visible": true
-  },
-  {
-    "id": "AN001",
-    "code": "ANEL-OURO-X1",
-    "cat": "aneis",
-    "name": "__TESTE__ Anel Solitário",
-    "material": "dourado",
-    "materialLabel": "Dourado",
-    "price": 59.9,
-    "specs": "Aro 18, banho ouro 18k, zircônia 5mm",
-    "imgs": [
-      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN001-1781094792438-1.jpg"
-    ],
-    "featured": false,
-    "gift": false,
-    "visible": true
   }
 ]

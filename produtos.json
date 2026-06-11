@@ -511,5 +511,23 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR045",
+    "code": "BR038",
+    "cat": "brincos",
+    "name": "Brinco flor pingente pérola",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 44.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR045-1781178187074-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR045-1781178187929-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR045-1781178188806-3.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

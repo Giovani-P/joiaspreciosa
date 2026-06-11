@@ -532,5 +532,25 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR046",
+    "code": "BR046",
+    "cat": "brincos",
+    "name": "Argola cravejada fina",
+    "material": "dourado",
+    "materialLabel": "Dourado e prata",
+    "price": 39.9,
+    "specs": "Disponíveis nos tamanho P - M - G \nArgola leve, hipoalergênicas",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR046-1781178327346-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR046-1781178328147-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR046-1781178329003-3.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR046-1781178329853-4.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR046-1781178330734-5.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

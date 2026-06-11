@@ -590,5 +590,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR049",
+    "code": "BR049",
+    "cat": "brincos",
+    "name": "Colar escolhi confiar em Deus",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 44.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR049-1781178754626-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR049-1781178755400-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

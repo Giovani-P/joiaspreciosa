@@ -680,5 +680,22 @@
     "featured": false,
     "gift": true,
     "visible": true
+  },
+  {
+    "id": "CL041",
+    "code": "CL029",
+    "cat": "colares",
+    "name": "Colar esferas",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL041-1781179354325-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL041-1781179355112-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

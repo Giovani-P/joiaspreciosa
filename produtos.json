@@ -791,5 +791,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CL045",
+    "code": "CL019",
+    "cat": "colares",
+    "name": "Choker nó",
+    "material": "dourado",
+    "materialLabel": "Dourado e Prata",
+    "price": 44.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL045-1781180238021-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL045-1781180238874-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

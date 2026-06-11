@@ -643,5 +643,24 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CL040",
+    "code": "CL040",
+    "cat": "colares",
+    "name": "Colar laminado",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL040-1781179118126-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL040-1781179119303-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL040-1781179120058-3.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL040-1781179120726-4.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

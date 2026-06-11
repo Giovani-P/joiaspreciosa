@@ -571,5 +571,24 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR048",
+    "code": "BR048",
+    "cat": "brincos",
+    "name": "Argola lisa",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR048-1781178476304-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR048-1781178477145-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR048-1781178477936-3.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR048-1781178478861-4.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

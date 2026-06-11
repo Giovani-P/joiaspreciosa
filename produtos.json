@@ -662,5 +662,23 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CJ015",
+    "code": "CJ015",
+    "cat": "conjuntos",
+    "name": "Conjunto gota ródio branco",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 59.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ015-1781179242628-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ015-1781179243411-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ015-1781179244152-3.jpg"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
   }
 ]

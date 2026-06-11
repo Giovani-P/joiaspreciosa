@@ -715,5 +715,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CL043",
+    "code": "CL022",
+    "cat": "colares",
+    "name": "Colar coração entrelaçado",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 44.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL043-1781179612365-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL043-1781179613149-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

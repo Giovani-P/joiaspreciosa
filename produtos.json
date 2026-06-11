@@ -845,5 +845,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BO001",
+    "code": "BO001",
+    "cat": "bolsas",
+    "name": "Bolsa V bege claro",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 79.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BO001-1781195793393-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BO001-1781195794394-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

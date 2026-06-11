@@ -699,5 +699,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CL042",
+    "code": "CL002",
+    "cat": "colares",
+    "name": "Colar esferas esmeralda",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 49.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL042-1781179569917-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

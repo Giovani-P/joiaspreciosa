@@ -829,5 +829,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR053",
+    "code": "TR004",
+    "cat": "brincos",
+    "name": "Trio pérola",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 49.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR053-1781180564137-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

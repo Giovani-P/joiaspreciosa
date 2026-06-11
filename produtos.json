@@ -555,11 +555,11 @@
   },
   {
     "id": "BR047",
-    "code": "BR047",
+    "code": "BR034",
     "cat": "brincos",
     "name": "Argola cravejada quadrada",
     "material": "dourado",
-    "materialLabel": "Dourado",
+    "materialLabel": "Dourado e Prata",
     "price": 44.9,
     "specs": "",
     "imgs": [

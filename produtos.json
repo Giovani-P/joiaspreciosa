@@ -774,5 +774,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CL044",
+    "code": "CL029",
+    "cat": "colares",
+    "name": "Choker mini esferas fino",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL044-1781180139952-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL044-1781180140766-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

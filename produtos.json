@@ -755,5 +755,23 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR051",
+    "code": "BR040",
+    "cat": "brincos",
+    "name": "Brinco Argola Pérola zircônia",
+    "material": "dourado",
+    "materialLabel": "Dourado e Prata",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR051-1781179998146-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR051-1781179999091-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR051-1781179999877-3.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

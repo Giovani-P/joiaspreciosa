@@ -625,5 +625,23 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CL039",
+    "code": "CL039",
+    "cat": "colares",
+    "name": "Colar riviera",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 44.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL039-1781178917944-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL039-1781178918699-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL039-1781178919519-3.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

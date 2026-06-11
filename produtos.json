@@ -811,5 +811,23 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR052",
+    "code": "TR003",
+    "cat": "brincos",
+    "name": "Trio",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR052-1781180489175-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR052-1781180489906-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR052-1781180490656-3.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

@@ -607,5 +607,23 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CL038",
+    "code": "CL038",
+    "cat": "colares",
+    "name": "Colar cruz zircônia",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 44.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL038-1781178868754-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL038-1781178869558-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL038-1781178870307-3.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

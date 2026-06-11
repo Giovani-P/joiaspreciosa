@@ -481,7 +481,7 @@
     "id": "RE004",
     "code": "RE004",
     "cat": "relogios",
-    "name": "Kit relógio",
+    "name": "Kit relógio fecho jóias bracelete e brinco",
     "material": "dourado",
     "materialLabel": "Dourado",
     "price": 109.9,
@@ -489,7 +489,6 @@
     "imgs": [
       "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE004-1781129268053-1.jpg",
       "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE004-1781129268958-2.jpg",
-      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE004-1781129269895-3.jpg",
       "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE004-1781129270753-4.jpg"
     ],
     "featured": false,

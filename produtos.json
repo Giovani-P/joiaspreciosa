@@ -141,16 +141,19 @@
   },
   {
     "id": "BR043",
+    "code": "BR043",
     "cat": "brincos",
     "name": "Borboleta Pérola",
     "material": "bicolor",
     "materialLabel": "Prata e Dourado",
     "price": 39.9,
+    "specs": "",
     "imgs": [
-      "https://drive.google.com/thumbnail?id=1pq0UWvuvweZpIesIAVGO8CRSWSLu-KKs&sz=w600"
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR043-1781178230045-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR043-1781178230947-2.jpg"
     ],
     "featured": false,
-    "gift": true,
+    "gift": false,
     "visible": true
   },
   {

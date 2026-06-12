@@ -318,8 +318,10 @@
       .discount-bar{padding:12px 20px}
       .cart-footer{padding:14px 20px 20px}
       .fab-cart{bottom:calc(70px + env(safe-area-inset-bottom));right:16px;padding:11px 16px;font-size:.72rem}
-      .fab-music{bottom:calc(16px + env(safe-area-inset-bottom));left:16px;padding:11px 15px;font-size:.64rem;letter-spacing:.06em;max-width:64vw}
-      .fab-music #fabMusicLabel{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+      .fab-music{bottom:calc(16px + env(safe-area-inset-bottom));left:16px;padding:10px 16px;font-size:.62rem;letter-spacing:.07em;gap:8px}
+      .fab-music .fm-ico,.fab-music .fm-ico svg{width:16px;height:16px}
+      .fab-music .fm-eq{width:16px;height:14px}
+      .fab-music #fabMusicLabel{white-space:nowrap}
       .toast{bottom:calc(130px + env(safe-area-inset-bottom));right:16px;max-width:220px}
       .modal-overlay{padding:0;align-items:flex-end}
       .modal{flex-direction:column;max-height:94vh;border-radius:16px 16px 0 0}
@@ -1139,6 +1141,10 @@ const _audio=document.getElementById('ambientAudio');
 const _fabMusic=document.getElementById('fabMusic');
 const _musicLabel=document.getElementById('fabMusicLabel');
 const MUSIC_VOL=0.35;
+const _mqMobile=window.matchMedia('(max-width:768px)');
+const _idleText=()=>_mqMobile.matches?'Toque e relaxe ♪':'Toque para uma experiência completa';
+_musicLabel.textContent=_idleText();
+_mqMobile.addEventListener('change',()=>{ if(_audio.paused) _musicLabel.textContent=_idleText(); });
 let _fadeTimer=null;
 function _fadeTo(target,done){
   clearInterval(_fadeTimer);
@@ -1157,7 +1163,7 @@ function _musicOn(){
 }
 function _musicOff(){
   _fadeTo(0,()=>_audio.pause());
-  _fabMusic.classList.remove('playing'); _musicLabel.textContent='Toque para uma experiência completa';
+  _fabMusic.classList.remove('playing'); _musicLabel.textContent=_idleText();
   localStorage.setItem('jp_music','off');
 }
 function toggleMusic(){ _audio.paused ? _musicOn() : _musicOff(); }

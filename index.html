@@ -753,7 +753,7 @@ function buildCard(p){
   return `
     <div class="card" id="card-${p.id}" onclick="openStory('${p.id}')">
       <div class="card-img-wrap">
-        <img class="card-img" src="${imgUrl(p.imgs[0])}" alt="${p.name}"
+        <img class="card-img" src="${imgUrl(p.imgs[0])}" alt="${p.name}" loading="lazy" decoding="async"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="card-img-placeholder" style="display:none">
           <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.2"><circle cx="12" cy="8" r="5"/><path d="M3 21c0-4.418 4.03-8 9-8s9 3.582 9 8"/></svg>

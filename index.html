@@ -19,8 +19,8 @@
       --rose:#B76E79; --cream:#FAF7F2; --cream-dark:#F0EAE0;
       --charcoal:#1A1A1A; --gray:#6B6B6B; --gray-light:#D4D0C8; --white:#FFFFFF;
     }
-    html{scroll-behavior:smooth}
-    body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden}
+    html{scroll-behavior:smooth;overflow-x:clip}
+    body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:clip;width:100%;max-width:100%}
 
     /* ── ANNOUNCEMENT BAR ── */
     .ann-bar{background:var(--charcoal);color:var(--gold-light);font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;overflow:hidden;height:34px;display:flex;align-items:center}
@@ -318,7 +318,7 @@
       .discount-bar{padding:12px 20px}
       .cart-footer{padding:14px 20px 20px}
       .fab-cart{bottom:calc(70px + env(safe-area-inset-bottom));right:16px;padding:11px 16px;font-size:.72rem}
-      .fab-music{bottom:calc(16px + env(safe-area-inset-bottom));left:16px;padding:10px 16px;font-size:.62rem;letter-spacing:.07em;gap:8px}
+      .fab-music{bottom:calc(72px + env(safe-area-inset-bottom));left:16px;padding:10px 16px;font-size:.62rem;letter-spacing:.07em;gap:8px}
       .fab-music .fm-ico,.fab-music .fm-ico svg{width:16px;height:16px}
       .fab-music .fm-eq{width:16px;height:14px}
       .fab-music #fabMusicLabel{white-space:nowrap}

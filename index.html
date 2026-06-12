@@ -64,6 +64,24 @@
     @keyframes fab-pulse{0%{box-shadow:0 8px 32px rgba(0,0,0,.25),0 0 0 0 rgba(201,169,110,.5)}70%{box-shadow:0 8px 32px rgba(0,0,0,.25),0 0 0 12px rgba(201,169,110,0)}100%{box-shadow:0 8px 32px rgba(0,0,0,.25),0 0 0 0 rgba(201,169,110,0)}}
     .fab-cart.pulse{animation:fab-pulse 1.2s ease}
 
+    /* ── MUSIC PLAYER ── */
+    .fab-music{position:fixed;bottom:32px;left:32px;z-index:150;display:flex;align-items:center;gap:11px;background:var(--cream);color:var(--charcoal);border:1.5px solid var(--gold);cursor:pointer;padding:12px 20px;border-radius:40px;font-family:'Lato',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 8px 28px rgba(0,0,0,.14);transition:background .25s,color .25s,transform .2s,box-shadow .2s;animation:music-breathe 3.4s ease-in-out infinite}
+    .fab-music:hover{background:var(--gold);color:var(--white);transform:translateY(-2px);box-shadow:0 12px 36px rgba(168,136,62,.32)}
+    .fab-music.playing{animation:none;background:var(--charcoal);color:var(--gold-light);border-color:var(--charcoal)}
+    .fab-music.playing:hover{background:#000;color:var(--gold-light)}
+    .fab-music .fm-ico{width:18px;height:18px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .fab-music .fm-ico svg{width:18px;height:18px}
+    /* equalizer (visível só tocando) */
+    .fab-music .fm-eq{display:none;align-items:flex-end;gap:2.5px;height:16px;width:18px}
+    .fab-music .fm-eq span{flex:1;background:currentColor;border-radius:2px;height:30%;animation:eq-bounce .9s ease-in-out infinite}
+    .fab-music .fm-eq span:nth-child(2){animation-delay:.25s}
+    .fab-music .fm-eq span:nth-child(3){animation-delay:.5s}
+    .fab-music .fm-eq span:nth-child(4){animation-delay:.15s}
+    .fab-music.playing .fm-ico{display:none}
+    .fab-music.playing .fm-eq{display:flex}
+    @keyframes eq-bounce{0%,100%{height:25%}50%{height:100%}}
+    @keyframes music-breathe{0%,100%{box-shadow:0 8px 28px rgba(0,0,0,.14),0 0 0 0 rgba(201,169,110,.45)}55%{box-shadow:0 8px 28px rgba(0,0,0,.14),0 0 0 10px rgba(201,169,110,0)}}
+
     /* ── HERO ── */
     .hero{background:linear-gradient(135deg,#1A1A1A 0%,#2C2419 55%,#3D3022 100%);color:var(--white);padding:90px 40px 100px;text-align:center;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(201,169,110,.18) 0%,transparent 70%)}
@@ -300,6 +318,8 @@
       .discount-bar{padding:12px 20px}
       .cart-footer{padding:14px 20px 20px}
       .fab-cart{bottom:calc(70px + env(safe-area-inset-bottom));right:16px;padding:11px 16px;font-size:.72rem}
+      .fab-music{bottom:calc(16px + env(safe-area-inset-bottom));left:16px;padding:11px 15px;font-size:.64rem;letter-spacing:.06em;max-width:64vw}
+      .fab-music #fabMusicLabel{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
       .toast{bottom:calc(130px + env(safe-area-inset-bottom));right:16px;max-width:220px}
       .modal-overlay{padding:0;align-items:flex-end}
       .modal{flex-direction:column;max-height:94vh;border-radius:16px 16px 0 0}
@@ -463,6 +483,14 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
   <span>Ver Seleção</span>
   <span class="fab-count" id="fabCount">0</span>
+</button>
+
+<!-- ── MUSIC PLAYER ── -->
+<audio id="ambientAudio" loop preload="none" src="audio/ambiente.mp3"></audio>
+<button class="fab-music" id="fabMusic" onclick="toggleMusic()" aria-label="Tocar música ambiente">
+  <span class="fm-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
+  <span class="fm-eq" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+  <span id="fabMusicLabel">Toque para uma experiência completa</span>
 </button>
 
 <!-- ── HERO ── -->
@@ -629,6 +657,7 @@
   <div class="footer-logo">Joias Preciosa</div>
   <div>Semi Joias &amp; Acessórios · Feitos com amor</div>
   <div>Atendimento via WhatsApp · (19) 99900-9303</div>
+  <div style="font-size:.62rem;opacity:.55;margin-top:10px">Música: "Gymnopédie No.1" · Kevin MacLeod (incompetech.com) · CC BY 4.0</div>
 </footer>
 
 <!-- ── PRODUCT STORY VIEWER ── -->
@@ -1104,6 +1133,40 @@ window.addEventListener('scroll',()=>{
 
 // ── PWA ──
 if('serviceWorker' in navigator){ window.addEventListener('load',()=>{}); }
+
+// ── MUSICA AMBIENTE ──
+const _audio=document.getElementById('ambientAudio');
+const _fabMusic=document.getElementById('fabMusic');
+const _musicLabel=document.getElementById('fabMusicLabel');
+const MUSIC_VOL=0.35;
+let _fadeTimer=null;
+function _fadeTo(target,done){
+  clearInterval(_fadeTimer);
+  const step=(target-_audio.volume)/16;
+  _fadeTimer=setInterval(()=>{
+    let v=_audio.volume+step;
+    if((step>0&&v>=target)||(step<0&&v<=target)){ v=target; clearInterval(_fadeTimer); if(done)done(); }
+    _audio.volume=Math.max(0,Math.min(1,v));
+  },45);
+}
+function _musicOn(){
+  _audio.volume=0;
+  const p=_audio.play();
+  const apply=()=>{ _fabMusic.classList.add('playing'); _musicLabel.textContent='Tocando ♪'; localStorage.setItem('jp_music','on'); _fadeTo(MUSIC_VOL); };
+  if(p&&p.then){ p.then(apply).catch(()=>{}); } else { apply(); }
+}
+function _musicOff(){
+  _fadeTo(0,()=>_audio.pause());
+  _fabMusic.classList.remove('playing'); _musicLabel.textContent='Toque para uma experiência completa';
+  localStorage.setItem('jp_music','off');
+}
+function toggleMusic(){ _audio.paused ? _musicOn() : _musicOff(); }
+// retoma automaticamente no 1º gesto se a pessoa já tinha deixado ligado
+if(localStorage.getItem('jp_music')==='on'){
+  const resume=()=>{ _musicOn(); window.removeEventListener('pointerdown',resume); window.removeEventListener('scroll',resume); };
+  window.addEventListener('pointerdown',resume,{once:false});
+  window.addEventListener('scroll',resume,{once:false,passive:true});
+}
 
 // ── CARGA DINAMICA DOS PRODUTOS ──
 const REPO='Giovani-P/joiaspreciosa';

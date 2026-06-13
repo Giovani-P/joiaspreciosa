@@ -191,14 +191,17 @@
   },
   {
     "id": "CL008",
+    "code": "CL008",
     "cat": "colares",
     "name": "Cordão Baiano",
     "material": "bicolor",
     "materialLabel": "Prata e Dourado",
     "price": 44.9,
+    "specs": "",
     "imgs": [
       "https://drive.google.com/thumbnail?id=1qhdrOEyB5WuDN4yu9HMFTKUCCIZbUWkO&sz=w600",
-      "https://drive.google.com/thumbnail?id=1E2jGP7VmSz5p8E32Co8ptzdu_eagesit&sz=w600"
+      "https://drive.google.com/thumbnail?id=1E2jGP7VmSz5p8E32Co8ptzdu_eagesit&sz=w600",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL008-1781350993358-1.jpg"
     ],
     "featured": false,
     "gift": false,

@@ -330,15 +330,18 @@
   },
   {
     "id": "CL037",
+    "code": "CL037",
     "cat": "colares",
     "name": "Colar Borboleta Madrepérola",
     "material": "dourado",
     "materialLabel": "Dourado",
     "price": 44.9,
+    "specs": "",
     "imgs": [
       "https://drive.google.com/thumbnail?id=1V4tkP7giEGzzebL5DWN3kg7t6DU3WzCg&sz=w600",
       "https://drive.google.com/thumbnail?id=1LUKxK35qJiU45fUz4iryW7FNzbtVeeqg&sz=w600",
-      "https://drive.google.com/thumbnail?id=18n_iZGoyT6m4M-Pb7bxU8avKH5PHZwpd&sz=w600"
+      "https://drive.google.com/thumbnail?id=18n_iZGoyT6m4M-Pb7bxU8avKH5PHZwpd&sz=w600",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL037-1781351018466-1.jpg"
     ],
     "featured": true,
     "gift": true,

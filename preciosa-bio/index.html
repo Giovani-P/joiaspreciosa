@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRECIOSA — Acesso Exclusivo</title>
+  <meta name="description" content="Comunidade secreta da PRECIOSA: acesso antecipado, sorteios, bastidores e benefícios exclusivos. Escolha onde você quer estar um passo à frente.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PRECIOSA — Acesso Exclusivo">
+  <meta property="og:description" content="Entre na comunidade secreta: acesso antecipado, sorteios e benefícios exclusivos.">
+  <meta property="og:url" content="https://preciosa-bio.vercel.app">
+  <meta name="theme-color" content="#050805">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --gold-1:#a87b32;
+      --gold-2:#e6c577;
+      --gold-3:#f4e2a8;
+      --gold-soft:#cda85e;
+      --green:#8caa84;
+      --green-deep:#5f7d59;
+      --ink:#ece7da;
+      --bg-0:#040604;
+      --bg-1:#0a120c;
+      --bg-2:#0f1a12;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html,body{min-height:100%}
+    body{
+      font-family:'Montserrat',sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(120% 80% at 85% 8%, rgba(40,72,48,.55) 0%, transparent 45%),
+        radial-gradient(100% 70% at 8% 95%, rgba(34,60,40,.55) 0%, transparent 50%),
+        radial-gradient(140% 120% at 50% 50%, #0c150e 0%, var(--bg-0) 70%);
+      background-attachment:fixed;
+      min-height:100vh;
+      display:flex;flex-direction:column;align-items:center;
+      padding:54px 20px 40px;position:relative;overflow-x:hidden;
+    }
+    /* brilho dourado de fundo */
+    body::before{
+      content:'';position:fixed;top:-12%;left:50%;transform:translateX(-50%);
+      width:460px;height:460px;border-radius:50%;
+      background:radial-gradient(circle,rgba(214,176,96,.10) 0%,transparent 65%);
+      pointer-events:none;z-index:0;
+    }
+    .container{width:100%;max-width:480px;position:relative;z-index:1;text-align:center}
+
+    /* ===== Monograma ===== */
+    .crest{
+      width:108px;height:108px;margin:0 auto 14px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;position:relative;
+      border:1.5px solid rgba(214,176,96,.55);
+      box-shadow:0 0 0 1px rgba(214,176,96,.18) inset, 0 14px 40px rgba(0,0,0,.6);
+      background:radial-gradient(circle at 50% 35%, rgba(40,66,46,.55), rgba(6,10,7,.9));
+    }
+    .crest .mono{
+      font-family:'Cormorant Garamond',serif;font-weight:600;font-size:3.4rem;line-height:1;
+      background:linear-gradient(160deg,var(--gold-3),var(--gold-1) 75%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      text-shadow:0 2px 10px rgba(0,0,0,.4);
+    }
+    .crest .flourish{
+      position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
+      font-size:.7rem;color:var(--gold-soft);opacity:.85;letter-spacing:.15em;
+    }
+    .crest .spark{position:absolute;color:var(--gold-3);font-size:.62rem;opacity:.9}
+    .crest .spark.s1{top:6px;right:14px}
+    .crest .spark.s2{bottom:10px;left:10px;font-size:.5rem}
+
+    /* ===== Marca ===== */
+    .brand{
+      font-family:'Cormorant Garamond',serif;font-weight:600;
+      font-size:2.5rem;letter-spacing:.42em;text-indent:.42em;
+      background:linear-gradient(180deg,var(--gold-3) 0%,var(--gold-2) 45%,var(--gold-1) 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      margin-bottom:6px;
+    }
+    .eyebrow{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      color:var(--green);font-size:.66rem;font-weight:500;
+      letter-spacing:.32em;text-indent:.32em;text-transform:uppercase;margin-bottom:30px;
+    }
+    .eyebrow::before,.eyebrow::after{
+      content:'';height:1px;width:34px;
+      background:linear-gradient(90deg,transparent,rgba(140,170,132,.7));
+    }
+    .eyebrow::after{transform:scaleX(-1)}
+    .eyebrow i{font-size:.5rem;color:var(--gold-soft)}
+
+    .headline{
+      font-family:'Cormorant Garamond',serif;font-weight:500;
+      font-size:2.1rem;line-height:1.18;letter-spacing:.01em;
+      color:var(--ink);margin:0 auto 38px;max-width:420px;
+    }
+    .headline .accent{color:var(--green);font-style:italic}
+    .headline .sp{color:var(--gold-2)}
+
+    /* ===== Cards ===== */
+    .links{display:flex;flex-direction:column;gap:18px}
+    .card{
+      display:block;text-decoration:none;color:inherit;position:relative;
+      padding:24px 22px 22px;border-radius:20px;text-align:left;
+      background:linear-gradient(160deg, rgba(20,32,22,.92), rgba(8,13,9,.92));
+      border:1px solid rgba(214,176,96,.32);
+      box-shadow:0 10px 34px rgba(0,0,0,.45), 0 0 0 1px rgba(214,176,96,.05) inset;
+      transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+      overflow:hidden;
+    }
+    .card::after{
+      content:'';position:absolute;inset:0;border-radius:20px;pointer-events:none;
+      background:radial-gradient(80% 60% at 50% -10%, rgba(214,176,96,.10), transparent 60%);
+    }
+    .card:hover,.card:focus-visible{
+      transform:translateY(-3px);border-color:rgba(230,197,119,.7);
+      box-shadow:0 16px 42px rgba(0,0,0,.55), 0 0 22px rgba(214,176,96,.12);outline:none;
+    }
+    .card-head{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+    .ic{
+      width:58px;height:58px;flex-shrink:0;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--gold-3);
+      background:radial-gradient(circle at 50% 35%, rgba(40,66,46,.9), rgba(8,13,9,.95));
+      border:1.5px solid rgba(214,176,96,.5);
+      box-shadow:0 6px 18px rgba(0,0,0,.5), 0 0 0 4px rgba(214,176,96,.06);
+    }
+    .ic.lock{font-size:1.2rem}
+    .ttl{flex:1}
+    .ttl .l1{
+      font-size:.94rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#f3eee2;line-height:1.35;
+    }
+    .ttl .l2{
+      font-size:.94rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--green);line-height:1.35;
+    }
+    .ttl .l3{
+      font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--gold-soft);margin-top:5px;opacity:.9;
+    }
+    .desc{
+      font-size:.9rem;font-weight:400;line-height:1.5;color:#cfc8b8;opacity:.92;
+      margin:0 0 18px;padding-left:2px;
+    }
+    .cta{
+      display:flex;align-items:center;justify-content:center;gap:12px;
+      padding:14px 20px;border-radius:12px;
+      font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#221805;
+      background:linear-gradient(180deg,var(--gold-3) 0%,var(--gold-2) 45%,var(--gold-1) 100%);
+      box-shadow:0 8px 22px rgba(168,123,50,.35), 0 1px 0 rgba(255,255,255,.35) inset;
+      transition:filter .2s ease;
+    }
+    .card:hover .cta{filter:brightness(1.06)}
+    .cta i{font-size:.85rem;transition:transform .2s ease}
+    .card:hover .cta i.fa-arrow-right-long{transform:translateX(5px)}
+
+    /* badge Top */
+    .badge{
+      position:absolute;top:0;right:22px;transform:translateY(-50%);
+      background:linear-gradient(180deg,var(--gold-3),var(--gold-1));color:#221805;
+      font-size:.58rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+      padding:5px 12px;border-radius:20px;box-shadow:0 5px 14px rgba(0,0,0,.5);z-index:2;
+    }
+
+    /* variantes de cor do ícone */
+    .card.wpp .ic{color:#bfe6c4}
+    .card.insta .ic{color:#f0d6a8}
+    .card.store .ic{color:#bfe6c4}
+    .card.shop .ic{color:#f0d6a8}
+
+    /* secundários mais discretos */
+    .card.secondary{padding:18px 20px}
+    .card.secondary .cta{display:none}
+    .card.secondary .desc{margin-bottom:0}
+    .card.secondary .card-head{margin-bottom:0}
+    .card.secondary .ic{width:48px;height:48px;font-size:1.3rem}
+    .card.secondary .arrow{
+      margin-left:auto;color:var(--gold-soft);font-size:.95rem;flex-shrink:0;transition:transform .2s ease;
+    }
+    .card.secondary:hover .arrow{transform:translateX(4px)}
+    .card.secondary .ttl .l1{font-size:.86rem}
+    .card.secondary .sub{font-size:.72rem;font-weight:400;letter-spacing:.02em;text-transform:none;color:#bdb6a6;margin-top:3px;opacity:.9}
+
+    /* ===== rodapé teaser ===== */
+    .teaser{margin-top:46px;text-align:center}
+    .teaser .gem{color:var(--gold-2);font-size:1.1rem;margin-bottom:12px;letter-spacing:.4em}
+    .teaser .t1{
+      color:var(--green);font-size:.66rem;font-weight:600;letter-spacing:.34em;text-indent:.34em;
+      text-transform:uppercase;margin-bottom:6px;
+    }
+    .teaser .t2{
+      font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.7rem;letter-spacing:.18em;text-indent:.18em;
+      background:linear-gradient(180deg,var(--gold-3),var(--gold-1));
+      -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px;
+    }
+    .teaser .t3{
+      font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#cdbf9f;opacity:.85;
+    }
+    footer{margin-top:40px;font-size:.66rem;letter-spacing:.12em;opacity:.5;text-align:center}
+    footer a{color:inherit;text-decoration:none}
+
+    /* ===== responsivo ===== */
+    @media(max-width:480px){
+      body{padding:40px 16px 32px}
+      .crest{width:96px;height:96px}
+      .crest .mono{font-size:3rem}
+      .brand{font-size:2.05rem;letter-spacing:.36em;text-indent:.36em}
+      .headline{font-size:1.78rem;margin-bottom:30px}
+      .card{padding:20px 18px}
+      .ic{width:52px;height:52px;font-size:1.45rem}
+      .ttl .l1,.ttl .l2{font-size:.86rem;letter-spacing:.1em}
+      .desc{font-size:.86rem}
+      .cta{font-size:.74rem;padding:13px 16px}
+      .teaser .t2{font-size:1.5rem}
+    }
+    @media(max-width:360px){
+      .brand{font-size:1.8rem;letter-spacing:.3em;text-indent:.3em}
+      .headline{font-size:1.6rem}
+      .ic{width:48px;height:48px;font-size:1.3rem}
+    }
+    @media(hover:none){
+      .card:hover{transform:none;box-shadow:0 10px 34px rgba(0,0,0,.45)}
+      .card:active{transform:scale(.98)}
+    }
+    @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Monograma + Marca -->
+    <div class="crest">
+      <span class="spark s1"><i class="fas fa-sparkles"></i></span>
+      <span class="mono">P</span>
+      <span class="flourish">&#10086;</span>
+      <span class="spark s2"><i class="fas fa-sparkle"></i></span>
+    </div>
+    <h1 class="brand">PRECIOSA</h1>
+    <p class="eyebrow"><i class="fas fa-gem"></i>Acesso Exclusivo<i class="fas fa-gem"></i></p>
+
+    <h2 class="headline">Escolha onde você quer estar <span class="accent">um passo à frente</span> <span class="sp">&#10024;</span></h2>
+
+    <div class="links">
+
+      <!-- 1. Comunidade WhatsApp (Top) -->
+      <a class="card wpp" href="https://chat.whatsapp.com/DtytsIxGH3E6thnmjNDxTb" target="_blank" rel="noopener">
+        <span class="badge">Top</span>
+        <div class="card-head">
+          <div class="ic"><i class="fab fa-whatsapp"></i></div>
+          <div class="ttl">
+            <div class="l1">Comunidade Secreta</div>
+            <div class="l2">no WhatsApp</div>
+          </div>
+        </div>
+        <p class="desc">Acesso antecipado, sorteios e benefícios exclusivos.</p>
+        <div class="cta"><i class="fas fa-arrow-right-long"></i> Entrar agora</div>
+      </a>
+
+      <!-- 2. Comunidade Instagram -->
+      <a class="card insta" href="https://ig.me/j/AbbOSIuj35VE_Z79/" target="_blank" rel="noopener">
+        <div class="card-head">
+          <div class="ic"><i class="fab fa-instagram"></i></div>
+          <div class="ttl">
+            <div class="l1">Comunidade Secreta</div>
+            <div class="l2">no Instagram</div>
+            <div class="l3">Para quem prefere receber pelo insta</div>
+          </div>
+        </div>
+        <p class="desc">Bastidores, novidades e conteúdos reservados.</p>
+        <div class="cta"><i class="fas fa-arrow-right-long"></i> Quero participar</div>
+      </a>
+
+      <!-- 3. WhatsApp da loja (secundário) -->
+      <a class="card store secondary" href="https://wa.me/message/KI3WPCO43UADN1" target="_blank" rel="noopener">
+        <div class="card-head">
+          <div class="ic"><i class="fas fa-comments"></i></div>
+          <div class="ttl">
+            <div class="l1">Falar com a loja</div>
+            <div class="sub">Atendimento e pedidos no WhatsApp</div>
+          </div>
+          <i class="fas fa-arrow-right-long arrow"></i>
+        </div>
+      </a>
+
+      <!-- 4. Vitrine online (secundário) -->
+      <a class="card shop secondary" href="https://joias-preciosa.vercel.app" target="_blank" rel="noopener">
+        <div class="card-head">
+          <div class="ic"><i class="fas fa-gem"></i></div>
+          <div class="ttl">
+            <div class="l1">Ver a vitrine</div>
+            <div class="sub">Catálogo completo de peças</div>
+          </div>
+          <i class="fas fa-arrow-right-long arrow"></i>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Teaser -->
+    <div class="teaser">
+      <div class="gem">&#9670;</div>
+      <div class="t1">Em breve</div>
+      <div class="t2">ALGO ESPECIAL</div>
+      <div class="t3">será revelado&hellip;</div>
+    </div>
+
+    <footer>© 2026 · PRECIOSA · Semi joias</footer>
+
+  </div>
+</body>
+</html>

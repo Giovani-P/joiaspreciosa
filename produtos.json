@@ -255,15 +255,18 @@
   },
   {
     "id": "CL015",
+    "code": "CL015",
     "cat": "colares",
     "name": "Colar Árvore da Vida",
     "material": "dourado",
     "materialLabel": "Dourado",
     "price": 49.9,
+    "specs": "",
     "imgs": [
       "https://drive.google.com/thumbnail?id=1zvBeMeAdG_R5802eUZqMydTebFNtv6Bc&sz=w600",
       "https://drive.google.com/thumbnail?id=1t41dhs_Qan3cL0XTTIccIZX1IP4nn8a0&sz=w600",
-      "https://drive.google.com/thumbnail?id=1wmGx3kBkgPhBnucXjrWxnEoXfAStLz9b&sz=w600"
+      "https://drive.google.com/thumbnail?id=1wmGx3kBkgPhBnucXjrWxnEoXfAStLz9b&sz=w600",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL015-1781351384364-1.jpg"
     ],
     "featured": true,
     "gift": true,

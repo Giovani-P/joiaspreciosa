@@ -895,5 +895,23 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "RE005",
+    "code": "RE005",
+    "cat": "relogios",
+    "name": "Bracelete aço inoxidável",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 59.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE005-1781481039287-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE005-1781481039988-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE005-1781481040649-3.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

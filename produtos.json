@@ -950,5 +950,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "AN003",
+    "code": "AN003",
+    "cat": "aneis",
+    "name": "Anel solitário coração cravejado zircônia",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN003-1781481276229-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN003-1781481276944-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

@@ -207,6 +207,18 @@
     .cart-discount-row{display:none;justify-content:space-between;align-items:center;margin-bottom:4px}
     .cart-discount-label{font-size:.72rem;color:#1a7a3f;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
     .cart-discount-val{font-size:.9rem;color:#1a7a3f;font-weight:700}
+    .coupon-box{margin:12px 0 6px}
+    .coupon-input-wrap{display:flex;gap:8px}
+    .coupon-input{flex:1;min-width:0;padding:11px 12px;border:1.5px solid var(--gray-light);border-radius:3px;font-family:'Lato',sans-serif;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--charcoal);background:var(--cream)}
+    .coupon-input:focus{outline:none;border-color:var(--gold)}
+    .coupon-input.err{border-color:var(--rose)}
+    .coupon-apply{flex-shrink:0;padding:0 18px;background:var(--charcoal);color:#fff;border:none;cursor:pointer;font-family:'Lato',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:3px;transition:background .2s}
+    .coupon-apply:hover{background:var(--gold-dark)}
+    .coupon-status{font-size:.72rem;margin-top:8px;line-height:1.4}
+    .coupon-status.ok{color:#1a7a3f;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+    .coupon-status.bad{color:var(--rose)}
+    .coupon-remove{background:none;border:none;cursor:pointer;color:var(--gray);font-size:.68rem;text-decoration:underline;font-family:'Lato',sans-serif}
+    .coupon-remove:hover{color:var(--charcoal)}
     .cart-total-row{display:flex;justify-content:space-between;align-items:center;margin:10px 0 18px;padding-top:10px;border-top:1px solid var(--cream-dark)}
     .cart-total-label{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray)}
     .cart-total-val{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--charcoal)}
@@ -401,7 +413,8 @@
     .lead-pop.done .lead-success{display:block}
     .lead-check{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center}
     .lead-check svg{width:30px;height:30px;color:#fff}
-    .lead-coupon{display:inline-block;margin:6px 0 18px;padding:10px 22px;border:1.5px dashed var(--gold-dark);border-radius:4px;font-family:'Playfair Display',serif;font-size:1.3rem;letter-spacing:.16em;color:var(--gold-dark)}
+    .lead-coupon{display:inline-block;margin:6px 0 4px;padding:10px 22px;border:1.5px dashed var(--gold-dark);border-radius:4px;font-family:'Playfair Display',serif;font-size:1.3rem;letter-spacing:.16em;color:var(--gold-dark);background:var(--cream);cursor:pointer;transition:background .2s}
+    .lead-coupon:hover{background:var(--cream-dark)}
     .lead-wpp{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:#25D366;color:#fff;border:none;cursor:pointer;text-decoration:none;font-family:'Lato',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:3px;transition:background .2s}
     .lead-wpp:hover{background:#1DA855}
     .lead-wpp svg{width:18px;height:18px}
@@ -762,6 +775,13 @@
       <span class="cart-discount-label">✦ 10% OFF aplicado</span>
       <span class="cart-discount-val" id="discountVal"></span>
     </div>
+    <div class="coupon-box" id="couponBox">
+      <div class="coupon-input-wrap" id="couponInputWrap">
+        <input class="coupon-input" id="couponInput" type="text" placeholder="Cupom de desconto" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();applyCoupon();}">
+        <button class="coupon-apply" type="button" onclick="applyCoupon()">Aplicar</button>
+      </div>
+      <div class="coupon-status" id="couponStatus" style="display:none"></div>
+    </div>
     <div class="cart-total-row">
       <span class="cart-total-label">Total</span>
       <span class="cart-total-val" id="cartTotal"></span>
@@ -798,12 +818,13 @@
 
       <div class="lead-success">
         <div class="lead-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <h3 class="lead-title">Desconto liberado! 🎉</h3>
-        <p style="font-size:.86rem;color:var(--gray);line-height:1.5;margin-bottom:6px">Seu cupom de <strong>10% OFF</strong> já está ativo no carrinho. Use o código:</p>
-        <div class="lead-coupon">PRECIOSA10</div>
+        <h3 class="lead-title">Cupom liberado! 🎉</h3>
+        <p style="font-size:.86rem;color:var(--gray);line-height:1.5;margin-bottom:6px">Use o código abaixo no <strong>carrinho</strong> para ganhar <strong>10% OFF</strong> na sua compra:</p>
+        <button type="button" class="lead-coupon" onclick="copyCoupon()" title="Toque para copiar">PRECIOSA10</button>
+        <p style="font-size:.7rem;color:var(--gray);margin:-8px 0 18px">Toque no cupom para copiar</p>
         <a class="lead-wpp" id="leadWppBtn" href="#" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.045z"/></svg>
-          Confirmar no WhatsApp
+          Falar com a Paloma no WhatsApp
         </a>
         <button class="lead-keep" type="button" onclick="closeLead()">Continuar comprando</button>
       </div>
@@ -815,6 +836,8 @@
 const WHATSAPP = '5519999009303';
 const DISCOUNT_THRESHOLD = 150;
 const DISCOUNT_RATE = 0.10;
+const LEAD_CAPTURE = 'https://g-lead.vercel.app/api/capture/177715742962a9c77fb2d3966cce34fa0fd7040d613457e4750becbd15f93ad3';
+const COUPON_CODE = 'PRECIOSA10';
 
 function imgUrl(u){ return u; }
 function fmt(v){ return 'R$ '+v.toFixed(2).replace('.',','); }
@@ -982,7 +1005,8 @@ function syncAllBtns(){
 
 function getSubtotal(){ return cart.reduce((s,p)=>s+p.price,0); }
 function leadUnlocked(){ return localStorage.getItem('jp_lead10')==='1'; }
-function getDiscount(sub){ return (leadUnlocked() || sub>=DISCOUNT_THRESHOLD) ? sub*DISCOUNT_RATE : 0; }
+function couponApplied(){ return localStorage.getItem('jp_coupon')===COUPON_CODE; }
+function getDiscount(sub){ return (couponApplied() || sub>=DISCOUNT_THRESHOLD) ? sub*DISCOUNT_RATE : 0; }
 
 function updateCartUI(){
   const count=cart.length, sub=getSubtotal(), disc=getDiscount(sub), total=sub-disc;
@@ -1050,6 +1074,45 @@ function updateCartUI(){
   if(disc>0){ dr.style.display='flex'; sr.style.display='flex'; document.getElementById('discountVal').textContent='- '+fmt(disc); }
   else { dr.style.display='none'; sr.style.display='none'; }
   document.getElementById('cartTotal').textContent=fmt(total);
+  renderCoupon();
+}
+
+// ── CUPOM ──
+function renderCoupon(){
+  const box=document.getElementById('couponBox');
+  const wrap=document.getElementById('couponInputWrap');
+  const status=document.getElementById('couponStatus');
+  if(!box) return;
+  // se desconto veio só pelo valor (>=150) e não há cupom, esconde o campo
+  if(couponApplied()){
+    wrap.style.display='none';
+    status.style.display='flex'; status.className='coupon-status ok';
+    status.innerHTML='✓ Cupom <strong style="margin:0 4px">'+COUPON_CODE+'</strong> aplicado · 10% OFF <button class="coupon-remove" type="button" onclick="removeCoupon()">remover</button>';
+  } else {
+    wrap.style.display='flex';
+    status.style.display='none'; status.className='coupon-status'; status.innerHTML='';
+    const inp=document.getElementById('couponInput'); if(inp) inp.classList.remove('err');
+  }
+}
+function applyCoupon(){
+  const inp=document.getElementById('couponInput');
+  const status=document.getElementById('couponStatus');
+  const code=(inp.value||'').trim().toUpperCase().replace(/\s+/g,'');
+  if(code===COUPON_CODE){
+    localStorage.setItem('jp_coupon',COUPON_CODE);
+    updateCartUI();
+    showToast('🎉 Cupom aplicado! 10% de desconto.');
+  } else {
+    inp.classList.add('err');
+    status.style.display='block'; status.className='coupon-status bad';
+    status.textContent='Cupom inválido. Confira o código e tente de novo.';
+  }
+}
+function removeCoupon(){ localStorage.removeItem('jp_coupon'); updateCartUI(); }
+function copyCoupon(){
+  const t=COUPON_CODE;
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(()=>showToast('Cupom '+t+' copiado!')).catch(()=>{}); }
+  else { showToast('Cupom: '+t); }
 }
 
 function toggleCart(){
@@ -1293,20 +1356,24 @@ function submitLead(e){
   if(digits.length<10){ phoneEl.classList.add('err'); ok=false; } else phoneEl.classList.remove('err');
   if(!ok) return false;
 
-  // libera o desconto de verdade no carrinho
+  // marca como lead (não reabre o pop-up) — o desconto ela aplica com o cupom no carrinho
   localStorage.setItem('jp_lead10','1');
   localStorage.setItem('jp_lead_data', JSON.stringify({nome:name, tel:phoneEl.value, ts:Date.now()}));
-  if(typeof updateCartUI==='function') updateCartUI();
 
-  // mensagem do lead pra Paloma
-  const msg='✨ Olá, Paloma! Acabei de me cadastrar no site para ganhar meu cupom de *10% de desconto*.\n\n'
-    +'👤 Nome: '+name+'\n📱 WhatsApp: '+phoneEl.value+'\n\nQuero garantir meu desconto! 💛 (cupom PRECIOSA10)';
-  const url='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg);
-  document.getElementById('leadWppBtn').href=url;
+  // envia o lead pro CRM GP Lead (cai direto no pipeline da Paloma)
+  fetch(LEAD_CAPTURE,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({ nome:name, telefone:phoneEl.value, origem:'Pop-up 10% — Vitrine Joias Preciosa' })
+  }).catch(()=>{});
 
-  // estado de sucesso + abre WhatsApp (entrega o lead pra Paloma)
+  // botão opcional de WhatsApp (caso a cliente queira falar com a Paloma)
+  const msg='✨ Olá, Paloma! Me cadastrei no site e quero usar meu cupom de *10% de desconto* (PRECIOSA10).\n\n'
+    +'👤 Nome: '+name+'\n📱 WhatsApp: '+phoneEl.value+' 💛';
+  document.getElementById('leadWppBtn').href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg);
+
+  // estado de sucesso
   document.getElementById('leadPop').classList.add('done');
-  window.open(url,'_blank');
   return false;
 }
 

@@ -931,5 +931,24 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "AN002",
+    "code": "AN002",
+    "cat": "aneis",
+    "name": "Anel entrelaçado",
+    "material": "dourado",
+    "materialLabel": "Dourado e Prata",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN002-1781481182780-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN002-1781481183491-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN002-1781481184212-3.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN002-1781481184957-4.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

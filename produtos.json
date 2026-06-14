@@ -913,5 +913,23 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "AN001",
+    "code": "AN001",
+    "cat": "aneis",
+    "name": "Anel gota cravejado zircônia esmeralda",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN001-1781481107696-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN001-1781481108454-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN001-1781481109257-3.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

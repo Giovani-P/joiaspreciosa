@@ -1331,7 +1331,6 @@ function openLead(){
   const o=document.getElementById('leadOverlay');
   if(!o) return;
   o.classList.add('open');
-  localStorage.setItem('jp_popup_seen','1');
   setTimeout(()=>{ const n=document.getElementById('leadName'); if(n) n.focus(); },380);
 }
 function closeLead(){ const o=document.getElementById('leadOverlay'); if(o) o.classList.remove('open'); }
@@ -1386,8 +1385,8 @@ function submitLead(e){
   // fechar ao clicar fora / ESC
   o.addEventListener('click',ev=>{ if(ev.target===o) closeLead(); });
   document.addEventListener('keydown',ev=>{ if(ev.key==='Escape') closeLead(); });
-  // não mostrar pra quem já é lead ou já viu o pop-up
-  if(leadUnlocked() || localStorage.getItem('jp_popup_seen')==='1') return;
+  // mostra a cada visita; só pula pra quem já se cadastrou (já tem o cupom)
+  if(leadUnlocked()) return;
   setTimeout(openLead, 10000);
 })();
 </script>

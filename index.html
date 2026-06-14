@@ -371,6 +371,47 @@
     .story-add.added{background:#fff}
     .story-share{flex-shrink:0;width:52px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:10px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
     .story-share svg{width:18px;height:18px}
+
+    /* ── POP-UP CAPTURA 10% ── */
+    .lead-overlay{position:fixed;inset:0;background:rgba(26,26,26,.62);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:400;opacity:0;pointer-events:none;transition:opacity .35s;display:flex;align-items:center;justify-content:center;padding:20px}
+    .lead-overlay.open{opacity:1;pointer-events:all}
+    .lead-pop{position:relative;background:var(--white);width:100%;max-width:420px;border-radius:4px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.4);transform:translateY(26px) scale(.96);transition:transform .4s cubic-bezier(.4,0,.2,1);border-top:3px solid var(--gold)}
+    .lead-overlay.open .lead-pop{transform:translateY(0) scale(1)}
+    .lead-close{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.85);border:none;cursor:pointer;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gray);z-index:3;transition:background .2s,color .2s}
+    .lead-close:hover{background:var(--charcoal);color:#fff}
+    .lead-close svg{width:16px;height:16px}
+    .lead-body{padding:40px 34px 34px;text-align:center}
+    .lead-badge{display:inline-block;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-dark);font-weight:700;margin-bottom:14px}
+    .lead-off{font-family:'Playfair Display',serif;font-size:2.9rem;line-height:1;color:var(--charcoal);margin-bottom:8px}
+    .lead-off span{color:var(--gold-dark)}
+    .lead-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:500;line-height:1.3;margin-bottom:10px}
+    .lead-sub{font-size:.86rem;color:var(--gray);line-height:1.5;margin-bottom:24px}
+    .lead-form{display:flex;flex-direction:column;gap:12px}
+    .lead-input{width:100%;padding:14px 16px;border:1.5px solid var(--gray-light);border-radius:3px;font-family:'Lato',sans-serif;font-size:.92rem;color:var(--charcoal);background:var(--cream);transition:border-color .2s}
+    .lead-input:focus{outline:none;border-color:var(--gold)}
+    .lead-input.err{border-color:var(--rose)}
+    .lead-submit{margin-top:4px;width:100%;padding:15px;background:var(--charcoal);color:#fff;border:none;cursor:pointer;font-family:'Lato',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;transition:background .2s,transform .15s}
+    .lead-submit:hover{background:var(--gold-dark);transform:translateY(-1px)}
+    .lead-note{font-size:.66rem;color:var(--gray);margin-top:14px;line-height:1.5}
+    .lead-decline{display:block;margin:14px auto 0;background:none;border:none;cursor:pointer;font-family:'Lato',sans-serif;font-size:.72rem;color:var(--gray);text-decoration:underline;letter-spacing:.04em}
+    .lead-decline:hover{color:var(--charcoal)}
+    /* estado sucesso */
+    .lead-success{display:none;text-align:center}
+    .lead-pop.done .lead-form,.lead-pop.done .lead-sub,.lead-pop.done .lead-decline,.lead-pop.done .lead-note{display:none}
+    .lead-pop.done .lead-success{display:block}
+    .lead-check{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center}
+    .lead-check svg{width:30px;height:30px;color:#fff}
+    .lead-coupon{display:inline-block;margin:6px 0 18px;padding:10px 22px;border:1.5px dashed var(--gold-dark);border-radius:4px;font-family:'Playfair Display',serif;font-size:1.3rem;letter-spacing:.16em;color:var(--gold-dark)}
+    .lead-wpp{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:#25D366;color:#fff;border:none;cursor:pointer;text-decoration:none;font-family:'Lato',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:3px;transition:background .2s}
+    .lead-wpp:hover{background:#1DA855}
+    .lead-wpp svg{width:18px;height:18px}
+    .lead-keep{display:block;margin:12px auto 0;background:none;border:none;cursor:pointer;font-family:'Lato',sans-serif;font-size:.74rem;color:var(--gray);text-decoration:underline}
+    @media(max-width:480px){
+      .lead-body{padding:34px 24px 28px}
+      .lead-off{font-size:2.4rem}
+      .lead-title{font-size:1.2rem}
+    }
+    @media(prefers-reduced-motion:reduce){.lead-overlay,.lead-pop{transition:opacity .2s}}
   </style>
 </head>
 <body>
@@ -735,6 +776,41 @@
 
 <div class="toast" id="toast"></div>
 
+<!-- ── POP-UP CAPTURA 10% ── -->
+<div class="lead-overlay" id="leadOverlay">
+  <div class="lead-pop" id="leadPop">
+    <button class="lead-close" onclick="closeLead()" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="lead-body">
+      <span class="lead-badge">✦ Oferta de boas-vindas ✦</span>
+      <div class="lead-off">10<span>%</span> OFF</div>
+      <h3 class="lead-title">Um presente pra você começar</h3>
+      <p class="lead-sub">Deixe seu nome e WhatsApp e ganhe <strong>10% de desconto</strong> na sua primeira compra. Sem valor mínimo!</p>
+
+      <form class="lead-form" id="leadForm" onsubmit="return submitLead(event)">
+        <input class="lead-input" id="leadName" type="text" placeholder="Seu nome" autocomplete="name" required>
+        <input class="lead-input" id="leadPhone" type="tel" placeholder="Seu WhatsApp (DDD + número)" autocomplete="tel" inputmode="numeric" required>
+        <button class="lead-submit" type="submit">Quero meus 10% de desconto</button>
+      </form>
+      <p class="lead-note">🔒 Seus dados são usados só para enviar seu cupom e novidades da PRECIOSA.</p>
+      <button class="lead-decline" type="button" onclick="closeLead()">Agora não, obrigada</button>
+
+      <div class="lead-success">
+        <div class="lead-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3 class="lead-title">Desconto liberado! 🎉</h3>
+        <p style="font-size:.86rem;color:var(--gray);line-height:1.5;margin-bottom:6px">Seu cupom de <strong>10% OFF</strong> já está ativo no carrinho. Use o código:</p>
+        <div class="lead-coupon">PRECIOSA10</div>
+        <a class="lead-wpp" id="leadWppBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.045z"/></svg>
+          Confirmar no WhatsApp
+        </a>
+        <button class="lead-keep" type="button" onclick="closeLead()">Continuar comprando</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 const WHATSAPP = '5519999009303';
 const DISCOUNT_THRESHOLD = 150;
@@ -905,7 +981,8 @@ function syncAllBtns(){
 }
 
 function getSubtotal(){ return cart.reduce((s,p)=>s+p.price,0); }
-function getDiscount(sub){ return sub>=DISCOUNT_THRESHOLD ? sub*DISCOUNT_RATE : 0; }
+function leadUnlocked(){ return localStorage.getItem('jp_lead10')==='1'; }
+function getDiscount(sub){ return (leadUnlocked() || sub>=DISCOUNT_THRESHOLD) ? sub*DISCOUNT_RATE : 0; }
 
 function updateCartUI(){
   const count=cart.length, sub=getSubtotal(), disc=getDiscount(sub), total=sub-disc;
@@ -929,7 +1006,7 @@ function updateCartUI(){
   }
 
   discBarEl.style.display='';
-  const pct=Math.min((sub/DISCOUNT_THRESHOLD)*100,100);
+  const pct = disc>0 ? 100 : Math.min((sub/DISCOUNT_THRESHOLD)*100,100);
   document.getElementById('progressFill').style.width=pct+'%';
   document.getElementById('progressFill').classList.toggle('full',disc>0);
   const msg=document.getElementById('discountMsg');
@@ -1185,6 +1262,67 @@ async function loadProducts(){
   renderAll();
 }
 loadProducts();
+
+// ── POP-UP CAPTURA 10% ──
+function openLead(){
+  const o=document.getElementById('leadOverlay');
+  if(!o) return;
+  o.classList.add('open');
+  localStorage.setItem('jp_popup_seen','1');
+  setTimeout(()=>{ const n=document.getElementById('leadName'); if(n) n.focus(); },380);
+}
+function closeLead(){ const o=document.getElementById('leadOverlay'); if(o) o.classList.remove('open'); }
+
+function maskPhone(v){
+  v=v.replace(/\D/g,'').slice(0,11);
+  if(v.length>10) return v.replace(/(\d{2})(\d{5})(\d{4})/,'($1) $2-$3');
+  if(v.length>6)  return v.replace(/(\d{2})(\d{4,5})(\d{0,4})/,'($1) $2-$3').replace(/-$/,'');
+  if(v.length>2)  return v.replace(/(\d{2})(\d{0,5})/,'($1) $2');
+  if(v.length>0)  return v.replace(/(\d{0,2})/,'($1');
+  return v;
+}
+
+function submitLead(e){
+  e.preventDefault();
+  const nameEl=document.getElementById('leadName');
+  const phoneEl=document.getElementById('leadPhone');
+  const name=nameEl.value.trim();
+  const digits=phoneEl.value.replace(/\D/g,'');
+  let ok=true;
+  if(name.length<2){ nameEl.classList.add('err'); ok=false; } else nameEl.classList.remove('err');
+  if(digits.length<10){ phoneEl.classList.add('err'); ok=false; } else phoneEl.classList.remove('err');
+  if(!ok) return false;
+
+  // libera o desconto de verdade no carrinho
+  localStorage.setItem('jp_lead10','1');
+  localStorage.setItem('jp_lead_data', JSON.stringify({nome:name, tel:phoneEl.value, ts:Date.now()}));
+  if(typeof updateCartUI==='function') updateCartUI();
+
+  // mensagem do lead pra Paloma
+  const msg='✨ Olá, Paloma! Acabei de me cadastrar no site para ganhar meu cupom de *10% de desconto*.\n\n'
+    +'👤 Nome: '+name+'\n📱 WhatsApp: '+phoneEl.value+'\n\nQuero garantir meu desconto! 💛 (cupom PRECIOSA10)';
+  const url='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg);
+  document.getElementById('leadWppBtn').href=url;
+
+  // estado de sucesso + abre WhatsApp (entrega o lead pra Paloma)
+  document.getElementById('leadPop').classList.add('done');
+  window.open(url,'_blank');
+  return false;
+}
+
+(function initLeadPopup(){
+  const o=document.getElementById('leadOverlay');
+  if(!o) return;
+  // máscara de telefone
+  const ph=document.getElementById('leadPhone');
+  if(ph) ph.addEventListener('input',()=>{ ph.value=maskPhone(ph.value); });
+  // fechar ao clicar fora / ESC
+  o.addEventListener('click',ev=>{ if(ev.target===o) closeLead(); });
+  document.addEventListener('keydown',ev=>{ if(ev.key==='Escape') closeLead(); });
+  // não mostrar pra quem já é lead ou já viu o pop-up
+  if(leadUnlocked() || localStorage.getItem('jp_popup_seen')==='1') return;
+  setTimeout(openLead, 10000);
+})();
 </script>
 </body>
 </html>

@@ -465,7 +465,7 @@
     ],
     "featured": false,
     "gift": true,
-    "visible": false
+    "visible": true
   },
   {
     "id": "RE002",

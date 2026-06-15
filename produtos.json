@@ -1153,5 +1153,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CJ019",
+    "code": "CJ019",
+    "cat": "conjuntos",
+    "name": "Conjunto flor",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 69.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ019-1781534231823-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ019-1781534232719-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

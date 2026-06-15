@@ -1203,5 +1203,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR060",
+    "code": "BR060",
+    "cat": "brincos",
+    "name": "Conjunto prata gota madrepérola",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 59.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR060-1781534406985-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR060-1781534407979-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

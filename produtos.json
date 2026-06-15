@@ -1422,5 +1422,21 @@
     "featured": false,
     "gift": true,
     "visible": true
+  },
+  {
+    "id": "BR070",
+    "code": "BR070",
+    "cat": "brincos",
+    "name": "Relógio ajustável",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 59.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR070-1781539244249-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

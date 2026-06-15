@@ -1390,5 +1390,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR069",
+    "code": "BR069",
+    "cat": "brincos",
+    "name": "Pulseira folhas cravejada",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 54.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR069-1781539201154-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

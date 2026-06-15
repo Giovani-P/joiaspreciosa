@@ -53,16 +53,19 @@
   },
   {
     "id": "BR024",
+    "code": "BR024",
     "cat": "brincos",
     "name": "Brinco Orquídea",
     "material": "dourado",
     "materialLabel": "Dourado",
     "price": 49.9,
+    "specs": "",
     "imgs": [
       "https://drive.google.com/thumbnail?id=1grIZF-4BcBGjhBkZswhfB9Qh6X6ASr55&sz=w600",
       "https://drive.google.com/thumbnail?id=11YL1AkI73jtUvDrAdFkX9XUN1l4xRj6N&sz=w600",
       "https://drive.google.com/thumbnail?id=1OjjW7o4Fi6-oOjbV7CaXHb9uE2QkVPLV&sz=w600",
-      "https://drive.google.com/thumbnail?id=1ggJDAbW6QAgpvmKOxfUIS8pe8b0jH6zr&sz=w600"
+      "https://drive.google.com/thumbnail?id=1ggJDAbW6QAgpvmKOxfUIS8pe8b0jH6zr&sz=w600",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR024-1781535471694-1.jpg"
     ],
     "featured": true,
     "gift": true,

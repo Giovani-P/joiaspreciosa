@@ -967,5 +967,23 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "AN004",
+    "code": "AN004",
+    "cat": "aneis",
+    "name": "Anel gota pink",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN004-1781484228150-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN004-1781484228914-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/AN004-1781484229633-3.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

@@ -1104,5 +1104,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR057",
+    "code": "BR057",
+    "cat": "brincos",
+    "name": "Trio borboletas",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 34.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR057-1781529005035-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

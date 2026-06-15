@@ -1354,5 +1354,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR067",
+    "code": "BR067",
+    "cat": "brincos",
+    "name": "Dupla coração",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 49.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR067-1781535354173-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR067-1781535355100-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

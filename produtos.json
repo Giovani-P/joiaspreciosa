@@ -290,7 +290,7 @@
     ],
     "featured": true,
     "gift": true,
-    "visible": false
+    "visible": true
   },
   {
     "id": "CL025",

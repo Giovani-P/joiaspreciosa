@@ -1406,5 +1406,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "RE007",
+    "code": "RE007",
+    "cat": "relogios",
+    "name": "Relógio ajustável",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 59.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE007-1781539224353-1.jpg"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
   }
 ]

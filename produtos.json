@@ -1319,5 +1319,23 @@
     "featured": false,
     "gift": true,
     "visible": true
+  },
+  {
+    "id": "CL047",
+    "code": "CL047",
+    "cat": "colares",
+    "name": "Colar madrepérola espírito santo",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 49.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL047-1781535275708-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL047-1781535276656-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL047-1781535277514-3.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

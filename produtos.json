@@ -31,18 +31,21 @@
   },
   {
     "id": "BR018",
+    "code": "BR018",
     "cat": "brincos",
     "name": "Brinco Flor",
     "material": "dourado",
     "materialLabel": "Dourado",
     "price": 44.9,
+    "specs": "",
     "imgs": [
       "https://drive.google.com/thumbnail?id=1e0LQNdKIjHhDv0VeIB-UMjGh_GVvFB0j&sz=w600",
       "https://drive.google.com/thumbnail?id=11ayPUVfgu8NcwTvFoww0M5YDkbpIjA5d&sz=w600",
       "https://drive.google.com/thumbnail?id=1IiCEdVayCLCL1jqqg6zmRjYyN0YG9s-C&sz=w600",
       "https://drive.google.com/thumbnail?id=1MvWZgdrKBjKf11hEcJKJkGKtSbA_nvOw&sz=w600",
       "https://drive.google.com/thumbnail?id=1lVBv1tk-b-SfUsPXsy3GyTpc-PsCJq-D&sz=w600",
-      "https://drive.google.com/thumbnail?id=1prdWYUg62FgszM91MEwgu5SDM-ffwdQ1&sz=w600"
+      "https://drive.google.com/thumbnail?id=1prdWYUg62FgszM91MEwgu5SDM-ffwdQ1&sz=w600",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR018-1781484622746-1.jpg"
     ],
     "featured": false,
     "gift": true,

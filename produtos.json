@@ -1236,5 +1236,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR062",
+    "code": "BR062",
+    "cat": "brincos",
+    "name": "Trio argola cravejada",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR062-1781534493144-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

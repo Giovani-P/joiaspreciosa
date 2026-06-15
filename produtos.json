@@ -1021,5 +1021,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "RE006",
+    "code": "RE006",
+    "cat": "relogios",
+    "name": "Relógio masculino original Poedagar",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 149.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE006-1781484753976-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

@@ -1187,5 +1187,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CJ020",
+    "code": "CJ020",
+    "cat": "conjuntos",
+    "name": "Conjunto gota verde turquesa",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 59.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ020-1781534317168-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

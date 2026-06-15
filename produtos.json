@@ -1087,5 +1087,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR056",
+    "code": "BR056",
+    "cat": "brincos",
+    "name": "Trio borboletas pérola",
+    "material": "dourado",
+    "materialLabel": "Dourado e Prata",
+    "price": 34.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR056-1781528967760-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR056-1781528968681-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

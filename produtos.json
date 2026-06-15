@@ -1220,5 +1220,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR061",
+    "code": "BR061",
+    "cat": "brincos",
+    "name": "Trio borboletas preta",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 34.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR061-1781534460922-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

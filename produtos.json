@@ -1371,5 +1371,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR068",
+    "code": "BR068",
+    "cat": "brincos",
+    "name": "Trio bolinhas",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 34.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR068-1781535401587-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

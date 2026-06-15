@@ -449,7 +449,7 @@
     ],
     "featured": true,
     "gift": true,
-    "visible": false
+    "visible": true
   },
   {
     "id": "RE001",

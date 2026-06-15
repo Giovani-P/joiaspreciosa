@@ -1438,5 +1438,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "RE008",
+    "code": "RE008",
+    "cat": "relogios",
+    "name": "Relógio oval ajustável",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 59.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE008-1781539270784-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

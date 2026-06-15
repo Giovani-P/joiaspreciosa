@@ -1136,5 +1136,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CJ018",
+    "code": "CJ018",
+    "cat": "conjuntos",
+    "name": "Conjunto gota azul claro",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 59.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ018-1781534035270-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ018-1781534036373-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

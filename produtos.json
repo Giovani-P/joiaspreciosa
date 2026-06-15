@@ -1285,5 +1285,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR065",
+    "code": "BR065",
+    "cat": "brincos",
+    "name": "Brinco borboleta",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR065-1781534644751-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR065-1781534645668-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

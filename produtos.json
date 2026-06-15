@@ -1268,5 +1268,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR064",
+    "code": "BR064",
+    "cat": "brincos",
+    "name": "Brinco click aço inoxidável",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR064-1781534613558-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR064-1781534614569-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

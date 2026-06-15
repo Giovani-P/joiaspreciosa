@@ -1002,5 +1002,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CL046",
+    "code": "CL046",
+    "cat": "colares",
+    "name": "Colar miçanga com coração dourado",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL046-1781484434010-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

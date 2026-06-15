@@ -1037,5 +1037,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CJ016",
+    "code": "CJ016",
+    "cat": "conjuntos",
+    "name": "Conjunto gota cravejada pink",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 79.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ016-1781528788676-1.jpg"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
   }
 ]

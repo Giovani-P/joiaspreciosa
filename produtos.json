@@ -1252,5 +1252,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR063",
+    "code": "BR063",
+    "cat": "brincos",
+    "name": "Trio borboletas e lua",
+    "material": "dourado",
+    "materialLabel": "Dourado e Prata",
+    "price": 34.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR063-1781534558368-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

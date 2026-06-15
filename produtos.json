@@ -1170,5 +1170,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR059",
+    "code": "BR059",
+    "cat": "brincos",
+    "name": "Dupla zircônia preta",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 49.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR059-1781534270076-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR059-1781534271412-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

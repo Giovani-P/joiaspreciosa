@@ -1302,5 +1302,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CJ021",
+    "code": "CJ021",
+    "cat": "conjuntos",
+    "name": "Conjunto turquesa",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 59.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ021-1781534674283-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ021-1781534675259-2.jpg"
+    ],
+    "featured": false,
+    "gift": true,
+    "visible": true
   }
 ]

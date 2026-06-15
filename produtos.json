@@ -1071,5 +1071,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR055",
+    "code": "BR055",
+    "cat": "brincos",
+    "name": "Trio gota",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 34.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR055-1781528923536-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

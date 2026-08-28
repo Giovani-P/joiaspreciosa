@@ -1489,5 +1489,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CJ023",
+    "code": "CJ019",
+    "cat": "conjuntos",
+    "name": "Conjunto esfera",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 59.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ023-1787946721377-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ023-1787946722416-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

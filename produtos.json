@@ -1454,5 +1454,24 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CJ022",
+    "code": "CJ082",
+    "cat": "conjuntos",
+    "name": "Conjunto flor",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 7990,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ022-1787946596262-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ022-1787946597466-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ022-1787946598292-3.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ022-1787946599144-4.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

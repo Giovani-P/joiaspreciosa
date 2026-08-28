@@ -1473,5 +1473,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR071",
+    "code": "BR015",
+    "cat": "brincos",
+    "name": "Conjunto Dubai cravejado",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 89.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR071-1787946674795-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

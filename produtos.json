@@ -1582,5 +1582,22 @@
     "featured": false,
     "gift": true,
     "visible": true
+  },
+  {
+    "id": "BR073",
+    "code": "BR073",
+    "cat": "brincos",
+    "name": "Brinco coração",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 49.9,
+    "specs": "✨ Brinco Feminino em Semijoia | Elegante, Delicado e Versátil\n\nDescrição\n\n💎 O detalhe que transforma o seu look!\n\nUm brinco elegante e versátil para quem ama estar sempre bem-arrumada. Seu design combina facilmente com diferentes estilos, trazendo um toque de sofisticação, feminilidade e brilho para a produção.\n\n✨ Benefícios:\n✔ Design moderno e elegante\n✔ Leve e confortável para o dia a dia\n✔ Fácil de combinar com outros acessórios\n✔ Perfeito para looks casuais ou sofisticados\n✔ Ideal para usar em diversas ocasiões\n✔ Excelente opção para presentear\n✔ Uma peça versátil para ter sempre no porta-joias\n\n💖 Sabe aquele acessório que você coloca e já sente o look diferente? É esse!\n\n🛍️ Escolha o seu modelo e adicione ao carrinho agora! ✨",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR073-1787947230817-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR073-1787947231803-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

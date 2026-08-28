@@ -1542,5 +1542,24 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CJ026",
+    "code": "CJ016",
+    "cat": "conjuntos",
+    "name": "Conjunto ponto de luz",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 69.9,
+    "specs": "✨ Conjuntos de Semijoias Femininas | Elegantes, Delicados e Sofisticados\n\nDescrição\n\n💎 O conjunto perfeito para deixar seu look ainda mais elegante!\n\nNossa seleção de conjuntos de semijoias foi escolhida para quem ama praticidade, sofisticação e peças que combinam entre si. São modelos variados para você escolher o seu favorito e criar produções incríveis.\n\n✨ Benefícios:\n✔ Conjunto completo e harmonioso\n✔ Designs modernos e sofisticados\n✔ Peças delicadas e versáteis\n✔ Fáceis de combinar com outros acessórios\n✔ Ideais para o dia a dia ou ocasiões especiais\n✔ Ótima opção para presentear\n✔ Mais praticidade para montar seu look\n\n💖 Um conjunto certo transforma até a produção mais básica.\n\n🛍️ Escolha seu modelo favorito, adicione ao carrinho e garanta o seu enquanto estiver disponível! ✨",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ026-1787947031162-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ026-1787947032031-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ026-1787947033138-3.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ026-1787947033930-4.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

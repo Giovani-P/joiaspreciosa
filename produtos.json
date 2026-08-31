@@ -1711,5 +1711,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR078",
+    "code": "BR078",
+    "cat": "brincos",
+    "name": "Brinco quadrado",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR078-1788193980320-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR078-1788193981383-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

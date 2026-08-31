@@ -1616,5 +1616,30 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "RE010",
+    "code": "RE010",
+    "cat": "relogios",
+    "name": "Braceletes Prata ou dourado",
+    "material": "dourado",
+    "materialLabel": "Dourado e prata",
+    "price": 59.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE010-1788193730448-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE010-1788193731606-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE010-1788193732727-3.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE010-1788193733606-4.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE010-1788193734617-5.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE010-1788193735569-6.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE010-1788193736872-7.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE010-1788193737780-8.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE010-1788193738787-9.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/RE010-1788193739596-10.jpg"
+    ],
+    "featured": true,
+    "gift": false,
+    "visible": true
   }
 ]

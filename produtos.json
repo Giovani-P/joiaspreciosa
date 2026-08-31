@@ -1692,5 +1692,24 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR077",
+    "code": "BR077",
+    "cat": "brincos",
+    "name": "Pulseira folhas",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 49.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR077-1788193923888-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR077-1788193924984-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR077-1788193926032-3.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR077-1788193926990-4.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

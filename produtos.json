@@ -138,13 +138,15 @@
   },
   {
     "id": "BR042",
+    "code": "BR042",
     "cat": "brincos",
     "name": "Borboleta Cravejada",
     "material": "dourado",
     "materialLabel": "Dourado",
-    "price": 34.9,
+    "price": 44.9,
+    "specs": "",
     "imgs": [
-      "https://drive.google.com/thumbnail?id=1MTaHpIXv10T8JwyrMDKovwAAGf7T-1SA&sz=w600"
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR042-1788194350202-1.jpg"
     ],
     "featured": false,
     "gift": false,

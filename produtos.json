@@ -1728,5 +1728,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR079",
+    "code": "BR079",
+    "cat": "brincos",
+    "name": "Brinco laço",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 39.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR079-1788194020269-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR079-1788194021270-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

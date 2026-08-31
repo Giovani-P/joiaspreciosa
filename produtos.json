@@ -1745,5 +1745,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR080",
+    "code": "BR080",
+    "cat": "brincos",
+    "name": "Brinco orquídea cravejada",
+    "material": "dourado",
+    "materialLabel": "Dourado e prata",
+    "price": 49.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR080-1788194075356-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR080-1788194076494-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

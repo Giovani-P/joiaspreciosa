@@ -1762,5 +1762,26 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR081",
+    "code": "BR081",
+    "cat": "brincos",
+    "name": "Trio brincos variados",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 49.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR081-1788194170433-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR081-1788194171394-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR081-1788194172279-3.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR081-1788194173267-4.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR081-1788194174253-5.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR081-1788194175355-6.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

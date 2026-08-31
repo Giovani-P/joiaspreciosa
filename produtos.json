@@ -1641,5 +1641,22 @@
     "featured": true,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR074",
+    "code": "BR074",
+    "cat": "brincos",
+    "name": "Brinco laço madre pérola",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 44.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR074-1788193807526-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR074-1788193808641-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

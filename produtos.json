@@ -1879,5 +1879,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR083",
+    "code": "BR083",
+    "cat": "brincos",
+    "name": "Brincos minimalistas",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 34.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR083-1789643782532-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

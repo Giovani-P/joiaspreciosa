@@ -1841,5 +1841,26 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BO002",
+    "code": "BO002",
+    "cat": "bolsas",
+    "name": "Bolsa tira colo",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 109.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BO002-1789643666504-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BO002-1789643667437-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BO002-1789643668536-3.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BO002-1789643669437-4.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BO002-1789643670818-5.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BO002-1789643672284-6.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

@@ -1895,5 +1895,21 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "BR084",
+    "code": "BR084",
+    "cat": "brincos",
+    "name": "Brinco laço",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 44.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/BR084-1789643863263-1.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

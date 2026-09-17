@@ -1862,5 +1862,22 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CL048",
+    "code": "CL048",
+    "cat": "colares",
+    "name": "Colar duplo coração",
+    "material": "prata",
+    "materialLabel": "Prata",
+    "price": 44.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL048-1789643708073-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CL048-1789643709489-2.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]

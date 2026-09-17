@@ -1806,5 +1806,23 @@
     "featured": false,
     "gift": false,
     "visible": true
+  },
+  {
+    "id": "CJ027",
+    "code": "CJ027",
+    "cat": "conjuntos",
+    "name": "Conjunto madrepérola",
+    "material": "dourado",
+    "materialLabel": "Dourado",
+    "price": 69.9,
+    "specs": "",
+    "imgs": [
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ027-1789643547341-1.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ027-1789643548316-2.jpg",
+      "https://cdn.jsdelivr.net/gh/Giovani-P/joiaspreciosa@main/img/CJ027-1789643549327-3.jpg"
+    ],
+    "featured": false,
+    "gift": false,
+    "visible": true
   }
 ]
